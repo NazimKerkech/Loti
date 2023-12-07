@@ -11,6 +11,9 @@ novembre 2023 - février 2024
 - Thomy
 ## Tuto pour Commit avec Git GUI
 Rescan
+
 Commit -> Stage To Commit
+
 Commit
+
 Push
