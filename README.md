@@ -32,7 +32,7 @@ Push
 
 ## Pour l'uploader sur le repo github
 * ```git add *```
-* ```git commit -m 'non_du_commit'```
+* ```git commit -m 'nom_du_commit'```
 * ```git push```
 ## Pour le telecharger (avant chaque modification du code
 * ```git pull```
