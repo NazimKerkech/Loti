@@ -25,6 +25,7 @@ Push
 * cd LoTI/
 * Dans CLion créer un nouveau projet
 * Donner le chemin du projet que vous avez telechargé
- ![image](https://github.com/Thhomy/LoTI/assets/45372740/a349ca21-3e6b-4111-8c8a-dd605517dc63)
+<img src="drawing.jpg" alt="drawing" width="200"/>
+![image](https://github.com/Thhomy/LoTI/assets/45372740/a349ca21-3e6b-4111-8c8a-dd605517dc63)
 * C'est fait
 * 
