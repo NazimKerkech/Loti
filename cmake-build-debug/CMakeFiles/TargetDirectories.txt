@@ -1,3 +1,3 @@
-/home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug/CMakeFiles/LoTI.dir
-/home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Admin/Desktop/LoTI/cmake-build-debug/CMakeFiles/LoTI.dir
+C:/Users/Admin/Desktop/LoTI/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Admin/Desktop/LoTI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
