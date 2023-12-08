@@ -9,5 +9,6 @@ int main() {
     cout << "Ahmed !" <<endl;
 
     cout << "heeeeyy" << endl;
+    cout << "heeeeyy" << endl;
     return 0;
 }
