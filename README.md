@@ -20,7 +20,7 @@ novembre 2023 - février 2024
 - ```git pull . main```
 - ```git add src dta gui```
 - ```git push -u origin main```
-- ```git commit -m 'cummit test'```
+- ```git commit -m 'cummit name'```
 
 ## Tuto ouvrir le projet avec clion
 * Aller dans le dossier où vous voulez avoir le projet
