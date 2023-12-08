@@ -1,7 +1,12 @@
 # LoTI
-## Desciprtion
 Projet Informatique SIA2
+
 novembre 2023 - février 2024
+## Desciprtion
+- src : fichiers sources (.cpp .h)
+- dta : données (images, descripteurs, bibliothèques)
+- GUI : interface homme machine (IHM)
+  
 ## Membres du groupe :
 - Leila
 - Asmaa
@@ -9,14 +14,7 @@ novembre 2023 - février 2024
 - **Ahmed**
 - Nazim
 - Thomy
-## Tuto pour Commit avec Git GUI
-Rescan
 
-Commit -> Stage To Commit
-
-Commit
-
-Push
 
 ## Tuto ouvrir le projet avec clion
 * Aller dans le dossier où vous voulez avoir le projet
@@ -34,6 +32,6 @@ Push
 * ```git add *```
 * ```git commit -m 'nom_du_commit'```
 * ```git push```
-## Pour le telecharger (avant chaque modification du code
+## Pour le telecharger (avant chaque modification du code)
 * ```git pull```
 
