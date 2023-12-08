@@ -27,6 +27,5 @@ int main() {
     Bibliotheque[0].afficheDescripteurs();
     Bibliotheque[1].afficheDescripteurs();
 
-
     return 0;
 }

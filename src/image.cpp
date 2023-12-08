@@ -43,17 +43,6 @@ vector<vector<string>> loadDescriteurs(string filename = "descripteurs.csv")
         }
         data.push_back(row);
     }
-
-    // Displaying the CSV data (for demonstration purposes)
-    for (const auto& row : data) 
-    {
-        for (const auto& cell : row) 
-        {
-            std::cout << cell << "\t";
-        }
-        std::cout << endl;
-    }
-
     // Close the file stream
     file.close();
     data.erase(data.begin()); //enlever entete
@@ -81,5 +70,6 @@ void Image::afficheDescripteurs()
     cout << "Numero : " << _numero << endl;
     cout << "Cout :   " << _cout << endl;
     cout << "Acces :  " << _acces << endl;
+    // xxx
     cout << endl;
 }
