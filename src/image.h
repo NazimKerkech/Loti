@@ -6,17 +6,18 @@ using namespace std;
 
 class Image {
 private:
-	string source; //un seul mot
-	string titre; //plusieurs mots
-	int numero;
-	double cout;
-	char acces; // 'L' ou 'R'
+	string _source; //un seul mot
+	string _titre; //plusieurs mots
+	int _numero;
+	double _cout;
+	char _acces; // 'L' ou 'R'
 	// XXX à rajouter
 	// Mat img
 public:
-	Image(string); //charger l'image à partir de son nom de fichier
+	Image(string, vector<string>); //charger l'image à partir de son nom de fichier, et lui donner les descripteurs
 
-
+	void afficheDescripteurs();
 };
 
 vector<vector<string>> loadDescriteurs(string);
+vector<Image> createBib(vector<vector<string>>);

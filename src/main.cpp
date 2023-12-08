@@ -18,8 +18,15 @@ int main() {
     cout << "heeeeyy" << endl;
 
     vector<vector<string>> data;
+    cout << LOTI_DIR + "/dta/descripteurs.csv" << endl;
     data = loadDescriteurs(LOTI_DIR+"/dta/descripteurs.csv");
+    cout << data.size()<<endl;
+    vector<Image> Bibliotheque;
+    Bibliotheque = createBib(data);
 
-    cout << LOTI_DIR + "/dta/descripteurs.csv";
+    Bibliotheque[0].afficheDescripteurs();
+    Bibliotheque[1].afficheDescripteurs();
+
+
     return 0;
 }
