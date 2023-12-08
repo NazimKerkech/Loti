@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
 
     QApplication a(argc, argv);
     // Read an image using OpenCV
-    cv::Mat cvImage = cv::imread("../atlantis.jpg");
+    cv::Mat cvImage = cv::imread(LOTI_DIR + "/dta/ico1.jpg");
 
     // Convert OpenCV image to QImage
     QImage qtImage(cvImage.data, cvImage.cols, cvImage.rows, cvImage.step, QImage::Format_RGB888);
