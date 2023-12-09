@@ -11,7 +11,11 @@ find_package(Qt5 COMPONENTS
         REQUIRED)
 find_package( OpenCV REQUIRED )
 
-add_executable(LoTI src/main.cpp "src/image.cpp" )
+add_executable(LoTI
+    src/main.cpp
+    src/image.cpp
+    src/image.h
+)
 
 add_definitions(-DSOURCE_DIR="${CMAKE_SOURCE_DIR}")
 
