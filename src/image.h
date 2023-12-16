@@ -19,5 +19,5 @@ public:
 	void afficheDescripteurs();
 };
 
-vector<vector<string>> loadDescriteurs(string);
+vector<vector<string>> loadCSV(string);
 vector<Image> createBib(vector<vector<string>>);

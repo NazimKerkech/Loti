@@ -19,7 +19,7 @@ Image::Image(string ImgFileName, vector<string> data)
     _acces = data[4][0]; // normalement un seul charactere
 }
 
-vector<vector<string>> loadDescriteurs(string filename = "descripteurs.csv")
+vector<vector<string>> loadCSV(string filename = "descripteurs.csv")
 {
     ifstream file(filename);
 
