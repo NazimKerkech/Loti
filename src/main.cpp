@@ -14,6 +14,7 @@
 using namespace std;
 
 const string LOTI_DIR(SOURCE_DIR);
+const string DATA_DIR(LOTI_DIR+"/dta/");
 
 int main(int argc, char* argv[]) 
 {
@@ -28,21 +29,30 @@ int main(int argc, char* argv[])
     cout << "heeeeyy" << endl;
 
     vector<vector<string>> data;
-    cout << LOTI_DIR + "/dta/descripteurs.csv" << endl;
-    data = loadCSV(LOTI_DIR+"/dta/descripteurs.csv");
+    cout << DATA_DIR + "descripteurs.csv" << endl;
+    data = loadCSV(DATA_DIR + "descripteurs.csv");
     cout << data.size()<<endl;
     vector<Image> Bibliotheque;
     Bibliotheque = createBib(data);
 
+    //affichage des descripteurs :
     Bibliotheque[0].afficheDescripteurs();
     Bibliotheque[1].afficheDescripteurs();
 
+    //modification d'un descripteur d'une image :
     data[1][0] = "DallE_2";
-    writeCSV(LOTI_DIR + "/dta/descripteurs.csv", data);
+    writeCSV(DATA_DIR + "descripteurs.csv", data);
+
+    //affichage des images :
+    Bibliotheque[0].afficheImage();
+    Bibliotheque[1].afficheImage();
+
+
+    //////// Test Qt //////////
 
     QApplication a(argc, argv);
     // Read an image using OpenCV
-    cv::Mat cvImage = cv::imread(LOTI_DIR + "/dta/ico1.jpg");
+    cv::Mat cvImage = cv::imread(LOTI_DIR + "/dta/1.jpg");
 
     // Convert OpenCV image to QImage
     QImage qtImage(cvImage.data, cvImage.cols, cvImage.rows, cvImage.step, QImage::Format_RGB888);
@@ -62,6 +72,6 @@ int main(int argc, char* argv[])
 
     // Show the main window
     mainWindow.show();
-
+    
     return a.exec();
 }

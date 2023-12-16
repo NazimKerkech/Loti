@@ -17,9 +17,12 @@ private:
 	// XXX à rajouter
 	Mat _img;
 public:
-	Image(string, vector<string>); //charger l'image à partir de son nom de fichier, et lui donner les descripteurs
+	Image(vector<string>); //charger l'image à partir de son nom de fichier, et lui donner les descripteurs
 
 	void afficheDescripteurs();
+	Mat getImg();
+	void afficheImage();
+
 };
 
 vector<vector<string>> loadCSV(string);
