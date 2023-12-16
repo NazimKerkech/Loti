@@ -1,16 +1,18 @@
-#pragma once
 #include "image.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <sstream>
+#include <opencv2/opencv.hpp>
 
 using namespace std;
+using namespace cv;
 
-Image::Image(string ImgFileName, vector<string> listDescripteurs)
+Image::Image(string numeroImage, vector<string> listDescripteurs)
 {
-    // image : Mat = imread(ImgFileName)
+    
+    _img = loadImage(numeroImage);
     
     _source = listDescripteurs[0];
     _titre = listDescripteurs[1];
@@ -82,8 +84,8 @@ void writeCSV(string filename, vector<vector<string>> data)
     outFile.close();
 
     // Replace the original file with the new file
-    if (remove(filename.c_str())) { cout << "Error deleting file."; };
-    if (rename(tempFilename.c_str(), filename.c_str())) { cout << "Error renaming temp."; }
+    if (remove(filename.c_str())) { cout << "Error deleting file.\n"; };
+    if (rename(tempFilename.c_str(), filename.c_str())) { cout << "Error renaming temp.\n"; }
 }
 
 vector<Image> createBib(vector<vector<string>> tableauDescripteurs)
@@ -109,4 +111,23 @@ void Image::afficheDescripteurs()
     cout << "Acces :  " << _acces << endl;
     // xxx
     cout << endl;
+}
+
+Mat loadImage(const string& imageName) //permet de charger une image avec seulement sont numero
+{
+    vector<string> extensions = { ".png", ".jpg", ".bmp", ".tif", ".tiff", ".jpeg"}; // extensions possibles
+    Mat image;
+
+    for (const auto& ext : extensions) {
+        string fullPath = imageName + ext;
+        image = imread(fullPath, IMREAD_COLOR);
+
+        if (!image.empty()) {
+            break;
+        }
+    }
+    if (image.empty()) {
+        cout << "Erreur chargement de l'image " << imageName << endl;
+    }
+    return image;
 }
