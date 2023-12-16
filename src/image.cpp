@@ -19,7 +19,7 @@ Image::Image(string ImgFileName, vector<string> listDescripteurs)
     _acces = listDescripteurs[4][0]; // normalement un seul charactere
 }
 
-vector<vector<string>> loadCSV(string filename = "descripteurs.csv")
+vector<vector<string>> loadCSV(string filename)
 {
     ifstream file(filename);
 
@@ -49,16 +49,53 @@ vector<vector<string>> loadCSV(string filename = "descripteurs.csv")
     return data;
 }
 
-vector<Image> createBib(vector<vector<string>> data)
+void writeCSV(string filename, vector<vector<string>> data)
 {
-    int nbImg = data.size();
+    string tempFilename("temp_write.csv");
+    ifstream inFile(filename); // Nom du fichier CSV en entrée
+    ofstream outFile(tempFilename); // Nom du fichier CSV en sortie (temporaire)
+    string line;
+
+    if (!inFile.is_open()) {
+        cout << "Impossible d'ouvrir le fichier d'entrée." << endl;
+        return;
+    }
+
+    if (!outFile.is_open()) {
+        cout << "Impossible de créer le fichier temporaire." << endl;
+        return;
+    }
+
+    // Copy the first line of input.csv to output.csv
+    getline(inFile, line);
+    outFile << line << endl;
+
+    // Copy the lines of data to output.csv
+    for (int i = 0; i < data.size(); i++) {
+        for (int j = 0; j < data[i].size(); j++) {
+            outFile << data[i][j] << ',';
+        }
+        outFile << endl;
+    }
+
+    inFile.close();
+    outFile.close();
+
+    // Replace the original file with the new file
+    if (remove(filename.c_str())) { cout << "Error deleting file."; };
+    if (rename(tempFilename.c_str(), filename.c_str())) { cout << "Error renaming temp."; }
+}
+
+vector<Image> createBib(vector<vector<string>> tableauDescripteurs)
+{
+    int nbImg = tableauDescripteurs.size();
     vector<Image> bibliotheque;
     for (int i = 0; i < nbImg; i++)
     {
         /*
-            recuperer le nom de l'image avant 
+            recuperer le nom de l image avant 
         */
-        bibliotheque.push_back(Image("image.png", data[i]));
+        bibliotheque.push_back(Image("image.png", tableauDescripteurs[i]));
     }
     return bibliotheque;
 }

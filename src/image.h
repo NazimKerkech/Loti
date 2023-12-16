@@ -20,4 +20,5 @@ public:
 };
 
 vector<vector<string>> loadCSV(string);
+void writeCSV(string, vector<vector<string>>);
 vector<Image> createBib(vector<vector<string>>);

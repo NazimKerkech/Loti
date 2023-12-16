@@ -37,6 +37,9 @@ int main(int argc, char* argv[])
     Bibliotheque[0].afficheDescripteurs();
     Bibliotheque[1].afficheDescripteurs();
 
+    data[1][0] = "DallE_2";
+    writeCSV(LOTI_DIR + "/dta/descripteurs.csv", data);
+
     QApplication a(argc, argv);
     // Read an image using OpenCV
     cv::Mat cvImage = cv::imread(LOTI_DIR + "/dta/ico1.jpg");
