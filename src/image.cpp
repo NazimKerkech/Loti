@@ -8,15 +8,15 @@
 
 using namespace std;
 
-Image::Image(string ImgFileName, vector<string> data)
+Image::Image(string ImgFileName, vector<string> listDescripteurs)
 {
     // image : Mat = imread(ImgFileName)
     
-    _source = data[0];
-    _titre = data[1];
-    _numero = stoi(data[2]); //convertir str en int
-    _cout = stod(data[3]);
-    _acces = data[4][0]; // normalement un seul charactere
+    _source = listDescripteurs[0];
+    _titre = listDescripteurs[1];
+    _numero = stoi(listDescripteurs[2]); //convertir str en int
+    _cout = stod(listDescripteurs[3]);
+    _acces = listDescripteurs[4][0]; // normalement un seul charactere
 }
 
 vector<vector<string>> loadCSV(string filename = "descripteurs.csv")
