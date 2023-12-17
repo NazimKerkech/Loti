@@ -6,13 +6,17 @@
 #include <sstream>
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgcodecs.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #include <filesystem>
+#include <cmath>
 
 using namespace std;
 using namespace cv;
 
 const string LOTI_DIR(SOURCE_DIR);
 const string DATA_DIR(LOTI_DIR + "/dta/");
+
+#define PI 3.14
 
 Image::Image(vector<string> listDescripteurs)
 {
@@ -157,4 +161,73 @@ int Image::rows() const
 int Image::cols() const
 {
     return _img.cols;
+}
+
+// Traitement d'image
+Mat Image::houghLineTransform(float pourcentage)
+{
+    Mat contours, greyMat, resultImage = this->_img.clone();
+    cvtColor(resultImage, greyMat, cv::COLOR_BGR2GRAY);
+    Canny(greyMat, contours, 50, 205, 3);
+    
+    float angle(0.0), pasAngle(1);
+    int rayon(0), total(0), max(0);
+    float seuille(0.0);
+    int cols(180 / pasAngle);
+    int rows(sqrt(contours.rows * contours.rows + contours.cols * contours.cols));
+
+    vector<vector<int>> M(rows, vector<int>(cols, 0));
+
+    for (int i = 0; i < contours.rows; i++)
+    {
+        for (int j = 0; j < contours.cols; j++)
+        {
+            if (contours.at<uchar>(i, j) != 0)
+            {
+                for (angle =0; angle < 180; angle += pasAngle)
+                {
+                    int numero_angle(angle/pasAngle);
+                    rayon = (int) round(j * cos(angle/180* PI) + i * sin(angle/180* PI));
+
+                    if (rayon >= 0) {
+                        M[rayon][numero_angle] += 1;
+                        if (M[rayon][numero_angle] > max)
+                        {
+                            max = M[rayon][numero_angle];
+                        }
+                    }  
+                }
+            }
+        }
+    }
+    seuille = pourcentage * max;
+    vector<float> listRayons, listAngles;
+    for (int i = 0; i < rows; i++) 
+    {
+        for (int j = 0; j < cols; j++) 
+        {
+            if (M[i][j] > seuille) 
+            {
+                listRayons.push_back(i);
+                listAngles.push_back(j*pasAngle/180*PI);
+            }
+        }
+    }
+    // Draw the lines
+    for (size_t i = 0; i < listRayons.size(); i++)
+    {
+        float rho = listRayons[i], theta = listAngles[i];
+        Point pt1, pt2;
+        double a = cos(theta), b = sin(theta);
+        double x0 = a * rho, y0 = b * rho;
+        pt1.x = (int)round(x0 + 10000 * (-b));
+        pt1.y = (int)round(y0 + 10000 * (a));
+        pt2.x = (int)round(x0 - 10000 * (-b));
+        pt2.y = (int)round(y0 - 10000 * (a));
+        line(resultImage, pt1, pt2, Scalar(0, 0, 255), 1, LINE_AA);
+    }
+
+    // Display the results
+    imshow("Detected Lines", resultImage);
+    return resultImage;
 }

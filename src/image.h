@@ -16,6 +16,7 @@ private:
 	char _acces; // 'L' ou 'R'
 	// XXX à rajouter
 	Mat _img;
+
 public:
 	Image(vector<string>); //charger l'image à partir de son nom de fichier, et lui donner les descripteurs
 
@@ -27,6 +28,12 @@ public:
 
 	int rows() const; // taille des x 
 	int cols() const; // taille des y
+
+	/*
+		Traitement d'image :
+	*/
+	
+	Mat houghLineTransform(float = 0.7);
 
 };
 
