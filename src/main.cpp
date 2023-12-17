@@ -52,9 +52,10 @@ int main(int argc, char* argv[])
     cout << "Taille x : " << Bibliotheque[2].rows() << endl;
     cout << "Taille y : " << Bibliotheque[2].cols() << endl;
 
-
+    Bibliotheque[0].houghTransform();
+    waitKey(0);
     //////// Test Qt //////////
-
+    /*
     QApplication a(argc, argv);
     // Read an image using OpenCV
     cv::Mat cvImage = cv::imread(LOTI_DIR + "/dta/1.jpg");
@@ -79,4 +80,6 @@ int main(int argc, char* argv[])
     mainWindow.show();
     
     return a.exec();
+    */
+    return 0;
 }
