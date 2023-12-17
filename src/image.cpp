@@ -5,6 +5,7 @@
 #include <vector>
 #include <sstream>
 #include <opencv2/opencv.hpp>
+#include <opencv2/imgcodecs.hpp>
 #include <filesystem>
 
 using namespace std;
@@ -15,14 +16,13 @@ const string DATA_DIR(LOTI_DIR + "/dta/");
 
 Image::Image(vector<string> listDescripteurs)
 {
-    
     _img = loadImage(DATA_DIR + listDescripteurs[2]); //ouverture avec le numero de l'image
     
     _source = listDescripteurs[0];
-    _titre = listDescripteurs[1];
+    _titre  = listDescripteurs[1];
     _numero = stoi(listDescripteurs[2]); //convertir str en int
-    _cout = stod(listDescripteurs[3]);
-    _acces = listDescripteurs[4][0]; // normalement un seul charactere
+    _cout   = stod(listDescripteurs[3]);
+    _acces  = listDescripteurs[4][0]; // normalement un seul charactere
 }
 
 vector<vector<string>> loadCSV(string filename)
@@ -98,9 +98,6 @@ vector<Image> createBib(vector<vector<string>> tableauDescripteurs)
     vector<Image> bibliotheque;
     for (int i = 0; i < nbImg; i++)
     {
-        /*
-            recuperer le nom de l image avant 
-        */
         bibliotheque.push_back(Image(tableauDescripteurs[i]));
     }
     return bibliotheque;
@@ -125,12 +122,9 @@ Mat loadImage(const string& imageName) //permet de charger une image avec seulem
     for (const auto& ext : extensions) {
         string fullPath = imageName + ext;
         
-        cout << fullPath << endl;
         if (filesystem::exists(fullPath))
         {
             image = imread(fullPath);
-        }
-        if (!image.empty()) {
             break;
         }
     }
@@ -144,7 +138,23 @@ Mat Image::getImg()
 {
     return _img;
 }
-void Image::afficheImage()
+
+void Image::afficheImage() const
 {
     imshow(this->_titre, this->_img);
+}
+
+cv::Vec3b Image::BGR(int x, int y)
+{
+    return this->_img.at<cv::Vec3b>(x, y);
+}
+
+int Image::rows() const
+{
+    return _img.rows;
+}
+
+int Image::cols() const
+{
+    return _img.cols;
 }

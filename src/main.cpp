@@ -47,6 +47,11 @@ int main(int argc, char* argv[])
     Bibliotheque[0].afficheImage();
     Bibliotheque[1].afficheImage();
 
+    //recuperer un pixel d'une image et le nombre de lignes et do colonnes
+    cout << "Valeur pixel : " << Bibliotheque[2].BGR(1000, 2000) << endl;
+    cout << "Taille x : " << Bibliotheque[2].rows() << endl;
+    cout << "Taille y : " << Bibliotheque[2].cols() << endl;
+
 
     //////// Test Qt //////////
 

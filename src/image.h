@@ -21,7 +21,12 @@ public:
 
 	void afficheDescripteurs();
 	Mat getImg();
-	void afficheImage();
+	void afficheImage() const;
+
+	cv::Vec3b BGR(int, int); // retourne le pixel en (x,y)
+
+	int rows() const; // taille des x 
+	int cols() const; // taille des y
 
 };
 
