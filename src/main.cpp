@@ -52,8 +52,7 @@ int main(int argc, char* argv[])
     cout << "Taille x : " << Bibliotheque[2].rows() << endl;
     cout << "Taille y : " << Bibliotheque[2].cols() << endl;
 
-    Bibliotheque[0].houghLineTransform();
-    waitKey(0);
+
     //////// Test Qt //////////
     /*
     QApplication a(argc, argv);
