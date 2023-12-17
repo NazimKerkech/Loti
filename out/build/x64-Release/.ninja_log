@@ -1,0 +1,20 @@
+# ninja log v5
+20	112	7245269369785100	LoTI_autogen/timestamp	779d3ab54c59444b
+167	249	7244802831626312	CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.obj	624721df09aa5a2b
+20	112	7245269369785100	LoTI_autogen/mocs_compilation.cpp	779d3ab54c59444b
+20	112	7245269369785100	C:/Users/etudiant/Documents/Cpp_dev/LoTI/LoTI/out/build/x64-Release/LoTI_autogen/timestamp	779d3ab54c59444b
+2644	2878	7245269397113593	LoTI.exe	d24fe7f9176acb6e
+20	112	7245269369785100	C:/Users/etudiant/Documents/Cpp_dev/LoTI/LoTI/out/build/x64-Release/LoTI_autogen/mocs_compilation.cpp	779d3ab54c59444b
+130	2461	7245266817201365	CMakeFiles/LoTI.dir/src/image.cpp.obj	e79b9340bba74ec
+113	2644	7245269395160431	CMakeFiles/LoTI.dir/src/main.cpp.obj	8bda4a252234fd4a
+26	149	7245274282704356	LoTI_autogen/timestamp	779d3ab54c59444b
+26	149	7245274282704356	LoTI_autogen/mocs_compilation.cpp	779d3ab54c59444b
+26	149	7245274282704356	C:/Users/etudiant/Documents/Cpp_dev/LoTI/LoTI/out/build/x64-Release/LoTI_autogen/timestamp	779d3ab54c59444b
+26	149	7245274282704356	C:/Users/etudiant/Documents/Cpp_dev/LoTI/LoTI/out/build/x64-Release/LoTI_autogen/mocs_compilation.cpp	779d3ab54c59444b
+154	2753	7245274308753988	CMakeFiles/LoTI.dir/src/image.cpp.obj	e79b9340bba74ec
+19	123	7245274548491115	LoTI_autogen/timestamp	779d3ab54c59444b
+19	123	7245274548491115	LoTI_autogen/mocs_compilation.cpp	779d3ab54c59444b
+19	123	7245274548491115	C:/Users/etudiant/Documents/Cpp_dev/LoTI/LoTI/out/build/x64-Release/LoTI_autogen/timestamp	779d3ab54c59444b
+19	123	7245274548491115	C:/Users/etudiant/Documents/Cpp_dev/LoTI/LoTI/out/build/x64-Release/LoTI_autogen/mocs_compilation.cpp	779d3ab54c59444b
+124	2787	7245274575123349	CMakeFiles/LoTI.dir/src/main.cpp.obj	8bda4a252234fd4a
+2787	3079	7245274577526105	LoTI.exe	d24fe7f9176acb6e

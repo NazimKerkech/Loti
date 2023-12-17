@@ -1,0 +1,9 @@
+# ninja log v5
+17	126	7245275019108495	LoTI_autogen/timestamp	3aa4f5daa3ecb16c
+157	520	7244801673227512	CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.obj	b629f8eff8874766
+17	126	7245275019108495	LoTI_autogen/mocs_compilation.cpp	3aa4f5daa3ecb16c
+17	126	7245275019108495	C:/Users/etudiant/Documents/Cpp_dev/LoTI/LoTI/out/build/x64-Debug/LoTI_autogen/mocs_compilation.cpp	3aa4f5daa3ecb16c
+17	126	7245275019108495	C:/Users/etudiant/Documents/Cpp_dev/LoTI/LoTI/out/build/x64-Debug/LoTI_autogen/timestamp	3aa4f5daa3ecb16c
+131	2249	7245275040230753	CMakeFiles/LoTI.dir/src/image.cpp.obj	cb5dc085b3d7fb67
+127	2572	7245275043540183	CMakeFiles/LoTI.dir/src/main.cpp.obj	40fb1225cf30795
+2572	3001	7245275047391239	LoTI.exe	aa76625c7ebe75e

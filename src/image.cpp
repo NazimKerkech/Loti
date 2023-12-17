@@ -170,9 +170,8 @@ Mat Image::houghLineTransform(float pourcentage)
     cvtColor(resultImage, greyMat, cv::COLOR_BGR2GRAY);
     Canny(greyMat, contours, 50, 205, 3);
     
-    float angle(0.0), pasAngle(1);
+    float seuille(0.0), angle(0.0), pasAngle(0.5);
     int rayon(0), total(0), max(0);
-    float seuille(0.0);
     int cols(180 / pasAngle);
     int rows(sqrt(contours.rows * contours.rows + contours.cols * contours.cols));
 
