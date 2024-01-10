@@ -303,3 +303,23 @@ Mat Image::houghLineTransform(float pourcentage)
     return resultImage;
 }
 
+Mat Image::convolution(Mat filtre) {
+    Mat image = this->getImg();
+    Mat convoluee = Mat::zeros(image.size(), image.type());
+
+    int bord_i = filtre.rows/2;
+    int bord_j = filtre.cols/2;
+
+    for(int i=bord_i; i<image.rows-bord_i; i++) {
+        for(int j=bord_j; j<image.cols-bord_j; j++) {
+            for(int k=0; k<filtre.rows; k++) {
+                for(int l=0; l<filtre.cols; l++) {
+                    convoluee.at<Vec3b>(i, j)[0] += image.at<Vec3b>(i+k-bord_i, j+l-bord_j)[0] * filtre.at<Vec3b>(k-bord_i, l-bord_j)[0];
+                    convoluee.at<Vec3b>(i, j)[1] += image.at<Vec3b>(i+k-bord_i, j+l-bord_j)[1] * filtre.at<Vec3b>(k-bord_i, l-bord_j)[1];
+                    convoluee.at<Vec3b>(i, j)[2] += image.at<Vec3b>(i+k-bord_i, j+l-bord_j)[2] * filtre.at<Vec3b>(k-bord_i, l-bord_j)[2];
+                }
+            }
+        }
+    }
+    return convoluee;
+}

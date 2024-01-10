@@ -14,11 +14,11 @@ private:
 	int _numero;
 	double _cout;
 	char _acces; // 'L' ou 'R'
-	// XXX à rajouter
+	// XXX ï¿½ rajouter
 	Mat _img;
 
 public:
-	Image(vector<string>); //charger l'image à partir de son nom de fichier, et lui donner les descripteurs
+	Image(vector<string>); //charger l'image ï¿½ partir de son nom de fichier, et lui donner les descripteurs
 
 	void afficheDescripteurs();
 	Mat getImg();
@@ -34,6 +34,8 @@ public:
 	*/
 	
 	Mat houghLineTransform(float = 0.7);
+	Mat convolution(Mat filtre);
+
 
 };
 
@@ -44,4 +46,4 @@ void appendCSV(vector<vector<string>>);
 vector<Image> createBib(vector<vector<string>>);
 
 Mat loadImage(const string&); // charge l'image dans la base de donnee (et a une bibliotheque)
-void addImage(string); // ajoute l'image à la base de donnee
+void addImage(string); // ajoute l'image ï¿½ la base de donnee

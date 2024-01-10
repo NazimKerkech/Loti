@@ -44,8 +44,8 @@ int main(int argc, char* argv[])
     writeCSV(DATA_DIR + "descripteurs.csv", data);
 
     //affichage des images :
-    Bibliotheque[0].afficheImage();
-    Bibliotheque[1].afficheImage();
+    //Bibliotheque[0].afficheImage();
+    //Bibliotheque[1].afficheImage();
 
     //recuperer un pixel d'une image et le nombre de lignes et do colonnes
     cout << "Valeur pixel : " << Bibliotheque[2].BGR(1000, 2000) << endl;
@@ -53,8 +53,14 @@ int main(int argc, char* argv[])
     cout << "Taille y : " << Bibliotheque[2].cols() << endl;
 
     //Hough
-    Bibliotheque[0].houghLineTransform();
+    //Bibliotheque[0].houghLineTransform();
 
+    //convolution
+    Mat filtre = Mat(3, 3, CV_8UC3, Scalar(1,1,1));
+    std::cout << filtre;
+
+    Mat convoluee = Bibliotheque[0].convolution(filtre);
+    Bibliotheque[0].afficheImage();
     //Ajouter une image a la base de donnee
     addImage("C:/Users/etudiant/Downloads/image.png");
     
