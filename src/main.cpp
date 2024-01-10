@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "image.h"
+#include "../gui/FenetrePrincipale.h"
 
 #include <QCoreApplication>
 #include <QImage>
@@ -19,7 +20,7 @@ const string DATA_DIR(LOTI_DIR+"/dta/");
 int main(int argc, char* argv[]) 
 {
        
-    std::cout << "Hello, World!" << std::endl;
+    /*std::cout << "Hello, World!" << std::endl;
     std::cout << "Hello there ;)" << std::endl;
     cout << "Ol Korect !" <<endl;
 
@@ -59,15 +60,15 @@ int main(int argc, char* argv[])
     Mat filtre = Mat(3, 3, CV_8UC3, Scalar(1,1,1));
     std::cout << filtre;
 
-    Mat convoluee = Bibliotheque[0].convolution(filtre);
-    Bibliotheque[0].afficheImage();
+    //Mat convoluee = Bibliotheque[0].convolution(filtre);
+    //Bibliotheque[0].afficheImage();
     //Ajouter une image a la base de donnee
-    addImage("C:/Users/etudiant/Downloads/image.png");
+    //addImage("C:/Users/etudiant/Downloads/image.png");
     
-    cv::waitKey(0); //Laisser les fenetres ouvertes
+    cv::waitKey(0); //Laisser les fenetres ouvertes*/
 
     //////// Test Qt //////////
-    /*
+
     QApplication a(argc, argv);
     // Read an image using OpenCV
     cv::Mat cvImage = cv::imread(LOTI_DIR + "/dta/1.jpg");
@@ -76,8 +77,8 @@ int main(int argc, char* argv[])
     QImage qtImage(cvImage.data, cvImage.cols, cvImage.rows, cvImage.step, QImage::Format_RGB888);
 
     // Set up the main window
-    QMainWindow mainWindow;
-    QWidget* centralWidget = new QWidget(&mainWindow);
+    FenetrePrincipale mainWindow;
+    /*QWidget* centralWidget = new QWidget(&mainWindow);
     QVBoxLayout* layout = new QVBoxLayout(centralWidget);
 
     // Create a QLabel to display the image
@@ -86,12 +87,11 @@ int main(int argc, char* argv[])
 
     // Add the QLabel to the layout
     layout->addWidget(label);
-    mainWindow.setCentralWidget(centralWidget);
+    mainWindow.setCentralWidget(centralWidget);*/
 
     // Show the main window
     mainWindow.show();
     
     return a.exec();
-    */
-    return 0;
+
 }

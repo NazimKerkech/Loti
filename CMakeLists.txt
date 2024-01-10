@@ -15,6 +15,7 @@ add_executable(LoTI
     src/main.cpp
     src/image.cpp
     src/image.h
+        gui/FenetrePrincipale.h
 )
 
 add_definitions(-DSOURCE_DIR="${CMAKE_SOURCE_DIR}")
