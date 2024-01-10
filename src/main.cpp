@@ -52,6 +52,13 @@ int main(int argc, char* argv[])
     cout << "Taille x : " << Bibliotheque[2].rows() << endl;
     cout << "Taille y : " << Bibliotheque[2].cols() << endl;
 
+    //Hough
+    Bibliotheque[0].houghLineTransform();
+
+    //Ajouter une image a la base de donnee
+    addImage("C:/Users/etudiant/Downloads/image.png");
+    
+    cv::waitKey(0); //Laisser les fenetres ouvertes
 
     //////// Test Qt //////////
     /*

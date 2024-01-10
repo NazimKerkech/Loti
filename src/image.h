@@ -39,5 +39,9 @@ public:
 
 vector<vector<string>> loadCSV(string);
 void writeCSV(string, vector<vector<string>>);
+void appendCSV(vector<vector<string>>);
+
 vector<Image> createBib(vector<vector<string>>);
-Mat loadImage(const string&);
+
+Mat loadImage(const string&); // charge l'image dans la base de donnee (et a une bibliotheque)
+void addImage(string); // ajoute l'image à la base de donnee

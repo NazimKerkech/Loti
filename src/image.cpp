@@ -9,9 +9,11 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <filesystem>
 #include <cmath>
+#include <ctime>
 
 using namespace std;
 using namespace cv;
+namespace fs = std::filesystem;
 
 const string LOTI_DIR(SOURCE_DIR);
 const string DATA_DIR(LOTI_DIR + "/dta/");
@@ -96,6 +98,26 @@ void writeCSV(string filename, vector<vector<string>> data)
     if (rename(tempFilename.c_str(), filename.c_str())) { cout << "Error renaming temp.\n"; }
 }
 
+void appendCSV(string filename, vector<string> ligne)
+{
+    ofstream file(filename, std::ios::app);
+
+    if (file.is_open()) {
+        // Nouvelle ligne à ajouter à la fin du fichier CSV
+        for (int i = 0; i < ligne.size(); i++)
+        {
+            file << ligne[i] << ",";
+        }
+        file << endl;
+
+        std::cout << "Nouvelle ligne ajoutée avec succès." << std::endl;
+        file.close();
+    }
+    else {
+        std::cout << "Impossible d'ouvrir le fichier." << std::endl;
+    }
+}
+
 vector<Image> createBib(vector<vector<string>> tableauDescripteurs)
 {
     int nbImg = tableauDescripteurs.size();
@@ -136,6 +158,56 @@ Mat loadImage(const string& imageName) //permet de charger une image avec seulem
         cout << "Erreur chargement de l'image " << imageName << endl;
     }
     return image;
+}
+
+
+void addImage(string filePath)
+{
+    // Chemin vers l'image source
+    fs::path imagePath = filePath;
+
+    // Chemin vers le répertoire de destination
+    time_t now = time(0); // unique id
+    string numeroImage = to_string(now);
+    fs::path destinationPath = DATA_DIR + numeroImage;
+
+    // Vérifier si le fichier source existe
+    if (fs::exists(imagePath)) {
+            // Obtenir le nom de fichier de l'image source
+            // std::string fileName = imagePath.filename().string();
+            fs::path extension = imagePath.extension();// .string();
+            destinationPath += extension;
+            try {
+                // Copier le fichier vers le répertoire de destination
+                fs::copy_file(imagePath, destinationPath, fs::copy_options::overwrite_existing);
+                std::cout << "L'image a été copiée avec succès vers " << destinationPath << std::endl;
+            }
+            catch (std::exception const& ex) {
+                std::cout << "Une erreur s'est produite : " << ex.what() << std::endl;
+                return;
+            }
+    }
+    else {
+        std::cout << "Le fichier source n'existe pas." << std::endl;
+        return;
+    }
+
+    vector<string> descripteurs;
+    descripteurs.push_back("SourceDefaut"); // source
+    descripteurs.push_back("Titre par Defaut"); // titre
+    descripteurs.push_back(numeroImage); // numero
+    descripteurs.push_back("0.0"); // cout
+    descripteurs.push_back("L"); // acces
+    cout << "ok "<< numeroImage<< " " << descripteurs.size() <<"\n";
+    Image imageAjoute(descripteurs);
+
+    appendCSV(DATA_DIR + "descripteurs.csv", descripteurs);
+
+    /*
+    Ajouter l'ajou de l'image à la bibliotheque
+    Ajouter l'ajou manuel des descripteurs
+    */
+    return;
 }
 
 Mat Image::getImg() 
@@ -212,7 +284,7 @@ Mat Image::houghLineTransform(float pourcentage)
             }
         }
     }
-    // Draw the lines
+    // Dessin des lignes
     for (size_t i = 0; i < listRayons.size(); i++)
     {
         float rho = listRayons[i], theta = listAngles[i];
@@ -226,7 +298,8 @@ Mat Image::houghLineTransform(float pourcentage)
         line(resultImage, pt1, pt2, Scalar(0, 0, 255), 1, LINE_AA);
     }
 
-    // Display the results
+    // Affichage
     imshow("Detected Lines", resultImage);
     return resultImage;
 }
+
