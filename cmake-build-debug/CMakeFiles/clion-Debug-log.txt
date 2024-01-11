@@ -1,4 +1,13 @@
-/home/thedoctor/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/thedoctor/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -G Ninja -S /home/thedoctor/Documents/M2/s3/LoTI -B /home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug
+/home/thedoctor/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/thedoctor/Documents/M2/s3/LoTI -B /home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug
+CMake Deprecation Warning:
+  Support for "Extra Generators" like
+
+    CodeBlocks
+
+  is deprecated and will be removed from a future version of CMake.  IDEs may
+  use the cmake-file-api(7) to view CMake-generated project build trees.
+
+
 -- The C compiler identification is GNU 11.4.0
 -- The CXX compiler identification is GNU 11.4.0
 -- Detecting C compiler ABI info
@@ -12,6 +21,6 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Found OpenCV: /usr/local (found version "4.8.0") 
--- Configuring done (2.3s)
+-- Configuring done (2.9s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug

@@ -147,9 +147,6 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "LoTI_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "LoTI_autogen::@6890427a1f51a3e7e1df"
 		}
@@ -288,20 +285,6 @@
 			[
 				3
 			]
-		},
-		{
-			"name" : "",
-			"sourceIndexes" : 
-			[
-				4
-			]
-		},
-		{
-			"name" : "CMake Rules",
-			"sourceIndexes" : 
-			[
-				5
-			]
 		}
 	],
 	"sources" : 
@@ -329,18 +312,6 @@
 			"backtrace" : 1,
 			"path" : "src/image.h",
 			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
-			"path" : "cmake-build-debug/LoTI_autogen/timestamp",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
-			"path" : "cmake-build-debug/LoTI_autogen/timestamp.rule",
-			"sourceGroupIndex" : 3
 		}
 	],
 	"type" : "EXECUTABLE"
