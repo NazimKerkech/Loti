@@ -95,6 +95,48 @@
 			null
 		],
 		[
+			"/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/AspectRatioPixmapLabel.h",
+			"Mu",
+			"JPUFWXRHQV/moc_AspectRatioPixmapLabel.cpp",
+			null
+		],
+		[
+			"/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameApplication.h",
+			"Mu",
+			"JPUFWXRHQV/moc_TrameApplication.cpp",
+			null
+		],
+		[
+			"/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameAuthentification.h",
+			"Mu",
+			"JPUFWXRHQV/moc_TrameAuthentification.cpp",
+			null
+		],
+		[
+			"/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameCentrale.h",
+			"Mu",
+			"JPUFWXRHQV/moc_TrameCentrale.cpp",
+			null
+		],
+		[
+			"/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameDroite.h",
+			"Mu",
+			"JPUFWXRHQV/moc_TrameDroite.cpp",
+			null
+		],
+		[
+			"/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameGauche.h",
+			"Mu",
+			"JPUFWXRHQV/moc_TrameGauche.cpp",
+			null
+		],
+		[
+			"/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameSuperieure.h",
+			"Mu",
+			"JPUFWXRHQV/moc_TrameSuperieure.cpp",
+			null
+		],
+		[
 			"/home/thedoctor/Documents/M2/s3/LoTI/src/image.h",
 			"Mu",
 			"UVLADIE3JM/moc_image.cpp",

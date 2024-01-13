@@ -120,6 +120,27 @@
 		<Unit filename="/home/thedoctor/Documents/M2/s3/LoTI/gui/FenetrePrincipale.h">
 			<Option target="LoTI"/>
 		</Unit>
+		<Unit filename="/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/AspectRatioPixmapLabel.h">
+			<Option target="LoTI"/>
+		</Unit>
+		<Unit filename="/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameApplication.h">
+			<Option target="LoTI"/>
+		</Unit>
+		<Unit filename="/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameAuthentification.h">
+			<Option target="LoTI"/>
+		</Unit>
+		<Unit filename="/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameCentrale.h">
+			<Option target="LoTI"/>
+		</Unit>
+		<Unit filename="/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameDroite.h">
+			<Option target="LoTI"/>
+		</Unit>
+		<Unit filename="/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameGauche.h">
+			<Option target="LoTI"/>
+		</Unit>
+		<Unit filename="/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameSuperieure.h">
+			<Option target="LoTI"/>
+		</Unit>
 		<Unit filename="/home/thedoctor/Documents/M2/s3/LoTI/src/image.cpp">
 			<Option target="LoTI"/>
 		</Unit>

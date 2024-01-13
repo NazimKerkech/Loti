@@ -3,7 +3,27 @@
 
 CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o: LoTI_autogen/mocs_compilation.cpp \
   /home/thedoctor/Documents/M2/s3/LoTI/gui/FenetrePrincipale.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/src/image.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/AspectRatioPixmapLabel.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameApplication.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameAuthentification.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameCentrale.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameDroite.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameGauche.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameSuperieure.h \
   LoTI_autogen/DMHXEJ42XS/moc_FenetrePrincipale.cpp \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/AspectRatioPixmapLabel.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameApplication.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameAuthentification.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameDroite.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameGauche.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameSuperieure.h \
+  LoTI_autogen/JPUFWXRHQV/moc_AspectRatioPixmapLabel.cpp \
+  LoTI_autogen/JPUFWXRHQV/moc_TrameApplication.cpp \
+  LoTI_autogen/JPUFWXRHQV/moc_TrameAuthentification.cpp \
+  LoTI_autogen/JPUFWXRHQV/moc_TrameDroite.cpp \
+  LoTI_autogen/JPUFWXRHQV/moc_TrameGauche.cpp \
+  LoTI_autogen/JPUFWXRHQV/moc_TrameSuperieure.cpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -303,6 +323,9 @@ CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o: LoTI_autogen/mocs_compi
   /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
@@ -315,10 +338,14 @@ CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o: LoTI_autogen/mocs_compi
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
@@ -326,6 +353,7 @@ CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o: LoTI_autogen/mocs_compi
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qitemselectionmodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
@@ -346,7 +374,9 @@ CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o: LoTI_autogen/mocs_compi
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
@@ -360,15 +390,20 @@ CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o: LoTI_autogen/mocs_compi
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/QPixmap \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/QResizeEvent \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h \
@@ -379,25 +414,58 @@ CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o: LoTI_autogen/mocs_compi
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvalidator.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFrame \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QHBoxLayout \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QListWidget \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemdelegate.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemview.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractslider.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistview.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistwidget.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qslider.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstyle.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstyleoption.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabbar.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
@@ -949,6 +1017,13 @@ CMakeFiles/LoTI.dir/src/image.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/im
 
 CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/main.cpp \
   /home/thedoctor/Documents/M2/s3/LoTI/gui/FenetrePrincipale.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/AspectRatioPixmapLabel.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameApplication.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameAuthentification.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameCentrale.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameDroite.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameGauche.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameSuperieure.h \
   /home/thedoctor/Documents/M2/s3/LoTI/src/image.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -1250,6 +1325,9 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QCoreApplication \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
@@ -1262,10 +1340,14 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
@@ -1273,6 +1355,7 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qitemselectionmodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
@@ -1293,7 +1376,9 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
@@ -1307,16 +1392,21 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/QPixmap \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/QResizeEvent \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h \
@@ -1327,21 +1417,40 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvalidator.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFrame \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QHBoxLayout \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QListWidget \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemdelegate.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemview.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractslider.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
@@ -1349,8 +1458,17 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistview.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistwidget.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qslider.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstyle.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstyleoption.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabbar.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
@@ -1476,27 +1594,17 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
   /usr/local/include/opencv4/opencv2/videoio.hpp
 
 
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout:
-
 /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage:
 
 /home/thedoctor/Documents/M2/s3/LoTI/src/main.cpp:
 
 /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
-
-/usr/include/c++/11/filesystem:
 
 /usr/include/c++/11/bits/fs_fwd.h:
 
 /usr/include/c++/11/bits/fs_dir.h:
-
-/home/thedoctor/Documents/M2/s3/LoTI/src/image.h:
-
-/home/thedoctor/Documents/M2/s3/LoTI/src/image.cpp:
 
 /usr/local/include/opencv4/opencv2/video/background_segm.hpp:
 
@@ -1507,8 +1615,6 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 /usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp:
 
 /usr/local/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp:
-
-/usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp:
 
 /usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp:
 
@@ -1527,8 +1633,6 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 /usr/local/include/opencv4/opencv2/ml.hpp:
 
 /usr/local/include/opencv4/opencv2/imgproc.hpp:
-
-/usr/local/include/opencv4/opencv2/flann/timer.h:
 
 /usr/local/include/opencv4/opencv2/flann/random.h:
 
@@ -1552,8 +1656,6 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/local/include/opencv4/opencv2/flann/config.h:
 
-/usr/local/include/opencv4/opencv2/flann/composite_index.h:
-
 /usr/local/include/opencv4/opencv2/flann/autotuned_index.h:
 
 /usr/local/include/opencv4/opencv2/flann/any.h:
@@ -1574,19 +1676,9 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/local/include/opencv4/opencv2/core/version.hpp:
 
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h:
-
-/usr/local/include/opencv4/opencv2/core/utility.hpp:
-
 /usr/local/include/opencv4/opencv2/objdetect/barcode.hpp:
 
 /usr/local/include/opencv4/opencv2/core/types.hpp:
-
-/usr/local/include/opencv4/opencv2/opencv_modules.hpp:
-
-/usr/local/include/opencv4/opencv2/core/saturate.hpp:
-
-/usr/local/include/opencv4/opencv2/core/optim.hpp:
 
 /usr/local/include/opencv4/opencv2/core/matx.hpp:
 
@@ -1638,31 +1730,75 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstyleoption.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h:
 
 /usr/local/include/opencv4/opencv2/flann/ground_truth.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistwidget.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistview.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h:
 
+/usr/local/include/opencv4/opencv2/core/utility.hpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractslider.h:
+
+/usr/include/c++/11/filesystem:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemview.h:
+
+/usr/local/include/opencv4/opencv2/flann/composite_index.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemdelegate.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit:
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel:
+
+/home/thedoctor/Documents/M2/s3/LoTI/src/image.cpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QHBoxLayout:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFrame:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h:
 
 /usr/local/include/opencv4/opencv2/core/persistence.hpp:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h:
 
@@ -1684,13 +1820,23 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qslider.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtGui/QResizeEvent:
+
 /usr/include/x86_64-linux-gnu/qt5/QtGui/QPixmap:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h:
+
+/usr/local/include/opencv4/opencv2/flann/timer.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h:
 
 /usr/local/include/opencv4/opencv2/flann/kdtree_index.h:
 
@@ -1716,6 +1862,14 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h:
 
+/usr/local/include/opencv4/opencv2/opencv_modules.hpp:
+
+/usr/local/include/opencv4/opencv2/core/saturate.hpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h:
@@ -1734,37 +1888,51 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h:
 
-/usr/include/c++/11/stdexcept:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h:
 
-/usr/include/c++/11/sstream:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h:
 
-/usr/local/include/opencv4/opencv2/core/cuda.hpp:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h:
 
-/usr/include/c++/11/ratio:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h:
+/usr/include/c++/11/bits/fs_path.h:
 
-/usr/include/c++/11/set:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h:
 
-/usr/include/c++/11/bits/cxxabi_forced.h:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h:
 
-/usr/include/c++/11/pstl/glue_algorithm_defs.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h:
 
-/usr/local/include/opencv4/opencv2/dnn.hpp:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h:
 
-/usr/include/c++/11/mutex:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h:
 
-/usr/include/c++/11/pstl/glue_numeric_defs.h:
+/usr/include/c++/11/bits/fs_ops.h:
 
-/usr/include/c++/11/memory:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h:
+
+/usr/local/include/opencv4/opencv2/flann/sampling.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h:
+
+/usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h:
 
 /usr/include/c++/11/math.h:
 
 /usr/include/c++/11/map:
-
-/usr/include/c++/11/locale:
 
 /usr/include/c++/11/limits:
 
@@ -1778,9 +1946,9 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h:
 
-/usr/include/c++/11/new:
+/usr/include/c++/11/iostream:
 
 /usr/include/linux/errno.h:
 
@@ -1791,8 +1959,6 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 /usr/include/c++/11/functional:
 
 /usr/include/c++/11/ext/type_traits.h:
-
-/usr/include/c++/11/bits/unique_ptr.h:
 
 /usr/include/c++/11/ext/new_allocator.h:
 
@@ -1836,6 +2002,10 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/include/c++/11/bits/stl_algo.h:
 
+/usr/local/include/opencv4/opencv2/dnn.hpp:
+
+/usr/include/c++/11/mutex:
+
 /usr/include/c++/11/bits/stl_tempbuf.h:
 
 /usr/include/sched.h:
@@ -1845,10 +2015,6 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 /usr/include/c++/11/clocale:
 
 /usr/include/c++/11/bits/unordered_map.h:
-
-/usr/include/c++/11/bits/fs_path.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h:
 
 /usr/include/c++/11/bits/stringfwd.h:
 
@@ -1861,6 +2027,8 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
 /usr/include/c++/11/debug/assertions.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h:
 
 /usr/include/c++/11/bits/string_view.tcc:
 
@@ -1876,19 +2044,9 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
-/usr/include/c++/11/ostream:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h:
-
 /usr/include/c++/11/bits/stl_set.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
-
-/usr/include/c++/11/bits/cpp_type_traits.h:
-
-/usr/include/c++/11/bits/stl_relops.h:
-
-/usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h:
 
@@ -1896,13 +2054,11 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/include/c++/11/backward/auto_ptr.h:
 
-/usr/include/c++/11/bits/stl_pair.h:
-
-/usr/include/c++/11/bits/parse_numbers.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QListWidget:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qitemselectionmodel.h:
 
 /usr/include/string.h:
 
@@ -1912,13 +2068,13 @@ CMakeFiles/LoTI.dir/src/main.cpp.o: /home/thedoctor/Documents/M2/s3/LoTI/src/mai
 
 /usr/include/c++/11/tr1/bessel_function.tcc:
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h:
 
 /usr/include/c++/11/bits/locale_facets.tcc:
 
@@ -1932,79 +2088,55 @@ LoTI_autogen/DMHXEJ42XS/moc_FenetrePrincipale.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
-/usr/include/c++/11/fstream:
+/usr/include/c++/11/bits/stl_algobase.h:
 
-/usr/include/c++/11/chrono:
+/usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+/usr/include/c++/11/bits/stl_relops.h:
 
-/usr/include/c++/11/bits/vector.tcc:
+/usr/include/c++/11/bits/cpp_type_traits.h:
 
-/usr/include/c++/11/bits/stl_multimap.h:
+/usr/include/c++/11/bits/stl_function.h:
 
-/usr/include/c++/11/bits/stl_construct.h:
+/usr/include/c++/11/string_view:
 
-/usr/local/include/opencv4/opencv2/flann/all_indices.h:
+/usr/include/c++/11/bits/invoke.h:
 
-/usr/include/c++/11/iomanip:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h:
 
-/usr/include/c++/11/tuple:
+/usr/include/c++/11/bits/stream_iterator.h:
 
-/usr/include/c++/11/bits/hash_bytes.h:
+/usr/include/c++/11/bits/shared_ptr_base.h:
 
-/usr/local/include/opencv4/opencv2/flann/general.h:
+/usr/local/include/opencv4/opencv2/imgcodecs.hpp:
 
-/usr/include/c++/11/tr1/modified_bessel_func.tcc:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+/usr/include/c++/11/bits/stl_heap.h:
 
-/usr/local/include/opencv4/opencv2/core/ovx.hpp:
+/usr/include/c++/11/bits/stl_bvector.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
-/usr/include/c++/11/bits/stl_map.h:
+/usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/endian.h:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h:
 
-/usr/include/c++/11/bits/cxxabi_init_exception.h:
+/usr/include/c++/11/bits/shared_ptr_atomic.h:
 
-/usr/include/c++/11/bits/exception_defines.h:
+/usr/include/features.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h:
 
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp:
-
-/usr/include/c++/11/bits/locale_facets.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h:
-
-/usr/include/c++/11/numeric:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h:
-
-/usr/include/c++/11/bits/basic_string.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h:
-
-/usr/include/c++/11/bits/concept_check.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h:
-
-/usr/include/c++/11/bits/basic_ios.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h:
+/usr/include/c++/11/bits/refwrap.h:
 
 /usr/include/c++/11/bits/ios_base.h:
+
+/usr/include/c++/11/bits/specfun.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h:
 
@@ -2014,127 +2146,21 @@ LoTI_autogen/DMHXEJ42XS/moc_FenetrePrincipale.cpp:
 
 /usr/include/c++/11/bits/basic_string.tcc:
 
-/usr/include/c++/11/bits/stl_function.h:
-
-/usr/include/c++/11/string_view:
-
 /usr/include/c++/11/bits/basic_ios.h:
+
+/usr/include/c++/11/bits/cxxabi_forced.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h:
+
+/usr/include/c++/11/set:
 
 /usr/include/c++/11/bits/atomic_base.h:
 
 /usr/include/c++/11/bits/hashtable.h:
 
-/usr/include/c++/11/bits/allocator.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/c++/11/bits/charconv.h:
-
-/usr/include/c++/11/ext/alloc_traits.h:
-
-/usr/include/c++/11/bits/stl_uninitialized.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
-
-/usr/include/c++/11/bits/exception.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
-
-/usr/include/c++/11/bits/refwrap.h:
-
-/usr/include/c++/11/bits/deque.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/c++/11/bits/fstream.tcc:
-
-/usr/include/c++/11/pstl/glue_memory_defs.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/c++/11/bits/node_handle.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
-
-/usr/include/c++/11/bits/stl_bvector.h:
-
-/usr/local/include/opencv4/opencv2/imgcodecs.hpp:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h:
-
-/usr/include/c++/11/bits/stl_heap.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/local/include/opencv4/opencv2/dnn/layer.hpp:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h:
-
-/usr/include/c++/11/bits/functional_hash.h:
-
-/usr/include/c++/11/complex:
-
-/usr/local/include/opencv4/opencv2/stitching/warpers.hpp:
-
-/usr/include/assert.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h:
-
-LoTI_autogen/mocs_compilation.cpp:
-
-/usr/include/c++/11/bits/invoke.h:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/include/c++/11/bits/specfun.h:
-
-/usr/local/include/opencv4/opencv2/flann/sampling.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h:
-
-/usr/include/c++/11/bits/stl_algobase.h:
-
-/usr/local/include/opencv4/opencv2/core/bufferpool.hpp:
-
-/usr/include/c++/11/array:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h:
-
-/usr/include/c++/11/cwctype:
-
-/usr/include/c++/11/deque:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h:
-
-/usr/include/c++/11/bits/stream_iterator.h:
-
-/usr/include/c++/11/bits/shared_ptr_base.h:
-
-/usr/include/c++/11/bits/codecvt.h:
-
-/usr/include/c++/11/bits/stl_iterator_base_types.h:
-
-/usr/include/c++/11/bits/list.tcc:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h:
-
-/usr/include/c++/11/bits/exception_ptr.h:
-
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h:
 
 /usr/include/c++/11/bit:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/c++/11/bits/locale_classes.tcc:
-
-/usr/include/c++/11/atomic:
 
 /usr/local/include/opencv4/opencv2/core/neon_utils.hpp:
 
@@ -2150,31 +2176,53 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
-/usr/include/c++/11/cmath:
+/usr/include/c++/11/complex:
 
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow:
+/usr/local/include/opencv4/opencv2/stitching/warpers.hpp:
 
-/usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h:
+/usr/include/assert.h:
 
-/usr/include/c++/11/utility:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h:
 
-/usr/include/c++/11/bits/alloc_traits.h:
+/usr/include/asm-generic/errno.h:
 
-/usr/include/c++/11/bits/memoryfwd.h:
+LoTI_autogen/JPUFWXRHQV/moc_TrameDroite.cpp:
 
-/usr/include/c++/11/bits/nested_exception.h:
+LoTI_autogen/JPUFWXRHQV/moc_TrameGauche.cpp:
+
+/usr/include/c++/11/atomic:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/c++/11/bits/stl_pair.h:
+
+/usr/include/c++/11/bits/parse_numbers.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h:
 
 /usr/include/c++/11/bits/shared_ptr.h:
 
-/usr/include/c++/11/bits/std_mutex.h:
+/usr/include/c++/11/bits/memoryfwd.h:
 
-/usr/include/c++/11/bits/allocated_ptr.h:
+/usr/include/c++/11/bits/nested_exception.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h:
+/usr/include/c++/11/bits/std_function.h:
 
-/usr/include/c++/11/bits/ptr_traits.h:
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/usr/include/c++/11/bits/algorithmfwd.h:
+
+/usr/include/c++/11/cmath:
+
+LoTI_autogen/JPUFWXRHQV/moc_TrameSuperieure.cpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h:
+
+/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameAuthentification.h:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
 
@@ -2184,6 +2232,212 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/bits/move.h:
 
+/usr/local/include/opencv4/opencv2/objdetect/charuco_detector.hpp:
+
+/usr/include/c++/11/bits/unique_lock.h:
+
+/usr/include/c++/11/bits/std_abs.h:
+
+LoTI_autogen/JPUFWXRHQV/moc_TrameAuthentification.cpp:
+
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/usr/local/include/opencv4/opencv2/core.hpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h:
+
+/home/thedoctor/Documents/M2/s3/LoTI/src/image.h:
+
+/usr/include/c++/11/bits/std_mutex.h:
+
+/usr/local/include/opencv4/opencv2/core/optim.hpp:
+
+LoTI_autogen/JPUFWXRHQV/moc_AspectRatioPixmapLabel.cpp:
+
+/usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/c++/11/bits/char_traits.h:
+
+LoTI_autogen/mocs_compilation.cpp:
+
+/usr/include/c++/11/bits/stl_map.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameSuperieure.h:
+
+/usr/include/c++/11/bits/quoted_string.h:
+
+/home/thedoctor/Documents/M2/s3/LoTI/gui/FenetrePrincipale.h:
+
+/usr/include/stdio.h:
+
+/usr/local/include/opencv4/opencv2/dnn/layer.hpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h:
+
+/usr/include/c++/11/bits/functional_hash.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h:
+
+/usr/include/c++/11/bits/allocator.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/c++/11/locale:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+
+/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameApplication.h:
+
+/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameCentrale.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/local/include/opencv4/opencv2/core/bufferpool.hpp:
+
+/usr/include/c++/11/array:
+
+/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameDroite.h:
+
+/usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp:
+
+/usr/include/c++/11/bits/locale_facets.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h:
+
+/usr/include/c++/11/bits/postypes.h:
+
+/usr/include/c++/11/fstream:
+
+/usr/include/c++/11/chrono:
+
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h:
+
+/usr/include/c++/11/bits/vector.tcc:
+
+/usr/include/c++/11/bits/stl_multimap.h:
+
+/usr/include/c++/11/bits/stl_construct.h:
+
+/usr/local/include/opencv4/opencv2/flann/general.h:
+
+/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/AspectRatioPixmapLabel.h:
+
+/usr/include/c++/11/tr1/modified_bessel_func.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/local/include/opencv4/opencv2/core/ovx.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h:
+
+/usr/include/c++/11/bits/basic_string.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h:
+
+/usr/include/c++/11/bits/locale_classes.tcc:
+
+/usr/include/c++/11/bits/codecvt.h:
+
+/usr/include/libintl.h:
+
+/usr/include/c++/11/string:
+
+/usr/include/c++/11/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/11/bits/list.tcc:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h:
+
+/usr/include/c++/11/bits/alloc_traits.h:
+
+/usr/include/c++/11/utility:
+
+/usr/include/c++/11/bits/exception_ptr.h:
+
+LoTI_autogen/JPUFWXRHQV/moc_TrameApplication.cpp:
+
+/usr/include/c++/11/bits/basic_ios.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h:
+
+/home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameGauche.h:
+
+/usr/include/c++/11/bits/concept_check.h:
+
+/usr/include/c++/11/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/11/bits/exception_defines.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/c++/11/bits/node_handle.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/c++/11/bits/deque.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/c++/11/bits/charconv.h:
+
+/usr/include/c++/11/ext/alloc_traits.h:
+
+/usr/include/c++/11/bits/fstream.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/c++/11/pstl/glue_memory_defs.h:
+
+/usr/include/c++/11/bits/stl_uninitialized.h:
+
+/usr/include/c++/11/deque:
+
+/usr/include/c++/11/cwctype:
+
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+
+/usr/include/c++/11/bits/exception.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
+
+/usr/include/c++/11/bits/allocated_ptr.h:
+
+/usr/include/c++/11/bits/ptr_traits.h:
+
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
 /usr/include/c++/11/bits/istream.tcc:
@@ -2192,17 +2446,11 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
-/usr/include/c++/11/bits/std_function.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h:
 
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+/usr/include/c++/11/sstream:
 
 /usr/include/c++/11/bits/locale_conv.h:
-
-/usr/include/ctype.h:
-
-/usr/include/c++/11/bits/ostream_insert.h:
 
 /usr/local/include/opencv4/opencv2/flann/matrix.h:
 
@@ -2216,15 +2464,35 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/bits/predefined_ops.h:
 
-/usr/include/c++/11/iostream:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h:
+/usr/include/c++/11/new:
 
-/home/thedoctor/Documents/M2/s3/LoTI/gui/FenetrePrincipale.h:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h:
 
-/usr/include/stdio.h:
+/usr/include/c++/11/numeric:
 
-/usr/include/c++/11/bits/quoted_string.h:
+/usr/include/c++/11/ostream:
+
+/usr/local/include/opencv4/opencv2/flann/all_indices.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qvalidator.h:
+
+/usr/include/c++/11/iomanip:
+
+/usr/include/c++/11/bits/hash_bytes.h:
+
+/usr/include/c++/11/tuple:
+
+/usr/include/c++/11/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/11/bits/ostream_insert.h:
+
+/usr/include/ctype.h:
+
+/usr/include/c++/11/memory:
+
+/usr/include/c++/11/pstl/glue_numeric_defs.h:
 
 /usr/include/c++/11/queue:
 
@@ -2236,27 +2504,11 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h:
 
-/usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp:
+/usr/local/include/opencv4/opencv2/core/cuda.hpp:
 
-/usr/include/c++/11/bits/shared_ptr_atomic.h:
+/usr/include/c++/11/ratio:
 
-/usr/include/features.h:
-
-/usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp:
-
-/usr/include/c++/11/bits/char_traits.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h:
-
-/usr/local/include/opencv4/opencv2/objdetect/charuco_detector.hpp:
-
-/usr/include/c++/11/bits/unique_lock.h:
-
-/usr/include/c++/11/bits/std_abs.h:
-
-/usr/include/c++/11/bits/algorithmfwd.h:
+/usr/include/c++/11/stdexcept:
 
 /usr/include/c++/11/backward/binders.h:
 
@@ -2268,17 +2520,23 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/streambuf:
 
+/usr/include/c++/11/bits/unique_ptr.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h:
+
 /usr/include/c++/11/ext/aligned_buffer.h:
 
 /usr/include/c++/11/bits/erase_if.h:
 
 /usr/include/c++/11/tr1/beta_function.tcc:
 
-/usr/include/c++/11/tr1/ell_integral.tcc:
-
 /usr/include/c++/11/tr1/exp_integral.tcc:
 
 /usr/include/c++/11/tr1/gamma.tcc:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h:
+
+/usr/include/c++/11/tr1/legendre_function.tcc:
 
 /usr/include/alloca.h:
 
@@ -2310,21 +2568,15 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/vector:
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabbar.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h:
 
 /usr/include/endian.h:
 
-/usr/include/c++/11/tr1/legendre_function.tcc:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h:
-
 /usr/include/c++/11/pstl/pstl_config.h:
 
 /usr/include/features-time64.h:
-
-/usr/include/c++/11/string:
-
-/usr/include/libintl.h:
 
 /usr/include/errno.h:
 
@@ -2335,6 +2587,8 @@ LoTI_autogen/mocs_compilation.cpp:
 /usr/include/locale.h:
 
 /usr/local/include/opencv4/opencv2/video.hpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstyle.h:
 
 /usr/include/c++/11/tr1/poly_hermite.tcc:
 
@@ -2362,6 +2616,10 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
 /usr/local/include/opencv4/opencv2/core/check.hpp:
@@ -2376,10 +2634,6 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-/usr/include/c++/11/bits/fs_ops.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h:
-
 /usr/local/include/opencv4/opencv2/core/affine.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
@@ -2387,18 +2641,6 @@ LoTI_autogen/mocs_compilation.cpp:
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
-
-/usr/local/include/opencv4/opencv2/core.hpp:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h:
 
 /usr/local/include/opencv4/opencv2/flann/saving.h:
 
@@ -2430,13 +2672,9 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/x86_64-linux-gnu/bits/time.h:
+/usr/include/c++/11/bits/sstream.tcc:
 
 /usr/include/c++/11/pstl/execution_defs.h:
-
-/usr/include/c++/11/bits/sstream.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
@@ -2449,8 +2687,6 @@ LoTI_autogen/mocs_compilation.cpp:
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h:
 
 /usr/local/include/opencv4/opencv2/stitching/detail/util_inl.hpp:
 
@@ -2475,8 +2711,6 @@ LoTI_autogen/mocs_compilation.cpp:
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
@@ -2506,8 +2740,6 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
@@ -2528,6 +2760,12 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug:
+
+/usr/include/c++/11/tr1/ell_integral.tcc:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QString:
+
 /usr/local/include/opencv4/opencv2/video/tracking.hpp:
 
 /usr/include/c++/11/system_error:
@@ -2546,14 +2784,6 @@ LoTI_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h:
 
-/usr/include/c++/11/bits/postypes.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h:
-
 /usr/include/c++/11/tr1/hypergeometric.tcc:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h:

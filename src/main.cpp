@@ -27,15 +27,16 @@ int main(int argc, char* argv[])
     cout << "Ahmed !" <<endl;
 
     cout << "heeeeyy" << endl;
-    cout << "heeeeyy" << endl;
+    cout << "heeeeyy" << endl;*/
 
     vector<vector<string>> data;
-    cout << DATA_DIR + "descripteurs.csv" << endl;
+    //cout << DATA_DIR + "descripteurs.csv" << endl;
     data = loadCSV(DATA_DIR + "descripteurs.csv");
-    cout << data.size()<<endl;
+    //cout << data.size()<<endl;
     vector<Image> Bibliotheque;
     Bibliotheque = createBib(data);
 
+    /*
     //affichage des descripteurs :
     Bibliotheque[0].afficheDescripteurs();
     Bibliotheque[1].afficheDescripteurs();
@@ -77,7 +78,7 @@ int main(int argc, char* argv[])
     QImage qtImage(cvImage.data, cvImage.cols, cvImage.rows, cvImage.step, QImage::Format_RGB888);
 
     // Set up the main window
-    FenetrePrincipale mainWindow;
+    FenetrePrincipale mainWindow(Bibliotheque);
     /*QWidget* centralWidget = new QWidget(&mainWindow);
     QVBoxLayout* layout = new QVBoxLayout(centralWidget);
 

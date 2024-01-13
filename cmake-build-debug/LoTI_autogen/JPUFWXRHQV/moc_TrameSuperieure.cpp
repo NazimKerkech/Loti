@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'FenetrePrincipale.h'
+** Meta object code from reading C++ file 'TrameSuperieure.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.3)
 **
@@ -7,11 +7,11 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../../gui/FenetrePrincipale.h"
+#include "../../../gui/trames/TrameSuperieure.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'FenetrePrincipale.h' doesn't include <QObject>."
+#error "The header file 'TrameSuperieure.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.15.3. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -21,27 +21,27 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_FenetrePrincipale_t {
+struct qt_meta_stringdata_TrameSuperieure_t {
     QByteArrayData data[3];
-    char stringdata0[34];
+    char stringdata0[33];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_FenetrePrincipale_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_TrameSuperieure_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_FenetrePrincipale_t qt_meta_stringdata_FenetrePrincipale = {
+static const qt_meta_stringdata_TrameSuperieure_t qt_meta_stringdata_TrameSuperieure = {
     {
-QT_MOC_LITERAL(0, 0, 17), // "FenetrePrincipale"
-QT_MOC_LITERAL(1, 18, 14), // "onLoginSuccess"
-QT_MOC_LITERAL(2, 33, 0) // ""
+QT_MOC_LITERAL(0, 0, 15), // "TrameSuperieure"
+QT_MOC_LITERAL(1, 16, 15), // "onButtonClicked"
+QT_MOC_LITERAL(2, 32, 0) // ""
 
     },
-    "FenetrePrincipale\0onLoginSuccess\0"
+    "TrameSuperieure\0onButtonClicked\0"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_FenetrePrincipale[] = {
+static const uint qt_meta_data_TrameSuperieure[] = {
 
  // content:
        8,       // revision
@@ -63,45 +63,45 @@ static const uint qt_meta_data_FenetrePrincipale[] = {
        0        // eod
 };
 
-void FenetrePrincipale::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void TrameSuperieure::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<FenetrePrincipale *>(_o);
+        auto *_t = static_cast<TrameSuperieure *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->onLoginSuccess(); break;
+        case 0: _t->onButtonClicked(); break;
         default: ;
         }
     }
     (void)_a;
 }
 
-QT_INIT_METAOBJECT const QMetaObject FenetrePrincipale::staticMetaObject = { {
-    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_meta_stringdata_FenetrePrincipale.data,
-    qt_meta_data_FenetrePrincipale,
+QT_INIT_METAOBJECT const QMetaObject TrameSuperieure::staticMetaObject = { {
+    QMetaObject::SuperData::link<QFrame::staticMetaObject>(),
+    qt_meta_stringdata_TrameSuperieure.data,
+    qt_meta_data_TrameSuperieure,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *FenetrePrincipale::metaObject() const
+const QMetaObject *TrameSuperieure::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *FenetrePrincipale::qt_metacast(const char *_clname)
+void *TrameSuperieure::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_FenetrePrincipale.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_TrameSuperieure.stringdata0))
         return static_cast<void*>(this);
-    return QMainWindow::qt_metacast(_clname);
+    return QFrame::qt_metacast(_clname);
 }
 
-int FenetrePrincipale::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int TrameSuperieure::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QFrame::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

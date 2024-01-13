@@ -234,6 +234,10 @@ int Image::cols() const
 {
     return _img.cols;
 }
+string Image::get_titre() const
+{
+    return _titre;
+}
 
 // Traitement d'image
 Mat Image::houghLineTransform(float pourcentage)
