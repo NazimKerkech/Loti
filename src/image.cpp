@@ -324,23 +324,33 @@ Mat Image::houghLineTransform(float pourcentage)
 }
 
 Mat Image::convolution(Mat filtre) {
-    Mat image = this->getImg();
-    Mat convoluee = Mat::zeros(image.size(), image.type());
+    //Mat image = this->getImg();
+    Mat convoluee = Mat::zeros(_img.size(), _img.type());
+
+    cout <<endl<< filtre;
+
+    cout<<endl<<"filtre "<<filtre.at<Vec3f>(0, 0)[0]<<endl;
+    cout<<endl<<"filtre "<<filtre.at<Vec3f>(0, 1)[1]<<endl;
+    cout<<endl<<"filtre "<<filtre.at<Vec3f>(2, 0)[0]<<endl;
 
     int bord_i = filtre.rows/2;
     int bord_j = filtre.cols/2;
 
-    for(int i=bord_i; i<image.rows-bord_i; i++) {
-        for(int j=bord_j; j<image.cols-bord_j; j++) {
+    for(int i=bord_i; i<_img.rows-bord_i; i++) {
+        for(int j=bord_j; j<_img.cols-bord_j; j++) {
             for(int k=0; k<filtre.rows; k++) {
                 for(int l=0; l<filtre.cols; l++) {
-                    convoluee.at<Vec3b>(i, j)[0] += image.at<Vec3b>(i+k-bord_i, j+l-bord_j)[0] * filtre.at<Vec3b>(k-bord_i, l-bord_j)[0];
-                    convoluee.at<Vec3b>(i, j)[1] += image.at<Vec3b>(i+k-bord_i, j+l-bord_j)[1] * filtre.at<Vec3b>(k-bord_i, l-bord_j)[1];
-                    convoluee.at<Vec3b>(i, j)[2] += image.at<Vec3b>(i+k-bord_i, j+l-bord_j)[2] * filtre.at<Vec3b>(k-bord_i, l-bord_j)[2];
+                    //cout<<"valeur precedente "<<i+k-bord_i<<" "<< j+l-bord_j<<" "<<_img.at<Vec3b>(i+k-bord_i, j+l-bord_j)[0]<<endl;
+                    convoluee.at<Vec3b>(i, j)[0] += round(_img.at<Vec3b>(i+k-bord_i, j+l-bord_j)[0] * filtre.at<Vec3f>(k, l)[0]);
+                    convoluee.at<Vec3b>(i, j)[1] += round(_img.at<Vec3b>(i+k-bord_i, j+l-bord_j)[1] * filtre.at<Vec3f>(k, l)[1]);
+                    convoluee.at<Vec3b>(i, j)[2] += round(_img.at<Vec3b>(i+k-bord_i, j+l-bord_j)[2] * filtre.at<Vec3f>(k, l)[2]);
+                    //cout<<"valeur SUIVANTE "<<(int)convoluee.at<Vec3b>(i+k-bord_i, j+l-bord_j)[0]<<endl;
                 }
             }
         }
     }
+    cout<<endl<<"filtre "<<filtre.at<Vec3b>(0, 0)[0]<<endl;
+
     return convoluee;
 }
 
