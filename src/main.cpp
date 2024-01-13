@@ -64,9 +64,11 @@ int main(int argc, char* argv[])
     //Mat convoluee = Bibliotheque[0].convolution(filtre);
     //Bibliotheque[0].afficheImage();
     //Ajouter une image a la base de donnee
-    //addImage("C:/Users/etudiant/Downloads/image.png");
+    */
+    addImage("C:/Users/etudiant/Downloads/image.png", "defaut.bib");
+    delImage("1", "defaut.bib");
     
-    cv::waitKey(0); //Laisser les fenetres ouvertes*/
+    //cv::waitKey(0); //Laisser les fenetres ouvertes
 
     //////// Test Qt //////////
 
