@@ -68,6 +68,16 @@ int main(int argc, char* argv[])
     
     cv::waitKey(0); //Laisser les fenetres ouvertes*/
 
+    ////// Laplacien
+    ///
+    /*  Image imm(loadCSV(DATA_DIR +"descripteurs.csv")[0]);
+    Mat laplacienres = imm.laplacien();
+
+   /* imm.afficheImage();
+    imshow("image filtrée", laplacienres);
+
+    cv::waitKey(0); //fenetres ouvertes  */
+
     //////// Test Qt //////////
 
     QApplication a(argc, argv);
