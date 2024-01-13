@@ -161,7 +161,7 @@ Mat loadImage(const string& imageName) //permet de charger une image avec seulem
 }
 
 
-void addImage(string filePath)
+void addImage(string filePath, string bibName)
 {
     // Chemin vers l'image source
     fs::path imagePath = filePath;
@@ -195,19 +195,35 @@ void addImage(string filePath)
     vector<string> descripteurs;
     descripteurs.push_back("SourceDefaut"); // source
     descripteurs.push_back("Titre par Defaut"); // titre
-    descripteurs.push_back(numeroImage); // numero
+    descripteurs.push_back(numeroImage); // numero par defaut
     descripteurs.push_back("0.0"); // cout
     descripteurs.push_back("L"); // acces
     cout << "ok "<< numeroImage<< " " << descripteurs.size() <<"\n";
     Image imageAjoute(descripteurs);
 
     appendCSV(DATA_DIR + "descripteurs.csv", descripteurs);
+    appendCSV(DATA_DIR + bibName, {numeroImage});
 
     /*
     Ajouter l'ajou de l'image à la bibliotheque
     Ajouter l'ajou manuel des descripteurs
     */
     return;
+}
+
+void delImage(string numeroImg, string bibName)
+{
+    vector<vector<string>> bib = loadCSV(DATA_DIR + bibName);
+    for (int i = 0;i < bib.size(); i++)
+    {
+        if (bib[i][0] == numeroImg)
+        {
+            bib.erase(bib.begin() + i);
+            writeCSV(DATA_DIR + bibName, bib);
+            return;
+        }
+    }
+    cout << "Erreur l'image n'est pas dans la bibliotheque" << endl;
 }
 
 Mat Image::getImg() 
@@ -336,4 +352,18 @@ Mat Image::convolution(Mat filtre) {
     cout<<endl<<"filtre "<<filtre.at<Vec3b>(0, 0)[0]<<endl;
 
     return convoluee;
+}
+
+//Laplacien
+Mat Image::laplacien() {
+
+    Mat kernel = (Mat_<float>(3, 3) <<
+                      0,  1, 0,
+                  1, -4, 1,
+                  0,  1, 0);
+
+
+    Mat laplacienres = convolution(kernel);
+
+    return laplacienres;
 }

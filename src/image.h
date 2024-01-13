@@ -36,7 +36,7 @@ public:
 	
 	Mat houghLineTransform(float = 0.7);
 	Mat convolution(Mat filtre);
-
+	Mat laplacien();
 
 };
 
@@ -47,4 +47,5 @@ void appendCSV(vector<vector<string>>);
 vector<Image> createBib(vector<vector<string>>);
 
 Mat loadImage(const string&); // charge l'image dans la base de donnee (et a une bibliotheque)
-void addImage(string); // ajoute l'image � la base de donnee
+void addImage(string, string); // ajoute l'image � la base de donnee
+void delImage(string, string); // supprime l'image d'une bibliotheque
