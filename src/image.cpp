@@ -343,3 +343,17 @@ Mat Image::convolution(Mat filtre) {
     }
     return convoluee;
 }
+
+//Laplacien
+Mat Image::laplacien() {
+
+    Mat kernel = (Mat_<float>(3, 3) <<
+                      0,  1, 0,
+                  1, -4, 1,
+                  0,  1, 0);
+
+
+    Mat laplacienres = convolution(kernel);
+
+    return laplacienres;
+}
