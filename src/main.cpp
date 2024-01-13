@@ -19,16 +19,6 @@ const string DATA_DIR(LOTI_DIR+"/dta/");
 
 int main(int argc, char* argv[]) 
 {
-       
-    /*std::cout << "Hello, World!" << std::endl;
-    std::cout << "Hello there ;)" << std::endl;
-    cout << "Ol Korect !" <<endl;
-
-    cout << "Ahmed !" <<endl;
-
-    cout << "heeeeyy" << endl;
-    cout << "heeeeyy" << endl;*/
-
     vector<vector<string>> data;
     //cout << DATA_DIR + "descripteurs.csv" << endl;
     data = loadCSV(DATA_DIR + "descripteurs.csv");
@@ -53,46 +43,29 @@ int main(int argc, char* argv[])
     cout << "Valeur pixel : " << Bibliotheque[2].BGR(1000, 2000) << endl;
     cout << "Taille x : " << Bibliotheque[2].rows() << endl;
     cout << "Taille y : " << Bibliotheque[2].cols() << endl;
-
+    */
     //Hough
     //Bibliotheque[0].houghLineTransform();
 
     //convolution
-    Mat filtre = Mat(3, 3, CV_8UC3, Scalar(1,1,1));
-    std::cout << filtre;
+    Mat filtre = Mat(5, 5, CV_32FC3, Scalar(1,1,1))/25;
 
-    //Mat convoluee = Bibliotheque[0].convolution(filtre);
+    cout << filtre;
+
+    Mat convoluee = Bibliotheque[0].convolution(filtre);
     //Bibliotheque[0].afficheImage();
+    imshow("convoluee", convoluee);
     //Ajouter une image a la base de donnee
     //addImage("C:/Users/etudiant/Downloads/image.png");
-    
-    cv::waitKey(0); //Laisser les fenetres ouvertes*/
+
+    cv::waitKey(0); //Laisser les fenetres ouvertes
 
     //////// Test Qt //////////
 
-    QApplication a(argc, argv);
-    // Read an image using OpenCV
-    cv::Mat cvImage = cv::imread(LOTI_DIR + "/dta/1.jpg");
-
-    // Convert OpenCV image to QImage
-    QImage qtImage(cvImage.data, cvImage.cols, cvImage.rows, cvImage.step, QImage::Format_RGB888);
-
-    // Set up the main window
-    FenetrePrincipale mainWindow(Bibliotheque);
-    /*QWidget* centralWidget = new QWidget(&mainWindow);
-    QVBoxLayout* layout = new QVBoxLayout(centralWidget);
-
-    // Create a QLabel to display the image
-    QLabel* label = new QLabel(centralWidget);
-    label->setPixmap(QPixmap::fromImage(qtImage));
-
-    // Add the QLabel to the layout
-    layout->addWidget(label);
-    mainWindow.setCentralWidget(centralWidget);*/
-
-    // Show the main window
-    mainWindow.show();
-    
-    return a.exec();
+    //QApplication a(argc, argv);
+    //FenetrePrincipale mainWindow(Bibliotheque);
+    //mainWindow.show();
+    return 0;
+    //return a.exec();
 
 }
