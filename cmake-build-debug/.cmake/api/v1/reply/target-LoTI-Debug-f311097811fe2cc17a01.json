@@ -33,25 +33,25 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 22,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 28,
+				"line" : 39,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 20,
+				"line" : 31,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 27,
+				"line" : 38,
 				"parent" : 0
 			}
 		]
@@ -283,7 +283,19 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
+<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/target-LoTI-Debug-14103efccb97a6715daa.json
 				3
+========
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11
+>>>>>>>> gui:cmake-build-debug/.cmake/api/v1/reply/target-LoTI-Debug-f311097811fe2cc17a01.json
 			]
 		}
 	],
@@ -312,6 +324,49 @@
 			"backtrace" : 1,
 			"path" : "src/image.h",
 			"sourceGroupIndex" : 1
+<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/target-LoTI-Debug-14103efccb97a6715daa.json
+========
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gui/FenetrePrincipale.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gui/trames/TrameSuperieure.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gui/trames/TrameGauche.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gui/trames/TrameCentrale.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gui/trames/TrameDroite.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gui/trames/AspectRatioPixmapLabel.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gui/trames/TrameAuthentification.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gui/trames/TrameApplication.h",
+			"sourceGroupIndex" : 1
+>>>>>>>> gui:cmake-build-debug/.cmake/api/v1/reply/target-LoTI-Debug-f311097811fe2cc17a01.json
 		}
 	],
 	"type" : "EXECUTABLE"

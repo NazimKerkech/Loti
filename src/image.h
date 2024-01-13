@@ -29,6 +29,7 @@ public:
 	int rows() const; // taille des x 
 	int cols() const; // taille des y
 
+	string get_titre() const;
 	/*
 		Traitement d'image :
 	*/

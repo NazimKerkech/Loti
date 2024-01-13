@@ -41,7 +41,11 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "LoTI::@6890427a1f51a3e7e1df",
+<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-824af1a685f952526e7b.json
 					"jsonFile" : "target-LoTI-Debug-14103efccb97a6715daa.json",
+========
+					"jsonFile" : "target-LoTI-Debug-f311097811fe2cc17a01.json",
+>>>>>>>> gui:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-8f0846ff8d7a64bf0d56.json
 					"name" : "LoTI",
 					"projectIndex" : 0
 				},
