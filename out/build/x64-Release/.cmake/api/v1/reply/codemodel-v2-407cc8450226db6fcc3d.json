@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "LoTI",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "LoTI::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LoTI-RelWithDebInfo-4da708536c1bcc76a9e5.json",
+					"name" : "LoTI",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LoTI_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LoTI_autogen-RelWithDebInfo-978bb5fe3556ee1a3c32.json",
+					"name" : "LoTI_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LoTI_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LoTI_autogen_timestamp_deps-RelWithDebInfo-1608d9bc21d6073b190e.json",
+					"name" : "LoTI_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/etudiant/Documents/Cpp_dev/LoTI/LoTI/out/build/x64-Release",
+		"source" : "C:/Users/etudiant/Documents/Cpp_dev/LoTI/LoTI"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

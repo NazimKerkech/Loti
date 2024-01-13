@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
     //Bibliotheque[0].houghLineTransform();
 
     //convolution
-    Mat filtre = Mat(5, 5, CV_32FC3, Scalar(1,1,1))/25;
+    Mat filtre = Mat(3, 3, CV_32FC3, Scalar(1,1,1))/9;
 
     cout << filtre;
 
@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
 
     //addImage("C:/Users/etudiant/Downloads/image.png", "defaut.bib");
     delImage("1", "defaut.bib");
-    
+    cv::waitKey(0);
     //cv::waitKey(0); //Laisser les fenetres ouvertes
 
     ////// Laplacien
