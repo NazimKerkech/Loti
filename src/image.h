@@ -36,7 +36,7 @@ public:
 	
 	Mat houghLineTransform(float = 0.7);
 	Mat convolution(Mat filtre);
-
+	Mat laplacien();
 
 };
 

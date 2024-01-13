@@ -65,10 +65,21 @@ int main(int argc, char* argv[])
     //Bibliotheque[0].afficheImage();
     //Ajouter une image a la base de donnee
     */
-    addImage("C:/Users/etudiant/Downloads/image.png", "defaut.bib");
+
+    //addImage("C:/Users/etudiant/Downloads/image.png", "defaut.bib");
     delImage("1", "defaut.bib");
     
     //cv::waitKey(0); //Laisser les fenetres ouvertes
+
+    ////// Laplacien
+    ///
+    /*  Image imm(loadCSV(DATA_DIR +"descripteurs.csv")[0]);
+    Mat laplacienres = imm.laplacien();
+
+   /* imm.afficheImage();
+    imshow("image filtrée", laplacienres);
+
+    cv::waitKey(0); //fenetres ouvertes  */
 
     //////// Test Qt //////////
 
