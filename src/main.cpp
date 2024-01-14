@@ -48,19 +48,19 @@ int main(int argc, char* argv[])
     //Bibliotheque[0].houghLineTransform();
 
     //convolution
-    Mat filtre = Mat(3, 3, CV_32FC3, Scalar(1,1,1))/9;
+    /*Mat filtre = Mat(3, 3, CV_32FC3, Scalar(1,1,1))/9;
 
     cout << filtre;
 
     Mat convoluee = Bibliotheque[0].convolution(filtre);
     //Bibliotheque[0].afficheImage();
-    imshow("convoluee", convoluee);
+    //imshow("convoluee", convoluee);
     //Ajouter une image a la base de donnee
     
 
     //addImage("C:/Users/etudiant/Downloads/image.png", "defaut.bib");
     delImage("1", "defaut.bib");
-    cv::waitKey(0);
+    cv::waitKey(0);*/
     //cv::waitKey(0); //Laisser les fenetres ouvertes
 
     ////// Laplacien
@@ -75,10 +75,10 @@ int main(int argc, char* argv[])
 
     //////// Test Qt //////////
 
-    //QApplication a(argc, argv);
-    //FenetrePrincipale mainWindow(Bibliotheque);
-    //mainWindow.show();
-    return 0;
-    //return a.exec();
+    QApplication a(argc, argv);
+    FenetrePrincipale mainWindow(Bibliotheque);
+    mainWindow.show();
+    //return 0;
+    return a.exec();
 
 }
