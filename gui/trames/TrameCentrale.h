@@ -38,7 +38,7 @@ public:
         Mat cvImage = imread(path);
 
         // Convert OpenCV Mat to Qt QPixmap
-        QImage qtImage(cvImage.data, cvImage.cols, cvImage.rows, cvImage.step, QImage::Format_RGB888);
+        QImage qtImage(cvImage.data, cvImage.cols, cvImage.rows, cvImage.step, QImage::Format_BGR888);
         pixmap = QPixmap::fromImage(qtImage);
 
         // Set the image on the label

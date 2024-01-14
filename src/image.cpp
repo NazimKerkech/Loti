@@ -335,21 +335,21 @@ Mat Image::convolution(Mat filtre) {
 
     int bord_i = filtre.rows/2;
     int bord_j = filtre.cols/2;
-
-    for(int i=bord_i; i<_img.rows-bord_i; i++) {
-        for(int j=bord_j; j<_img.cols-bord_j; j++) {
+    cout << "ok" << endl;
+    for(int i=bord_i; i< convoluee.rows-bord_i; i++) {
+        for(int j=bord_j; j< convoluee.cols-bord_j; j++) {
             for(int k=0; k<filtre.rows; k++) {
                 for(int l=0; l<filtre.cols; l++) {
                     //cout<<"valeur precedente "<<i+k-bord_i<<" "<< j+l-bord_j<<" "<<_img.at<Vec3b>(i+k-bord_i, j+l-bord_j)[0]<<endl;
-                    convoluee.at<Vec3b>(i, j)[0] += round(_img.at<Vec3b>(i+k-bord_i, j+l-bord_j)[0] * filtre.at<Vec3f>(k, l)[0]);
-                    convoluee.at<Vec3b>(i, j)[1] += round(_img.at<Vec3b>(i+k-bord_i, j+l-bord_j)[1] * filtre.at<Vec3f>(k, l)[1]);
-                    convoluee.at<Vec3b>(i, j)[2] += round(_img.at<Vec3b>(i+k-bord_i, j+l-bord_j)[2] * filtre.at<Vec3f>(k, l)[2]);
+                    convoluee.at<Vec3b>(i, j)[0] += round(_img.at<Vec3b>(i + k - bord_i, j + l - bord_j)[0] * filtre.at<Vec3f>(k, l)[0]); //
+                    convoluee.at<Vec3b>(i, j)[1] += round(_img.at<Vec3b>(i + k - bord_i, j + l - bord_j)[1] * filtre.at<Vec3f>(k, l)[1]);
+                    convoluee.at<Vec3b>(i, j)[2] += round(_img.at<Vec3b>(i + k - bord_i, j + l - bord_j)[2] * filtre.at<Vec3f>(k, l)[2]);
                     //cout<<"valeur SUIVANTE "<<(int)convoluee.at<Vec3b>(i+k-bord_i, j+l-bord_j)[0]<<endl;
+                    //cout << i + k - bord_i << " " << j + l - bord_j << endl;
                 }
             }
         }
     }
-    cout<<endl<<"filtre "<<filtre.at<Vec3b>(0, 0)[0]<<endl;
 
     return convoluee;
 }
