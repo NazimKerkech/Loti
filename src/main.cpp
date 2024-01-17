@@ -68,11 +68,16 @@ int main(int argc, char* argv[])
     ////// Laplacien
     ///
     /*  Mat laplacienImage =  Bibliotheque[0].laplacien();
-    imshow("Image filtrée", laplacienImage);
-    waitKey(0);*/
-    //Rehaussement
-    //Mat imageRehaussee = Bibliotheque[0].rehaussementContour();
-    //waitKey(0);
+    Mat laplacienImage =  Bibliotheque[0].laplacien(2);
+    Mat out;
+    normalize(laplacienImage, out,0,255, cv::NORM_MINMAX);
+    imshow("Laplacien", out);
+    waitKey(0);
+
+    //Rehauss
+    Mat imm =  Bibliotheque[0].rehaussementContour();
+    imshow("image rehaussée", imm);
+    waitKey(0);
     
     //Test de la segmentation
     /*segmentation
