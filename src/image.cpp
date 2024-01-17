@@ -359,3 +359,21 @@ Mat Image::laplacien() {
 
     return laplacienres;
 }
+//Segmentation
+Mat Image::Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil) {
+
+    for (int i = 0; i < image.rows; ++i) {
+        for (int j = 0; j < image.cols; ++j) {
+            Vec3b &pixel = image.at<cv::Vec3b>(i, j); // référence pixel
+
+            if (pixel[0] > bSeuil && pixel[1] > gSeuil && pixel[2] > rSeuil) {
+                pixel[0] = 255;//bleu
+                pixel[1] = 0;//green
+                pixel[2] = 0;//red
+            } else {
+
+            }
+        }
+    }
+
+    return image;
