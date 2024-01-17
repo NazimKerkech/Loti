@@ -4,7 +4,6 @@
  mdp:/home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/moc_predefs.h
  mdp:/home/thedoctor/Documents/LoTI/gui/FenetrePrincipale.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/AspectRatioPixmapLabel.h
- mdp:/home/thedoctor/Documents/LoTI/gui/trames/RescalingPixmapLabel.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameApplication.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameAuthentification.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameCentrale.h
@@ -563,7 +562,6 @@
  mmc:Q_OBJECT
  mdp:/home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/moc_predefs.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/AspectRatioPixmapLabel.h
- mdp:/home/thedoctor/Documents/LoTI/gui/trames/RescalingPixmapLabel.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameCentrale.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameDroite.h
  mdp:/home/thedoctor/Documents/LoTI/src/image.h
@@ -1795,7 +1793,6 @@
  mmc:Q_OBJECT
  mdp:/home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/moc_predefs.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/AspectRatioPixmapLabel.h
- mdp:/home/thedoctor/Documents/LoTI/gui/trames/RescalingPixmapLabel.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameApplication.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameCentrale.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameDroite.h
@@ -2889,7 +2886,6 @@
  mmc:Q_OBJECT
  mdp:/home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/moc_predefs.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/AspectRatioPixmapLabel.h
- mdp:/home/thedoctor/Documents/LoTI/gui/trames/RescalingPixmapLabel.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameAuthentification.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameCentrale.h
  mdp:/home/thedoctor/Documents/LoTI/gui/trames/TrameDroite.h

@@ -13,7 +13,7 @@
 //class FenetrePrincipale;
 #include "TrameCentrale.h"
 #include "../../src/image.h"
-#include "RescalingPixmapLabel.h"
+//#include "RescalingPixmapLabel.h"
 
 using namespace std;
 

@@ -21,32 +21,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7967fb12-c2b9-430f-be8b-192677925c79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/gui/trames/RescalingPixmapLabel.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-0550fb12c467a01d5442.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-ef4ed5570c90aec5bf4c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-01-17T08-49-03-0714.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-LoTI-Debug-3ca3a894be1c9a6dab7d.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/image.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/image.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI_autogen.dir/AutogenInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI_autogen.dir/AutogenInfo.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI_autogen.dir/ParseCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI_autogen.dir/ParseCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/d/57a3e119dc81dfc2f06872031a2d35fe560f94c54fc653a5c3c38afbadb58e71.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/d/57a3e119dc81dfc2f06872031a2d35fe560f94c54fc653a5c3c38afbadb58e71.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/DMHXEJ42XS/moc_FenetrePrincipale.cpp.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/DMHXEJ42XS/moc_FenetrePrincipale.cpp.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_TrameApplication.cpp.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_TrameApplication.cpp.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_TrameAuthentification.cpp.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_TrameAuthentification.cpp.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_TrameDroite.cpp.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_TrameDroite.cpp.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/mocs_compilation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/mocs_compilation.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/trames/TrameCentrale.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameCentrale.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/trames/TrameDroite.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameDroite.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/trames/TrameGauche.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameGauche.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/image.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +106,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705481324827</updated>
-      <workItem from="1705481341398" duration="5618000" />
+      <workItem from="1705481341398" duration="9800000" />
     </task>
     <servers />
   </component>

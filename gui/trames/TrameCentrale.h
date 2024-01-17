@@ -59,18 +59,23 @@ public:
                 //Mat filtre = (Mat_<float>(3, 3) <<  1, 0, 1, 0, -4, 0, 1, 0, 1);
                 //cout << filtre <<endl;
                 Mat filtre = Mat(5, 5, CV_32F, Scalar(1))/25;
-                cout << filtre <<endl;
+                //cout << filtre <<endl;
 
-                Mat convoluee = _image.convolution(filtre);
-                QImage qtImage(convoluee.data, convoluee.cols, convoluee.rows, convoluee.step, QImage::Format_BGR888);
+                Mat resultat = _image.convolution(filtre);
+                Mat resultat2;
+                normalize(resultat, resultat2, 0, 255, NORM_MINMAX);
+
+                QImage qtImage(resultat2.data, resultat2.cols, resultat2.rows, resultat2.step, QImage::Format_BGR888);
                 pixmap = QPixmap::fromImage(qtImage);
                 // Set the image on the label
                 imageLabel->setPixmap(pixmap);
+
+
             }
         }
 private:
     QPixmap pixmap;
-    AspectRatioPixmapLabel* imageLabel;
+    AspectRatioPixmapLabel *imageLabel;
 
 };
 

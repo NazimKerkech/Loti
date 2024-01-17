@@ -327,23 +327,24 @@ Mat Image::houghLineTransform(float pourcentage)
 
 Mat Image::convolution(Mat filtre) {
     //Mat image = this->getImg();
-    Mat convoluee = Mat::zeros(_img.size(), _img.type());
+    Mat convoluee = Mat::zeros(_img.size(), CV_32FC3);
 
     int bord_i = filtre.rows/2;
     int bord_j = filtre.cols/2;
+    cout << "bords "<< bord_i << bord_j <<endl;
     for(int i=bord_i; i< convoluee.rows-bord_i; i++) {
         for(int j=bord_j; j< convoluee.cols-bord_j; j++) {
             for(int k=0; k<filtre.rows; k++) {
                 for(int l=0; l<filtre.cols; l++) {
-                    convoluee.at<Vec3b>(i, j)[0] += round(_img.at<Vec3b>(i + k - bord_i, j + l - bord_j)[0] * filtre.at<float>(k, l)); //
-                    convoluee.at<Vec3b>(i, j)[1] += round(_img.at<Vec3b>(i + k - bord_i, j + l - bord_j)[1] * filtre.at<float>(k, l));
-                    convoluee.at<Vec3b>(i, j)[2] += round(_img.at<Vec3b>(i + k - bord_i, j + l - bord_j)[2] * filtre.at<float>(k, l));
+                    convoluee.at<Vec3f>(i, j)[0] += _img.at<Vec3b>(i + k - bord_i, j + l - bord_j)[0] * filtre.at<float>(k, l);
+                    convoluee.at<Vec3f>(i, j)[1] += _img.at<Vec3b>(i + k - bord_i, j + l - bord_j)[1] * filtre.at<float>(k, l);
+                    convoluee.at<Vec3f>(i, j)[2] += _img.at<Vec3b>(i + k - bord_i, j + l - bord_j)[2] * filtre.at<float>(k, l);
                 }
             }
         }
     }
-
-    return convoluee;
+    convoluee.convertTo(convoluee, CV_8UC3); // or CV_32F works (too)
+    return convoluee.clone();
 }
 
 //Laplacien
