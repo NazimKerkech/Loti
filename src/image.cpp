@@ -355,9 +355,11 @@ Mat Image::laplacien() {
                   0,  1, 0);
 
 
-    Mat laplacienres = convolution(kernel);
+     // filtre d'opencv!!! cv::filter2D
+    Mat laplacien_res;
+    cv::filter2D(_img, laplacien_res, -1, kernel);
 
-    return laplacienres;
+    return laplacien_res;
 }
 //Segmentation
 Mat Image::Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil) {
