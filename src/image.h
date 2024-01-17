@@ -39,6 +39,7 @@ public:
 	Mat laplacien();
 	Mat Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil);
         Mat rehaussementContour();
+	tuple<Mat, Mat, Mat, Mat> Image::histogramme();
 
 };
 
