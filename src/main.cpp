@@ -72,6 +72,10 @@ int main(int argc, char* argv[])
     imshow("image filtrée", laplacienres);
 
     cv::waitKey(0); //fenetres ouvertes  */
+    //Test de la segmentation
+    /*segmentation
+    Bibliotheque[0].Segmentation(Bibliotheque[0].getImg(),20,100,200);
+    Bibliotheque[0].afficheImage();*/ 
 
     //////// Test Qt //////////
 
