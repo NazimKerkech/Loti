@@ -19,7 +19,7 @@ private:
 
 public:
 	Image(vector<string>); //charger l'image � partir de son nom de fichier, et lui donner les descripteurs
-
+	Image();
 	void afficheDescripteurs();
 	Mat getImg();
 	void afficheImage() const;

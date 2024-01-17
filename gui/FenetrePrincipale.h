@@ -41,6 +41,7 @@ public:
 
         setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
         connect(trameAuthentification, &TrameAuthentification::loginSuccess, this, &FenetrePrincipale::onLoginSuccess);
+
     }
 
 protected:

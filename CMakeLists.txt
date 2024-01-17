@@ -26,6 +26,7 @@ add_executable(LoTI
         gui/trames/AspectRatioPixmapLabel.h
         gui/trames/TrameAuthentification.h
         gui/trames/TrameApplication.h
+        gui/trames/TrameCentrale.h
 )
 
 add_definitions(-DSOURCE_DIR="${CMAKE_SOURCE_DIR}")

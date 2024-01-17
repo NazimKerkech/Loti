@@ -26,7 +26,7 @@ using namespace cv;
 class TrameApplication : public QFrame {
     Q_OBJECT
 
-protected:
+public:
     TrameSuperieure *trameSup;
     TrameCentrale *tramecentrale;
     TrameGauche *tramegauche;
@@ -37,10 +37,10 @@ public:
         this->setFixedSize(500, 400);
 
         // Initialisation des trames
-        this->tramecentrale = new TrameCentrale(this);
-        this->trameSup = new TrameSuperieure(this, tramecentrale);
-        this->tramegauche = new TrameGauche(bibliotheque, tramecentrale, this);
-        this->tramedroite = new TrameDroite(tramecentrale, this);
+        this->tramecentrale = new TrameCentrale(bibliotheque, this);
+        this->trameSup = new TrameSuperieure(this);
+        this->tramegauche = new TrameGauche(bibliotheque, this);
+        this->tramedroite = new TrameDroite(this);
 
         //QWidget *centralWidget = new QWidget(this);
         //setCentralWidget(centralWidget);
@@ -67,7 +67,13 @@ public:
         //setMinimumSize(QSize(0, 0));
         setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
 
+        bool connected1 = connect(this->tramegauche, &TrameGauche::demande_changer_image, this->tramecentrale, &TrameCentrale::changer_image);
+        bool connected2 = connect(this->tramedroite, &TrameDroite::traitement, this->tramecentrale, &TrameCentrale::appliquer_traitement);
 
+        //connect(trameApplication->tramegauche, &TrameGauche::demande_changer_image, trameApplication->tramecentrale, &TrameCentrale::changer_image);
+        if (!connected1 || !connected2) {
+            qDebug() << "Failed to connect the signal and slot!";
+        }
     }
 
 protected:

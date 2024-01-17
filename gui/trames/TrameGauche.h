@@ -19,11 +19,12 @@ using namespace std;
 
 class TrameGauche: public QFrame {
     Q_OBJECT
-private:
-    QListWidget* _Widget_bibliotheque;
-    TrameCentrale* _trameCentrale;
 public:
-    TrameGauche(vector<Image> bibliotheque, TrameCentrale* trameCentrale, QWidget *parent = nullptr) : QFrame(parent) {
+    QListWidget* _Widget_bibliotheque;
+    signals:
+        void demande_changer_image(int indice_selectionne);
+public:
+    TrameGauche(vector<Image> bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
         setObjectName("TrameGauche");  // Set a unique object name for the QFrame
         setStyleSheet("#TrameGauche { border: 3px solid black; }");
         // Create a QListWidget to display the list
@@ -47,12 +48,7 @@ public:
         QListWidgetItem *selectedItem = _Widget_bibliotheque->currentItem();
 
         if (selectedItem) {
-            qDebug() << "Selected item: " << selectedItem->text();
-            cout << selectedItem->text().toStdString()<<endl;
-            const string LOTI_DIR(SOURCE_DIR);
-            //this->_trameCentrale->update_image(LOTI_DIR + "/dta/"+selectedItem->text().toStdString());
-            // Add your code to handle the selected item
-
+            emit demande_changer_image(_Widget_bibliotheque->row(selectedItem));
         }
     }
 };

@@ -16,11 +16,8 @@ using namespace std;
 
 class TrameSuperieure : public QFrame {
     Q_OBJECT
-private:
-    TrameCentrale* _trameCentrale;
 public:
-    TrameSuperieure(QWidget *parent = nullptr, TrameCentrale* trameCentrale = nullptr) : QFrame(parent) {
-        this->_trameCentrale = trameCentrale;
+    TrameSuperieure(QWidget *parent = nullptr) : QFrame(parent) {
         setObjectName("TrameSuperieure");  // Set a unique object name for the QFrame
         setStyleSheet("#TrameSuperieure { border: 3px solid black; }");
 
@@ -35,10 +32,6 @@ public:
     }
     private slots:
     void onButtonClicked() {
-        // This function will be executed when the button is clicked
-        qDebug() << "Button clicked!";
-        const string LOTI_DIR(SOURCE_DIR);
-        this->_trameCentrale->update_image(LOTI_DIR + "/dta/2.jpg");
     }
 
 };

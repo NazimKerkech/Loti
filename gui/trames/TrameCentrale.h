@@ -12,39 +12,59 @@
 #include <QDebug>
 #include <QPainter>
 #include "AspectRatioPixmapLabel.h"
+#include <QString>
+#include "../../src/image.h"
+
 using namespace std;
 using namespace cv;
 
 class TrameCentrale : public QFrame {
+private:
+    vector<Image> bibliotheque;
+    Image _image;
 public:
-    TrameCentrale(QWidget *parent = nullptr) : QFrame(parent) {
+    TrameCentrale(vector<Image> bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
+        this->bibliotheque = bibliotheque;
         setObjectName("TrameCentrale");  // Set a unique object name for the QFrame
         setStyleSheet("#TrameCentrale { border: 3px solid black; }");  // Apply style only to the QFrame
         //this->setStyleSheet("border: 5px solid black;");
         const string LOTI_DIR(SOURCE_DIR);
 
         imageLabel = new AspectRatioPixmapLabel(this);
-
-        update_image(LOTI_DIR + "/dta/1.jpg");
+        _image = bibliotheque[0];
+        update_image(_image);
 
         QVBoxLayout *frameLayout = new QVBoxLayout(this);
         frameLayout->addWidget(imageLabel);
 
-        //this->setFixedWidth(parent->size().width()*6/10);
-        //this->setFixedHeight(parent->size().height() * 5/ 6);
     }
-    void update_image(string path) {
-        // Load the image using OpenCV
-        Mat cvImage = imread(path);
+    void update_image(Image img) {
+        _image = img;
+        Mat image = img.getImg();
 
         // Convert OpenCV Mat to Qt QPixmap
-        QImage qtImage(cvImage.data, cvImage.cols, cvImage.rows, cvImage.step, QImage::Format_BGR888);
+        QImage qtImage(image.data, image.cols, image.rows, image.step, QImage::Format_BGR888);
         pixmap = QPixmap::fromImage(qtImage);
 
         // Set the image on the label
         imageLabel->setPixmap(pixmap);
-
     }
+    public slots:
+        void changer_image(int indice_selectionne) {
+            this->update_image(bibliotheque[indice_selectionne]);
+        }
+        void appliquer_traitement(QString traitement) {
+            cout << traitement.toStdString()<<endl;
+            if(traitement.toStdString()=="Flouter l'image") {
+                Mat filtre = Mat(5, 5, CV_32FC3, Scalar(1,1,1))/25;
+
+                Mat convoluee = _image.convolution(filtre);
+                QImage qtImage(convoluee.data, convoluee.cols, convoluee.rows, convoluee.step, QImage::Format_BGR888);
+                pixmap = QPixmap::fromImage(qtImage);
+                // Set the image on the label
+                imageLabel->setPixmap(pixmap);
+            }
+        }
 private:
     QPixmap pixmap;
     AspectRatioPixmapLabel* imageLabel;

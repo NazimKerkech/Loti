@@ -20,22 +20,37 @@ class TrameDroite: public QFrame {
     Q_OBJECT
 private:
     QListWidget* _Widget_traitementImg;
-    TrameCentrale* _trameCentrale;
+    signals:
+        void traitement(QString traitement);
 public:
-    TrameDroite(TrameCentrale* trameCentrale, QWidget *parent = nullptr) : QFrame(parent) {
+    TrameDroite(QWidget *parent = nullptr) : QFrame(parent) {
         setObjectName("TrameDroite");  // Set a unique object name for the QFrame
         setStyleSheet("#TrameDroite { border: 3px solid black; }");
-        this->setFixedWidth(parent->size().width()*2/10);
+        //this->setFixedWidth(parent->size().width()*2/10);
 
         //thomy :
         _Widget_traitementImg = new QListWidget(this);
         _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Flouter l'image")));
         _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Detection de contours")));
         _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Detection de lignes droites")));
-        _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Réaussement de contours")));
+        _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Rehaussement de contours")));
         _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Segmentation")));
 
+        connect(_Widget_traitementImg, &QListWidget::itemDoubleClicked, this, &TrameDroite::onItemDoubleClicked);
+
+        QVBoxLayout *layout = new QVBoxLayout(this);
+        layout->addWidget(_Widget_traitementImg);
+
+        this->setFixedWidth(parent->size().width()*2/10);
     }
-    
+public:
+    void onItemDoubleClicked() {
+        QListWidgetItem *selectedItem = _Widget_traitementImg->currentItem();
+
+        if (selectedItem) {
+            cout<<"application des traitements ..."<<endl;
+            emit traitement(selectedItem->text());
+        }
+    }
 };
 #endif //TRAMEDROITE_H

@@ -2,6 +2,7 @@
   /home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug/LoTI_autogen/moc_predefs.h \
   /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/AspectRatioPixmapLabel.h \
   /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/TrameCentrale.h \
+  /home/thedoctor/Documents/M2/s3/LoTI/src/image.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/assert.h \
@@ -286,6 +287,7 @@
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
