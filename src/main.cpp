@@ -65,13 +65,11 @@ int main(int argc, char* argv[])
 
     ////// Laplacien
     ///
-    /*  Image imm(loadCSV(DATA_DIR +"descripteurs.csv")[0]);
-    Mat laplacienres = imm.laplacien();
+    /*  Mat laplacienImage =  Bibliotheque[0].laplacien();
+    imshow("Image filtrée", laplacienImage);
+    waitKey(0);*/
 
-   /* imm.afficheImage();
-    imshow("image filtrée", laplacienres);
-
-    cv::waitKey(0); //fenetres ouvertes  */
+    
     //Test de la segmentation
     /*segmentation
     Bibliotheque[0].Segmentation(Bibliotheque[0].getImg(),20,100,200);
