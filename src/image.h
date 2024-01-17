@@ -38,6 +38,7 @@ public:
 	Mat convolution(Mat filtre);
 	Mat laplacien();
 	Mat Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil);
+        Mat rehaussementContour();
 
 };
 
