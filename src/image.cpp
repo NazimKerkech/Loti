@@ -379,3 +379,48 @@ Mat Image::Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil) 
     }
 
     return image;
+//Rehaussement
+Mat Image::rehaussementContour()
+{
+    Mat imageComposante[3];
+    Mat contourComposante[3];
+    int i;
+    int nbComposante = _img.channels() ;
+    vector<Mat> imageRehaussementComposante;
+
+    cout << "ok2" << endl;
+
+    Mat contourImage= laplacien();
+    Mat rehaussement;
+
+    cout << "ok3" << endl;
+    // Addition de l'image originale et de l'image des contours (rehaussement)
+    if(nbComposante == 1){
+
+
+        rehaussement = _img + contourImage;
+        cout << "ok4" << endl;
+    }else {
+        split(_img, imageComposante) ;
+        split(contourImage, contourComposante);
+        cout << "ok5" << endl;
+        for (i = 0; i <3 ; i++) {
+            imageRehaussementComposante.push_back(imageComposante[i] + contourComposante[i]);
+        }
+
+        merge(imageRehaussementComposante, rehaussement);
+
+    }
+
+
+
+    // Normalisation pour éviter des valeurs en dehors de la plage 0-255
+    normalize(rehaussement, rehaussement, 0, 255, NORM_MINMAX);
+
+
+    // Affichage de l'image rehaussée des contours
+    imshow("Image avec rehaussement de contour", rehaussement);
+
+
+    return rehaussement;
+}
