@@ -56,7 +56,10 @@ public:
         void appliquer_traitement(QString traitement) {
             cout << traitement.toStdString()<<endl;
             if(traitement.toStdString()=="Flouter l'image") {
-                Mat filtre = Mat(5, 5, CV_32FC3, Scalar(1,1,1))/25;
+                //Mat filtre = (Mat_<float>(3, 3) <<  1, 0, 1, 0, -4, 0, 1, 0, 1);
+                //cout << filtre <<endl;
+                Mat filtre = Mat(5, 5, CV_32F, Scalar(1))/25;
+                cout << filtre <<endl;
 
                 Mat convoluee = _image.convolution(filtre);
                 QImage qtImage(convoluee.data, convoluee.cols, convoluee.rows, convoluee.step, QImage::Format_BGR888);

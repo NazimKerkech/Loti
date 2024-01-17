@@ -20,6 +20,7 @@ class TrameDroite: public QFrame {
     Q_OBJECT
 private:
     QListWidget* _Widget_traitementImg;
+    QTabWidget* _onglets_histogramme;
     signals:
         void traitement(QString traitement);
 public:
@@ -38,8 +39,13 @@ public:
 
         connect(_Widget_traitementImg, &QListWidget::itemDoubleClicked, this, &TrameDroite::onItemDoubleClicked);
 
+
+        _onglets_histogramme = new QTabWidget(this);
+
         QVBoxLayout *layout = new QVBoxLayout(this);
         layout->addWidget(_Widget_traitementImg);
+        layout->addStretch();
+        layout->addWidget(_onglets_histogramme);
 
         this->setFixedWidth(parent->size().width()*2/10);
     }
