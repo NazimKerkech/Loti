@@ -450,7 +450,7 @@ Mat Image::rehaussementContour(){
 
 
     // Affichage de l'image rehaussée des contours
-    imshow("Image avec rehaussement de contour", rehaussement);
+   // imshow("Image avec rehaussement de contour", rehaussement);
 
 
     return rehaussement;
