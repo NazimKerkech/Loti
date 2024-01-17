@@ -25,6 +25,8 @@ int main(int argc, char* argv[])
     //cout << data.size()<<endl;
     vector<Image> Bibliotheque;
     Bibliotheque = createBib(data);
+    //tri de la biblio 
+    Image::tri_Cout(Bibliotheque);
 
     /*
     //affichage des descripteurs :
