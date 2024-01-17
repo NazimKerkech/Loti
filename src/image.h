@@ -20,7 +20,7 @@ private:
 public:
 	Image(vector<string>); //charger l'image � partir de son nom de fichier, et lui donner les descripteurs
 	Image();
-	void afficheDescripteurs();
+	void afficheDescripteurs() const;
 	Mat getImg();
 	void afficheImage() const;
 
@@ -30,13 +30,16 @@ public:
 	int cols() const; // taille des y
 
 	string get_titre() const;
+	//pour le tri des images
+    	double get_cout() const;
+    	static void tri_Cout(vector<Image>& bibliotheque); //il demandait static
 	/*
 		Traitement d'image :
 	*/
 	
 	Mat houghLineTransform(float = 0.7);
 	Mat convolution(Mat filtre);
-	Mat laplacien();
+	Mat laplacien(int=2);
 	Mat Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil);
 	Mat rehaussementContour();
 	tuple<Mat, Mat, Mat, Mat> histogramme();

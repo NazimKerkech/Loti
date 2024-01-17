@@ -131,7 +131,7 @@ vector<Image> createBib(vector<vector<string>> tableauDescripteurs)
     return bibliotheque;
 }
 
-void Image::afficheDescripteurs()
+void Image::afficheDescripteurs() const
 {
     cout << "Source : " << _source << endl;
     cout << "Titre :  " << _titre << endl;
@@ -256,6 +256,17 @@ string Image::get_titre() const
 {
     return _titre;
 }
+// Tri d'images par ordre décroissant
+
+double Image::get_cout() const
+{
+    return _cout;
+}
+void Image::tri_Cout(vector<Image>& bibliotheque) {
+    sort(bibliotheque.begin(), bibliotheque.end(), [](const Image& img1, const Image& img2) {
+        return img1._cout > img2._cout;
+    });
+}
 
 // Traitement d'image
 Mat Image::houghLineTransform(float pourcentage)
@@ -348,20 +359,41 @@ Mat Image::convolution(Mat filtre) {
 }
 
 //Laplacien
-Mat Image::laplacien() {
-
-    Mat kernel = (Mat_<float>(3, 3) <<
+Mat Image::laplacien(int noFiltre) {
+    // Dle kernel du laplacien
+    Mat kernel;
+    switch (noFiltre){
+    case 1:
+     kernel = (Mat_<float>(3, 3) <<
                       0,  1, 0,
                   1, -4, 1,
                   0,  1, 0);
+        break;
 
 
-     // filtre d'opencv!!! cv::filter2D
+    case 3:
+     kernel = (Mat_<float>(7, 7)<< 0,    0.0037,    0.0147,    0.0256,    0.0147,    0.0037, 0,
+                 0.0037 ,   0.0147,    0.0293 ,   0.0220 ,   0.0293,    0.0147,    0.0037,
+                 0.0147,    0.0293,   -0.0147,   -0.0879 ,  -0.0147,    0.0293  ,  0.0147,
+                 0.0256,    0.0220,   -0.0879 ,  -0.2198  , -0.0879,    0.0220 ,   0.0256,
+                 0.0147,    0.0293,   -0.0147,   -0.0879 ,  -0.0147,    0.0293,    0.0147,
+                 0.0037,    0.0147,    0.0293 ,   0.0220,    0.0293,    0.0147,    0.0037,
+                   0 ,   0.0037,    0.0147,    0.0256,    0.0147,    0.0037,         0);
+
+    break;
+    default:
+     kernel =  (Mat_<float>(5, 5)<<   0  ,  0.0625,    0.1250 ,   0.0625,         0,
+                   0.0625    ,     0 ,  -0.1250 ,        0 ,   0.0625,
+                   0.1250 ,  -0.1250 ,  -0.5000,   -0.1250  ,  0.1250,
+                   0.0625  ,       0,   -0.1250 ,        0   , 0.0625,
+                   0   , 0.0625   , 0.1250,    0.0625,         0);
+}
     Mat laplacien_res;
     cv::filter2D(_img, laplacien_res, -1, kernel);
 
     return laplacien_res;
 }
+
 //Segmentation
 Mat Image::Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil) {
     for (int i = 0; i < image.rows; ++i) {
@@ -419,7 +451,7 @@ Mat Image::rehaussementContour(){
 
 
     // Affichage de l'image rehaussée des contours
-    imshow("Image avec rehaussement de contour", rehaussement);
+   // imshow("Image avec rehaussement de contour", rehaussement);
 
 
     return rehaussement;
