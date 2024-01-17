@@ -1,4 +1,4 @@
-# Install script for directory: /home/thedoctor/Documents/M2/s3/LoTI
+# Install script for directory: /home/thedoctor/Documents/LoTI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/thedoctor/Documents/LoTI/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

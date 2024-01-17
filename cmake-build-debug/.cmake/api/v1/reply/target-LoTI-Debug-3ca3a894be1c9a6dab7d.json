@@ -85,7 +85,7 @@
 				},
 				{
 					"backtrace" : 4,
-					"define" : "SOURCE_DIR=\"/home/thedoctor/Documents/M2/s3/LoTI\""
+					"define" : "SOURCE_DIR=\"/home/thedoctor/Documents/LoTI\""
 				}
 			],
 			"includes" : 
@@ -98,7 +98,7 @@
 				{
 					"backtrace" : 0,
 					"isSystem" : true,
-					"path" : "/home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug/LoTI_autogen/include"
+					"path" : "/home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/include"
 				},
 				{
 					"backtrace" : 2,

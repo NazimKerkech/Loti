@@ -246,7 +246,7 @@
 #define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2
 #define __STDC_IEC_60559_BFP__ 201404L
 #define __SIZEOF_PTRDIFF_T__ 8
-#define SOURCE_DIR "/home/thedoctor/Documents/M2/s3/LoTI"
+#define SOURCE_DIR "/home/thedoctor/Documents/LoTI"
 #define __LDBL_DIG__ 18
 #define __FLT64_IS_IEC_60559__ 2
 #define __x86_64__ 1

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug"
+			"value" : "/home/thedoctor/Documents/LoTI/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/thedoctor/Documents/LoTI/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/thedoctor/Documents/M2/s3/LoTI"
+			"value" : "/home/thedoctor/Documents/LoTI"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1163,7 +1163,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug"
+			"value" : "/home/thedoctor/Documents/LoTI/cmake-build-debug"
 		},
 		{
 			"name" : "LoTI_IS_TOP_LEVEL",
@@ -1187,7 +1187,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/thedoctor/Documents/M2/s3/LoTI"
+			"value" : "/home/thedoctor/Documents/LoTI"
 		},
 		{
 			"name" : "OpenCV_DIR",

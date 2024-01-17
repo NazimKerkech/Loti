@@ -42,6 +42,8 @@ public:
 
         this->setFixedWidth(parent->size().width()*2/10);
         //this->setFixedHeight(parent->size().height() * 5/ 6);
+
+        emit demande_changer_image(0);
     }
     void onItemSelectionChanged() {
         // This function will be called when an item is selected in the QListWidget

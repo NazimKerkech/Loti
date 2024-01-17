@@ -363,7 +363,6 @@ Mat Image::laplacien() {
 }
 //Segmentation
 Mat Image::Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil) {
-
     for (int i = 0; i < image.rows; ++i) {
         for (int j = 0; j < image.cols; ++j) {
             Vec3b &pixel = image.at<cv::Vec3b>(i, j); // référence pixel
@@ -379,9 +378,9 @@ Mat Image::Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil) 
     }
 
     return image;
+}
 //Rehaussement
-Mat Image::rehaussementContour()
-{
+Mat Image::rehaussementContour(){
     Mat imageComposante[3];
     Mat contourComposante[3];
     int i;
@@ -433,12 +432,24 @@ tuple<Mat, Mat, Mat, Mat> Image::histogramme() {
     // niveaux de gris
     cvtColor(image, imageGray, COLOR_BGR2GRAY);  // Convertir en niveaux de gris
 
+    vector<int> hist(256, 0);
     for (int i = 0; i < imageGray.rows; i++) {
         for (int j = 0; j < imageGray.cols; j++) {
             int intensity = imageGray.at<uchar>(i, j);
-            int barHeight = static_cast<int>(intensity * 256.0 / 255.0);
-            line(histImage, Point(j, 256), Point(j, 256 - barHeight), Scalar(255, 255, 255));
-        }
+            hist[intensity]++;
+       }
+    }
+
+    int maxCount = *max_element(hist.begin(), hist.end());
+    for (int i = 0; i < 256; i++) {
+        int barHeight = static_cast<int>(hist[i] * 256.0 / maxCount);
+        //line(histImage, Point(i, 256), Point(i, 256 - barHeight), Scalar(255, 255, 255));
+        // Choisissez la couleur en fonction du canal
+        Scalar color;
+        color = Scalar(255, 255, 255);
+
+        // Dessinez la ligne dans l'histogramme approprié
+        line(histImage, Point(i, 256), Point(i, 256 - barHeight), color);
     }
 
     // Images pour afficher les histogrammes de chaque canal

@@ -40,7 +40,7 @@ public:
         this->tramecentrale = new TrameCentrale(bibliotheque, this);
         this->trameSup = new TrameSuperieure(this);
         this->tramegauche = new TrameGauche(bibliotheque, this);
-        this->tramedroite = new TrameDroite(this);
+        this->tramedroite = new TrameDroite(bibliotheque, this);
 
         //QWidget *centralWidget = new QWidget(this);
         //setCentralWidget(centralWidget);
@@ -68,10 +68,11 @@ public:
         setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
 
         bool connected1 = connect(this->tramegauche, &TrameGauche::demande_changer_image, this->tramecentrale, &TrameCentrale::changer_image);
-        bool connected2 = connect(this->tramedroite, &TrameDroite::traitement, this->tramecentrale, &TrameCentrale::appliquer_traitement);
+        bool connected2 = connect(this->tramegauche, &TrameGauche::demande_changer_image, this->tramedroite, &TrameDroite::charger_histogramme);
+        bool connected3 = connect(this->tramedroite, &TrameDroite::traitement, this->tramecentrale, &TrameCentrale::appliquer_traitement);
 
         //connect(trameApplication->tramegauche, &TrameGauche::demande_changer_image, trameApplication->tramecentrale, &TrameCentrale::changer_image);
-        if (!connected1 || !connected2) {
+        if (!connected1 || !connected2 || !connected3) {
             qDebug() << "Failed to connect the signal and slot!";
         }
     }

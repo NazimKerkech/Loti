@@ -31,8 +31,8 @@ public:
         const string LOTI_DIR(SOURCE_DIR);
 
         imageLabel = new AspectRatioPixmapLabel(this);
-        _image = bibliotheque[0];
-        update_image(_image);
+        //_image = bibliotheque[0];
+        //update_image(_image);
 
         QVBoxLayout *frameLayout = new QVBoxLayout(this);
         frameLayout->addWidget(imageLabel);

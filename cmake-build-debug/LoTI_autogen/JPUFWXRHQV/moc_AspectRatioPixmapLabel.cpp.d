@@ -1,5 +1,5 @@
-/home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_AspectRatioPixmapLabel.cpp: /home/thedoctor/Documents/M2/s3/LoTI/gui/trames/AspectRatioPixmapLabel.h \
-  /home/thedoctor/Documents/M2/s3/LoTI/cmake-build-debug/LoTI_autogen/moc_predefs.h \
+/home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_AspectRatioPixmapLabel.cpp: /home/thedoctor/Documents/LoTI/gui/trames/AspectRatioPixmapLabel.h \
+  /home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/moc_predefs.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/assert.h \
