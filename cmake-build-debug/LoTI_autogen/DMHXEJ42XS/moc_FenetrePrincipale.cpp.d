@@ -1,6 +1,7 @@
 /home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/DMHXEJ42XS/moc_FenetrePrincipale.cpp: /home/thedoctor/Documents/LoTI/gui/FenetrePrincipale.h \
   /home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/moc_predefs.h \
   /home/thedoctor/Documents/LoTI/gui/trames/AspectRatioPixmapLabel.h \
+  /home/thedoctor/Documents/LoTI/gui/trames/RescalingPixmapLabel.h \
   /home/thedoctor/Documents/LoTI/gui/trames/TrameApplication.h \
   /home/thedoctor/Documents/LoTI/gui/trames/TrameAuthentification.h \
   /home/thedoctor/Documents/LoTI/gui/trames/TrameCentrale.h \

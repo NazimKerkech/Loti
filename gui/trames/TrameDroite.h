@@ -13,6 +13,7 @@
 //class FenetrePrincipale;
 #include "TrameCentrale.h"
 #include "../../src/image.h"
+#include "RescalingPixmapLabel.h"
 
 using namespace std;
 
@@ -86,6 +87,12 @@ public:
         QImage qtImage(image.data, image.cols, image.rows, image.step, QImage::Format_BGR888);
         pixmap = QPixmap::fromImage(qtImage);
         return pixmap;
+    }
+
+protected:
+    void resizeEvent(QResizeEvent *event) override {
+        QFrame::resizeEvent(event);
+        _onglets_histogramme->setFixedHeight(event->size().height()*3/10);
     }
 };
 #endif //TRAMEDROITE_H
