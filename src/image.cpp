@@ -131,7 +131,7 @@ vector<Image> createBib(vector<vector<string>> tableauDescripteurs)
     return bibliotheque;
 }
 
-void Image::afficheDescripteurs()
+void Image::afficheDescripteurs() const
 {
     cout << "Source : " << _source << endl;
     cout << "Titre :  " << _titre << endl;
@@ -255,6 +255,17 @@ int Image::cols() const
 string Image::get_titre() const
 {
     return _titre;
+}
+// Tri d'images par ordre décroissant
+
+double Image::get_cout() const
+{
+    return _cout;
+}
+void Image::tri_Cout(vector<Image>& bibliotheque) {
+    sort(bibliotheque.begin(), bibliotheque.end(), [](const Image& img1, const Image& img2) {
+        return img1._cout > img2._cout;
+    });
 }
 
 // Traitement d'image
