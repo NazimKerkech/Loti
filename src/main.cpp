@@ -75,7 +75,26 @@ int main(int argc, char* argv[])
     //Test de la segmentation
     /*segmentation
     Bibliotheque[0].Segmentation(Bibliotheque[0].getImg(),20,100,200);
-    Bibliotheque[0].afficheImage();*/ 
+    Bibliotheque[0].afficheImage();*/
+
+    auto histograms = Bibliotheque[0].histogramme();
+    Mat histImageBlue = std::get<0>(histograms);
+    Mat histImageGreen = std::get<1>(histograms);
+    Mat histImageRed = std::get<2>(histograms);
+    Mat histImage = std::get<3>(histograms);
+
+    //Mat histImageCombined = std::get<4>(histograms);
+    //merge(std::vector<Mat>{histImageBlue, histImageGreen, histImageRed}, histImageCombined);
+    imshow("Histogramme", histImage);
+
+    // ... autres codes ...
+
+    //cv::waitKey(0);
+    imshow("Histogramme Rouge", histImageRed);
+    imshow("Histogramme Vert", histImageGreen);
+    imshow("Histogramme Bleu", histImageBlue);
+    //imshow("Histogramme Combiné", histImageCombined);
+    cv::waitKey(0);
 
     //////// Test Qt //////////
 
