@@ -37,6 +37,7 @@ public:
 	Mat houghLineTransform(float = 0.7);
 	Mat convolution(Mat filtre);
 	Mat laplacien();
+	Mat Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil);
 
 };
 
