@@ -424,3 +424,72 @@ Mat Image::rehaussementContour()
 
     return rehaussement;
 }
+
+//Mat Image::histogramme() {
+tuple<Mat, Mat, Mat, Mat> Image::histogramme() {
+    Mat image = this->getImg();
+    Mat histImage = Mat::zeros(256, 256, CV_8UC3);  // Image pour afficher l'histogramme en NVG
+    Mat imageGray;
+    // niveaux de gris
+    cvtColor(image, imageGray, COLOR_BGR2GRAY);  // Convertir en niveaux de gris
+
+    for (int i = 0; i < imageGray.rows; i++) {
+        for (int j = 0; j < imageGray.cols; j++) {
+            int intensity = imageGray.at<uchar>(i, j);
+            int barHeight = static_cast<int>(intensity * 256.0 / 255.0);
+            line(histImage, Point(j, 256), Point(j, 256 - barHeight), Scalar(255, 255, 255));
+        }
+    }
+
+    // Images pour afficher les histogrammes de chaque canal
+    Mat histImageRed = Mat::zeros(256, 256, CV_8UC3);
+    Mat histImageGreen = Mat::zeros(256, 256, CV_8UC3);
+    Mat histImageBlue = Mat::zeros(256, 256, CV_8UC3);
+
+    //Mat histImageCombined;
+    
+    // Calculez et affichez l'histogramme pour chaque canal
+    for (int channel = 0; channel < image.channels(); ++channel) {
+        vector<int> hist(256, 0);
+
+        for (int i = 0; i < image.rows; i++) {
+            for (int j = 0; j < image.cols; j++) {
+                int intensity = image.at<Vec3b>(i, j)[channel];
+                hist[intensity]++;
+            }
+        }
+
+        // Normalizez l'histogramme pour l'affichage
+        int maxCount = *max_element(hist.begin(), hist.end());
+        for (int i = 0; i < 256; i++) {
+            int barHeight = static_cast<int>(hist[i] * 256.0 / maxCount);
+            //line(histImage, Point(i, 256), Point(i, 256 - barHeight), Scalar(255, 255, 255));
+            // Choisissez la couleur en fonction du canal
+            Scalar color;
+            if (channel == 0)      // canal bleu
+                color = Scalar(255, 0, 0);
+            else if (channel == 1) // canal vert
+                color = Scalar(0, 255, 0);
+            else                   // canal rouge
+                color = Scalar(0, 0, 255);
+
+            // Dessinez la ligne dans l'histogramme approprié
+            if (channel == 0)
+                line(histImageBlue, Point(i, 256), Point(i, 256 - barHeight), color);
+            else if (channel == 1)
+                line(histImageGreen, Point(i, 256), Point(i, 256 - barHeight), color);
+            else
+                line(histImageRed, Point(i, 256), Point(i, 256 - barHeight), color);
+        }
+    }
+
+    //vector<Mat> channels;
+    //channels.push_back(histImageRed);
+    //channels.push_back(histImageGreen);
+    //channels.push_back(histImageBlue);
+
+    //Mat histImageCombined;
+    //cv::merge(channels, histImageCombined);
+
+    return make_tuple(histImageBlue, histImageGreen, histImageRed, histImage);
+}
