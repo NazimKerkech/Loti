@@ -252,17 +252,27 @@ int Image::cols() const
 {
     return _img.cols;
 }
+string Image::get_source() const
+{
+    return _source;
+}
 string Image::get_titre() const
 {
     return _titre;
 }
-// Tri d'images par ordre décroissant
-
+int Image::get_numero() const
+{
+    return _numero;
+}
 double Image::get_cout() const
 {
     return _cout;
 }
-void Image::tri_Cout(vector<Image>& bibliotheque) {
+char Image::get_acces() const
+{
+    return _acces;
+}
+void Image::tri_Cout(vector<Image>& bibliotheque) { // Tri d'images par ordre décroissant
     sort(bibliotheque.begin(), bibliotheque.end(), [](const Image& img1, const Image& img2) {
         return img1._cout > img2._cout;
     });

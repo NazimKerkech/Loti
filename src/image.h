@@ -29,10 +29,14 @@ public:
 	int rows() const; // taille des x 
 	int cols() const; // taille des y
 
+	string Image::get_source() const;
+	int Image::get_numero() const;
+	double get_cout() const;
 	string get_titre() const;
+	char Image::get_acces() const;
+
 	//pour le tri des images
-    	double get_cout() const;
-    	static void tri_Cout(vector<Image>& bibliotheque); //il demandait static
+    static void tri_Cout(vector<Image>& bibliotheque); //il demandait static
 	/*
 		Traitement d'image :
 	*/

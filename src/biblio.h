@@ -14,9 +14,10 @@ private:
     std::string _bibName;
 
 public:
-
+    Biblio();
     Biblio(std::string);
 
+    vector<Image> get_images();
     // afficher les descript
     void displayDescriptors();
 

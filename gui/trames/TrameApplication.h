@@ -20,6 +20,7 @@
 #include "TrameDroite.h"
 #include <vector>
 #include "../../src/image.h"
+#include "../../src/biblio.h"
 using namespace std;
 using namespace cv;
 
@@ -32,7 +33,7 @@ public:
     TrameGauche *tramegauche;
     TrameDroite *tramedroite;
 public:
-    TrameApplication(vector<Image> bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
+    TrameApplication(Biblio bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
         // Taille
         this->setFixedSize(500, 400);
 

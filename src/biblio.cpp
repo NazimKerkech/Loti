@@ -4,6 +4,7 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <fstream>
+#include "image.h"
 using namespace std;
 using namespace cv;
 namespace fs = std::filesystem;
@@ -14,9 +15,15 @@ const string DATA_DIR(LOTI_DIR + "/dta/");
 
 // biblio.cpp
 
+Biblio::Biblio() {}
 
 Biblio::Biblio(std::string bibName) : _bibName(bibName) {
     loadLibrary();
+}
+
+vector<Image> Biblio::get_images()
+{
+    return _bib;
 }
 
 void Biblio::displayDescriptors() {

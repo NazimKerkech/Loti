@@ -17,6 +17,7 @@
 #include "trames/TrameAuthentification.h"
 #include <vector>
 #include "../src/image.h"
+#include "../src/biblio.h"
 using namespace std;
 using namespace cv;
 
@@ -26,9 +27,9 @@ class FenetrePrincipale : public QMainWindow {
 protected:
     TrameAuthentification *trameAuthentification;
     TrameApplication *trameApplication;
-    vector<Image> _bibliotheque;
+    Biblio _bibliotheque;
 public:
-    FenetrePrincipale(vector<Image> bibliotheque, QWidget *parent = nullptr) : QMainWindow(parent) {
+    FenetrePrincipale(Biblio bibliotheque, QWidget *parent = nullptr) : QMainWindow(parent) {
         // Taille
         _bibliotheque = bibliotheque;
         this->setFixedSize(500, 400);

@@ -13,17 +13,19 @@
 #include <QPainter>
 #include "AspectRatioPixmapLabel.h"
 #include <QString>
+#include <QVBoxLayout>
 #include "../../src/image.h"
+#include "../../src/biblio.h"
 
 using namespace std;
 using namespace cv;
 
 class TrameCentrale : public QFrame {
 private:
-    vector<Image> bibliotheque;
+    Biblio bibliotheque;
     Image _image;
 public:
-    TrameCentrale(vector<Image> bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
+    TrameCentrale(Biblio bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
         this->bibliotheque = bibliotheque;
         setObjectName("TrameCentrale");  // Set a unique object name for the QFrame
         setStyleSheet("#TrameCentrale { border: 3px solid black; }");  // Apply style only to the QFrame
@@ -51,7 +53,7 @@ public:
     }
     public slots:
         void changer_image(int indice_selectionne) {
-            this->update_image(bibliotheque[indice_selectionne]);
+            this->update_image(bibliotheque.get_images()[indice_selectionne]);
         }
         void appliquer_traitement(QString traitement) {
             cout << traitement.toStdString()<<endl;

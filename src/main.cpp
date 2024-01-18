@@ -23,10 +23,14 @@ int main(int argc, char* argv[])
     //cout << DATA_DIR + "descripteurs.csv" << endl;
     data = loadCSV(DATA_DIR + "descripteurs.csv");
     //cout << data.size()<<endl;
-    vector<Image> Bibliotheque;
-    Bibliotheque = createBib(data);
+    //vector<Image> Bibliotheque;
+    //Bibliotheque = createBib(data);
+
+    Biblio Bibliotheque("defaut.bib");
+
     //tri de la biblio 
-    Image::tri_Cout(Bibliotheque);
+
+    //Image::tri_Cout(Bibliotheque);
 
     /*
     //affichage des descripteurs :
@@ -105,10 +109,10 @@ int main(int argc, char* argv[])
 
     //////// Test Qt //////////
 
-    QApplication a(argc, argv);
-    FenetrePrincipale mainWindow(Bibliotheque);
-    mainWindow.show();
-    //return 0;
-    return a.exec();
+    //QApplication a(argc, argv);
+    //FenetrePrincipale mainWindow(Bibliotheque);
+    //mainWindow.show();
+    return 0;
+    //return a.exec();
 
 }

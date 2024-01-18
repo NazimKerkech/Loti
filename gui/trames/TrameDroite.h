@@ -13,6 +13,7 @@
 //class FenetrePrincipale;
 #include "TrameCentrale.h"
 #include "../../src/image.h"
+#include "../../src/biblio.h"
 //#include "RescalingPixmapLabel.h"
 
 using namespace std;
@@ -22,12 +23,12 @@ class TrameDroite: public QFrame {
 private:
     QListWidget* _Widget_traitementImg;
     QTabWidget* _onglets_histogramme;
-    vector<Image> bibliotheque;
+    Biblio bibliotheque;
 
     signals:
         void traitement(QString traitement);
 public:
-    TrameDroite(vector<Image> bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
+    TrameDroite(Biblio bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
         this->bibliotheque = bibliotheque;
         setObjectName("TrameDroite");  // Set a unique object name for the QFrame
         setStyleSheet("#TrameDroite { border: 3px solid black; }");
@@ -64,7 +65,7 @@ public:
     }
     public slots:
     void charger_histogramme(int indice_selectionne) {
-        auto histograms = this->bibliotheque[indice_selectionne].histogramme();
+        auto histograms = this->bibliotheque.get_images()[indice_selectionne].histogramme();
         Mat histImageBlue = std::get<0>(histograms);
         Mat histImageGreen = std::get<1>(histograms);
         Mat histImageRed = std::get<2>(histograms);
