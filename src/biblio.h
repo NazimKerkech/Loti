@@ -18,6 +18,7 @@ public:
     Biblio(std::string);
 
     vector<Image> get_images();
+
     // afficher les descript
     void displayDescriptors();
 

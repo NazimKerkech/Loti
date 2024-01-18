@@ -20,6 +20,7 @@
 #include "TrameDroite.h"
 #include <vector>
 #include "../../src/image.h"
+#include "../../src/biblio.h"
 #include <qobjectdefs.h>
 #include <QLineEdit>
 

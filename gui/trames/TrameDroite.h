@@ -23,13 +23,13 @@ class TrameDroite: public QFrame {
 private:
     QListWidget* _Widget_traitementImg;
     QTabWidget* _onglets_histogramme;
-    Biblio bibliotheque;
+    Biblio _bibliotheque;
 
     signals:
         void traitement(QString traitement);
 public:
     TrameDroite(Biblio bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
-        this->bibliotheque = bibliotheque;
+        this->_bibliotheque = bibliotheque;
         setObjectName("TrameDroite");  // Set a unique object name for the QFrame
         setStyleSheet("#TrameDroite { border: 3px solid black; }");
         //this->setFixedWidth(parent->size().width()*2/10);
@@ -65,7 +65,7 @@ public:
     }
     public slots:
     void charger_histogramme(int indice_selectionne) {
-        auto histograms = this->bibliotheque.get_images()[indice_selectionne].histogramme();
+        auto histograms = this->_bibliotheque.get_images()[indice_selectionne].histogramme();
         Mat histImageBlue = std::get<0>(histograms);
         Mat histImageGreen = std::get<1>(histograms);
         Mat histImageRed = std::get<2>(histograms);

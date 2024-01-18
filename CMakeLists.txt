@@ -15,6 +15,8 @@ add_executable(LoTI
     src/main.cpp
     src/image.cpp
     src/image.h
+    src/biblio.h
+    src/biblio.cpp
         gui/FenetrePrincipale.h
         gui/trames/TrameSuperieure.h
         gui/trames/TrameGauche.h

@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 {
     vector<vector<string>> data;
     //cout << DATA_DIR + "descripteurs.csv" << endl;
-    data = loadCSV(DATA_DIR + "descripteurs.csv");
+    //data = loadCSV(DATA_DIR + "descripteurs.csv");
     //cout << data.size()<<endl;
     //vector<Image> Bibliotheque;
     //Bibliotheque = createBib(data);
@@ -109,10 +109,10 @@ int main(int argc, char* argv[])
 
     //////// Test Qt //////////
 
-    //QApplication a(argc, argv);
-    //FenetrePrincipale mainWindow(Bibliotheque);
-    //mainWindow.show();
-    return 0;
-    //return a.exec();
+    QApplication a(argc, argv);
+    FenetrePrincipale mainWindow(Bibliotheque);
+    mainWindow.show();
+    //return 0;
+    return a.exec();
 
 }
