@@ -60,7 +60,10 @@ public:
         layout_inf->setSpacing(0);
         layout_inf->addWidget(tramegauche);
         layout_inf->addWidget(tramecentrale);
-        layout_inf->addWidget(tramedroite);
+        if(userAcces == "2"){
+            layout_inf->addWidget(tramedroite);
+        }    
+        // layout_inf->addWidget(tramedroite);
         frame_inf->setLayout(layout_inf);
 
         vlayout->addWidget(frame_inf);
