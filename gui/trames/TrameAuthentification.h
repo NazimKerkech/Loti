@@ -23,7 +23,7 @@
 #include "../../src/biblio.h"
 #include <qobjectdefs.h>
 #include <QLineEdit>
-
+#include "../../src/utilisateur.h"
 
 class TrameAuthentification : public QFrame {
     Q_OBJECT
@@ -45,7 +45,7 @@ public:
 
         QPushButton *loginButton = new QPushButton("Login", this);
         connect(loginButton, &QPushButton::clicked, this, &TrameAuthentification::onLoginButtonClicked);
-
+        messageLabel = new QLabel(this);
         // Layout setup
         QVBoxLayout *layout = new QVBoxLayout(this);
         layout->addWidget(titleLabel);
@@ -62,11 +62,23 @@ public:
         void onLoginButtonClicked() {
             // Perform authentication logic here
             // If authentication is successful, emit the loginSuccess signal
-            emit loginSuccess();
+            // emit loginSuccess();
+            Utilisateur utilisateur;
+            utilisateur.loadCSV("../dta/utilisateurs.csv");
+
+            QString inputValue = usernameLineEdit->text();
+            bool user_exist = utilisateur.login(inputValue.toStdString());
+
+            if (!user_exist) {
+                messageLabel->setText("Pardon");
+            } else {
+                emit loginSuccess();
+            }
         }
 
 private:
     QLineEdit *usernameLineEdit;
     QLineEdit *passwordLineEdit;
+    QLabel *messageLabel;
 };
 #endif //TRAMEAUTHENTIFICATION_H
