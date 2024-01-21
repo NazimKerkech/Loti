@@ -20,7 +20,9 @@
 #include "TrameDroite.h"
 #include <vector>
 #include "../../src/image.h"
+#include "../../src/utilisateur.h"
 #include "../../src/biblio.h"
+
 using namespace std;
 using namespace cv;
 
@@ -43,7 +45,7 @@ public:
         this->tramecentrale = new TrameCentrale(bibliotheque, this);
         this->trameSup = new TrameSuperieure(id, this);
         this->tramegauche = new TrameGauche(bibliotheque, this);
-        this->tramedroite = new TrameDroite(bibliotheque, this);
+        this->tramedroite = new TrameDroite(bibliotheque, id, this);
 
         //QWidget *centralWidget = new QWidget(this);
         //setCentralWidget(centralWidget);
@@ -62,9 +64,8 @@ public:
         layout_inf->setSpacing(0);
         layout_inf->addWidget(tramegauche);
         layout_inf->addWidget(tramecentrale);
-        /*if(userAcces == "2"){
-            layout_inf->addWidget(tramedroite);
-        }    */
+
+
         layout_inf->addWidget(tramedroite);
         frame_inf->setLayout(layout_inf);
 

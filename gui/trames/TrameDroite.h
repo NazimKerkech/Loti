@@ -14,6 +14,7 @@
 #include "TrameCentrale.h"
 #include "../../src/image.h"
 #include "../../src/biblio.h"
+#include "../../src/utilisateur.h"
 //#include "RescalingPixmapLabel.h"
 
 using namespace std;
@@ -28,27 +29,37 @@ private:
     signals:
         void traitement(QString traitement);
 public:
-    TrameDroite(Biblio bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
+    TrameDroite(Biblio bibliotheque, string id, QWidget *parent = nullptr) : QFrame(parent) {
         this->_bibliotheque = bibliotheque;
         setObjectName("TrameDroite");  // Set a unique object name for the QFrame
         setStyleSheet("#TrameDroite { border: 3px solid black; }");
         //this->setFixedWidth(parent->size().width()*2/10);
 
         //thomy :
-        _Widget_traitementImg = new QListWidget(this);
-        _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Flouter l'image")));
-        _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Detection de contours")));
-        _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Detection de lignes droites")));
-        _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Rehaussement de contours")));
-        _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Segmentation")));
 
-        connect(_Widget_traitementImg, &QListWidget::itemDoubleClicked, this, &TrameDroite::onItemDoubleClicked);
+            _Widget_traitementImg = new QListWidget();
+            _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Flouter l'image")));
+            _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Detection de contours")));
+            _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Detection de lignes droites")));
+            _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Rehaussement de contours")));
+            _Widget_traitementImg->addItem(new QListWidgetItem(QString::fromStdString("Segmentation")));
 
+            connect(_Widget_traitementImg, &QListWidget::itemDoubleClicked, this, &TrameDroite::onItemDoubleClicked);
 
         _onglets_histogramme = new QTabWidget(this);
 
         QVBoxLayout *layout = new QVBoxLayout(this);
-        layout->addWidget(_Widget_traitementImg);
+
+        const string LOTI_DIR(SOURCE_DIR);
+        Utilisateur user;
+        user.loadCSV(LOTI_DIR+"/dta/utilisateurs.txt");
+
+        user.login(id);
+        string access = user.getUserAccess();
+        cout << user.getUserAccess() <<endl;
+        if(user.getUserAccess() == "2") {
+            layout->addWidget(_Widget_traitementImg);
+        }
         layout->addStretch();
         layout->addWidget(_onglets_histogramme);
 

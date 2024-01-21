@@ -13,6 +13,7 @@ public:
     bool login(const std::string& username);
     void loadCSV(const std::string& filename);
     const std::vector<std::vector<std::string>>& getUserData() const;
+    std::string getUserAccess();
 
 private:
     std::string userAccess;

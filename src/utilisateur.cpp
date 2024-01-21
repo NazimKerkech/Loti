@@ -53,6 +53,9 @@ void Utilisateur::loadCSV(const std::string& filename) {
     // Close the file stream
     file.close();
 }
+std::string Utilisateur::getUserAccess() {
+    return this->userAccess;
+}
 
 const std::vector<std::vector<std::string>>& Utilisateur::getUserData() const {
     return userData;
