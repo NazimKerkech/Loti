@@ -446,7 +446,7 @@ Mat Image::rehaussementContour(){
     return rehaussement;
 }
 
-//Mat Image::histogramme() {
+// Histogramme
 tuple<Mat, Mat, Mat, Mat> Image::histogramme() {
     Mat image = this->getImg();
     Mat histImage = Mat::zeros(256, 256, CV_8UC3);  // Image pour afficher l'histogramme en NVG
