@@ -57,14 +57,16 @@ public:
     }
 
     signals:
-        void loginSuccess();
+        void loginSuccess(string id);
     private slots:
         void onLoginButtonClicked() {
             // Perform authentication logic here
             // If authentication is successful, emit the loginSuccess signal
             // emit loginSuccess();
+            const string LOTI_DIR(SOURCE_DIR);
+
             Utilisateur utilisateur;
-            utilisateur.loadCSV("../dta/utilisateurs.csv");
+            utilisateur.loadCSV(LOTI_DIR+"/dta/utilisateurs.txt");
 
             QString inputValue = usernameLineEdit->text();
             bool user_exist = utilisateur.login(inputValue.toStdString());
@@ -72,7 +74,7 @@ public:
             if (!user_exist) {
                 messageLabel->setText("Pardon");
             } else {
-                emit loginSuccess();
+                emit loginSuccess(inputValue.toStdString());
             }
         }
 

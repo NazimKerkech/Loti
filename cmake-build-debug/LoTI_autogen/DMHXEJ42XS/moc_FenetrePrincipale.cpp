@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FenetrePrincipale_t {
-    QByteArrayData data[3];
-    char stringdata0[34];
+    QByteArrayData data[5];
+    char stringdata0[44];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,10 +34,13 @@ static const qt_meta_stringdata_FenetrePrincipale_t qt_meta_stringdata_FenetrePr
     {
 QT_MOC_LITERAL(0, 0, 17), // "FenetrePrincipale"
 QT_MOC_LITERAL(1, 18, 14), // "onLoginSuccess"
-QT_MOC_LITERAL(2, 33, 0) // ""
+QT_MOC_LITERAL(2, 33, 0), // ""
+QT_MOC_LITERAL(3, 34, 6), // "string"
+QT_MOC_LITERAL(4, 41, 2) // "id"
 
     },
-    "FenetrePrincipale\0onLoginSuccess\0"
+    "FenetrePrincipale\0onLoginSuccess\0\0"
+    "string\0id"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,10 +58,10 @@ static const uint qt_meta_data_FenetrePrincipale[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x08 /* Private */,
+       1,    1,   19,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 3,    4,
 
        0        // eod
 };
@@ -69,11 +72,10 @@ void FenetrePrincipale::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         auto *_t = static_cast<FenetrePrincipale *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->onLoginSuccess(); break;
+        case 0: _t->onLoginSuccess((*reinterpret_cast< string(*)>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 QT_INIT_METAOBJECT const QMetaObject FenetrePrincipale::staticMetaObject = { {

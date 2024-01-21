@@ -17,19 +17,20 @@ add_executable(LoTI
     src/image.h
     src/biblio.h
     src/biblio.cpp
-        gui/FenetrePrincipale.h
-        gui/trames/TrameSuperieure.h
-        gui/trames/TrameGauche.h
-        gui/trames/TrameCentrale.h
-        gui/trames/TrameDroite.h
-        gui/FenetrePrincipale.h
-        gui/trames/TrameSuperieure.h
-        src/main.cpp
-        gui/trames/AspectRatioPixmapLabel.h
-        gui/trames/TrameAuthentification.h
-        gui/trames/TrameApplication.h
-        gui/trames/TrameCentrale.h
-        gui/trames/RescalingPixmapLabel.h
+    src/utilisateur.h
+    src/utilisateur.cpp
+    gui/FenetrePrincipale.h
+    gui/trames/TrameSuperieure.h
+    gui/trames/TrameGauche.h
+    gui/trames/TrameCentrale.h
+    gui/trames/TrameDroite.h
+    gui/FenetrePrincipale.h
+    gui/trames/TrameSuperieure.h
+    gui/trames/AspectRatioPixmapLabel.h
+    gui/trames/TrameAuthentification.h
+    gui/trames/TrameApplication.h
+    gui/trames/TrameCentrale.h
+
 )
 
 add_definitions(-DSOURCE_DIR="${CMAKE_SOURCE_DIR}")

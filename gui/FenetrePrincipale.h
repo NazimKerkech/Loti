@@ -52,7 +52,7 @@ protected:
         this->trameApplication->setFixedWidth(event->size().width());
     }
     private slots:
-    void onLoginSuccess() {
+    void onLoginSuccess(string id) {
         // Remove the login frame and display the main application frame
         delete trameAuthentification;
         trameAuthentification = nullptr;
@@ -60,7 +60,7 @@ protected:
         trameApplication = nullptr;
         // Create and set up your main application frame
         // ...
-        this->trameApplication = new TrameApplication(_bibliotheque, this);
+        this->trameApplication = new TrameApplication(_bibliotheque, id, this);
         setCentralWidget(trameApplication);
 
 

@@ -98,12 +98,6 @@
 			null
 		],
 		[
-			"/home/thedoctor/Documents/LoTI/gui/trames/RescalingPixmapLabel.h",
-			"Mu",
-			"JPUFWXRHQV/moc_RescalingPixmapLabel.cpp",
-			null
-		],
-		[
 			"/home/thedoctor/Documents/LoTI/gui/trames/TrameApplication.h",
 			"Mu",
 			"JPUFWXRHQV/moc_TrameApplication.cpp",
@@ -140,9 +134,21 @@
 			null
 		],
 		[
+			"/home/thedoctor/Documents/LoTI/src/biblio.h",
+			"Mu",
+			"UVLADIE3JM/moc_biblio.cpp",
+			null
+		],
+		[
 			"/home/thedoctor/Documents/LoTI/src/image.h",
 			"Mu",
 			"UVLADIE3JM/moc_image.cpp",
+			null
+		],
+		[
+			"/home/thedoctor/Documents/LoTI/src/utilisateur.h",
+			"Mu",
+			"UVLADIE3JM/moc_utilisateur.cpp",
 			null
 		]
 	],
@@ -203,8 +209,10 @@
 	"SETTINGS_FILE" : "/home/thedoctor/Documents/LoTI/cmake-build-debug/CMakeFiles/LoTI_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/thedoctor/Documents/LoTI/src/biblio.cpp", "Mu", null ],
 		[ "/home/thedoctor/Documents/LoTI/src/image.cpp", "Mu", null ],
-		[ "/home/thedoctor/Documents/LoTI/src/main.cpp", "Mu", null ]
+		[ "/home/thedoctor/Documents/LoTI/src/main.cpp", "Mu", null ],
+		[ "/home/thedoctor/Documents/LoTI/src/utilisateur.cpp", "Mu", null ]
 	],
 	"VERBOSITY" : 0
 }

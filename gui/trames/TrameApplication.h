@@ -32,14 +32,16 @@ public:
     TrameCentrale *tramecentrale;
     TrameGauche *tramegauche;
     TrameDroite *tramedroite;
+    string id;
 public:
-    TrameApplication(Biblio bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
+    TrameApplication(Biblio bibliotheque, string id="", QWidget *parent = nullptr) : QFrame(parent) {
         // Taille
         this->setFixedSize(500, 400);
+        this->id = id;
 
         // Initialisation des trames
         this->tramecentrale = new TrameCentrale(bibliotheque, this);
-        this->trameSup = new TrameSuperieure(this);
+        this->trameSup = new TrameSuperieure(id, this);
         this->tramegauche = new TrameGauche(bibliotheque, this);
         this->tramedroite = new TrameDroite(bibliotheque, this);
 
@@ -60,10 +62,10 @@ public:
         layout_inf->setSpacing(0);
         layout_inf->addWidget(tramegauche);
         layout_inf->addWidget(tramecentrale);
-        if(userAcces == "2"){
+        /*if(userAcces == "2"){
             layout_inf->addWidget(tramedroite);
-        }    
-        // layout_inf->addWidget(tramedroite);
+        }    */
+        layout_inf->addWidget(tramedroite);
         frame_inf->setLayout(layout_inf);
 
         vlayout->addWidget(frame_inf);

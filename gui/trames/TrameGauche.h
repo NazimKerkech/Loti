@@ -41,11 +41,11 @@ public:
             tableau->setRowCount(5);
             tableau->setColumnCount(1);
 
-            // Remplir le tableau avec des données de démonstration
+            // Remplir le tableau avec des donnï¿½es de dï¿½monstration
             /*
             tableau->setItem(0, 0, new QTableWidgetItem(QString("Source")));
             tableau->setItem(1, 0, new QTableWidgetItem(QString("Titre")));
-            tableau->setItem(2, 0, new QTableWidgetItem(QString("Numéro")));
+            tableau->setItem(2, 0, new QTableWidgetItem(QString("Numï¿½ro")));
             tableau->setItem(3, 0, new QTableWidgetItem(QString("Cout")));
             tableau->setItem(4, 0, new QTableWidgetItem(QString("Acces")));
             */
