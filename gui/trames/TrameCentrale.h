@@ -55,6 +55,59 @@ public:
         void changer_image(int indice_selectionne) {
             this->update_image(bibliotheque.get_images()[indice_selectionne]);
         }
+        void flouter(int taille_filtre) {
+            Mat filtre = Mat(taille_filtre, taille_filtre, CV_32F, Scalar(1))/(taille_filtre*taille_filtre);
+            //cout << filtre <<endl;
+
+            Mat resultat = _image.convolution(filtre);
+            Mat resultat2;
+            normalize(resultat, resultat2, 0, 255, NORM_MINMAX);
+
+            QImage qtImage(resultat2.data, resultat2.cols, resultat2.rows, resultat2.step, QImage::Format_BGR888);
+            pixmap = QPixmap::fromImage(qtImage);
+            // Set the image on the label
+            imageLabel->setPixmap(pixmap);
+        }
+        void deriver(int noFiltre) {
+            Mat resultat = _image.laplacien(noFiltre);
+            Mat resultat2;
+            normalize(resultat, resultat2, 0, 255, NORM_MINMAX);
+
+            QImage qtImage(resultat2.data, resultat2.cols, resultat2.rows, resultat2.step, QImage::Format_BGR888);
+            pixmap = QPixmap::fromImage(qtImage);
+            // Set the image on the label
+            imageLabel->setPixmap(pixmap);
+        }
+        void detecter_lignes() {
+            Mat resultat = _image.houghLineTransform();
+            Mat resultat2;
+            normalize(resultat, resultat2, 0, 255, NORM_MINMAX);
+
+            QImage qtImage(resultat2.data, resultat2.cols, resultat2.rows, resultat2.step, QImage::Format_BGR888);
+            pixmap = QPixmap::fromImage(qtImage);
+            // Set the image on the label
+            imageLabel->setPixmap(pixmap);
+        }
+        void rehausser() {
+            Mat resultat = _image.rehaussementContour();
+            Mat resultat2;
+            normalize(resultat, resultat2, 0, 255, NORM_MINMAX);
+
+            QImage qtImage(resultat2.data, resultat2.cols, resultat2.rows, resultat2.step, QImage::Format_BGR888);
+            pixmap = QPixmap::fromImage(qtImage);
+            // Set the image on the label
+            imageLabel->setPixmap(pixmap);
+        }
+        void segmenter(int seuil_r, int seuil_g, int seuil_b) {
+            Mat resultat = _image.Segmentation(seuil_r, seuil_g, seuil_b);
+            Mat resultat2;
+            normalize(resultat, resultat2, 0, 255, NORM_MINMAX);
+
+            QImage qtImage(resultat2.data, resultat2.cols, resultat2.rows, resultat2.step, QImage::Format_BGR888);
+            pixmap = QPixmap::fromImage(qtImage);
+            // Set the image on the label
+            imageLabel->setPixmap(pixmap);
+        }
         void appliquer_traitement(QString traitement) {
             cout << traitement.toStdString()<<endl;
             if(traitement.toStdString()=="Flouter l'image") {

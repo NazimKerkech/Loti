@@ -44,7 +44,7 @@ public:
 	Mat houghLineTransform(float = 0.7);
 	Mat convolution(Mat filtre);
 	Mat laplacien(int=2);
-	Mat Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil);
+	Mat Segmentation(double rSeuil, double gSeuil, double bSeuil);
 	Mat rehaussementContour();
 	tuple<Mat, Mat, Mat, Mat> histogramme();
 };

@@ -78,13 +78,20 @@ public:
         bool connected2 = connect(this->tramegauche, &TrameGauche::demande_changer_image, this->tramedroite, &TrameDroite::charger_histogramme);
         bool connected3 = connect(this->tramedroite, &TrameDroite::traitement, this->tramecentrale, &TrameCentrale::appliquer_traitement);
 
+        bool connected4 = connect(this->tramedroite, &TrameDroite::flou, this->tramecentrale, &TrameCentrale::flouter);
+        bool connected5 = connect(this->tramedroite, &TrameDroite::contours, this->tramecentrale, &TrameCentrale::deriver);
+        bool connected6 = connect(this->tramedroite, &TrameDroite::detection_lignes, this->tramecentrale, &TrameCentrale::detecter_lignes);
+        bool connected7 = connect(this->tramedroite, &TrameDroite::rehaussement, this->tramecentrale, &TrameCentrale::rehausser);
+        bool connected8 = connect(this->tramedroite, &TrameDroite::segmentation, this->tramecentrale, &TrameCentrale::segmenter);
+
         //connect(trameApplication->tramegauche, &TrameGauche::demande_changer_image, trameApplication->tramecentrale, &TrameCentrale::changer_image);
-        if (!connected1 || !connected2 || !connected3) {
+        if (!connected1 || !connected2 || !connected3 || !connected4 || !connected5 || !connected6) {
             qDebug() << "Failed to connect the signal and slot!";
         }
     }
 
 protected:
+
     void resizeEvent(QResizeEvent *event) override {
         QFrame::resizeEvent(event);
         this->trameSup->setFixedHeight(event->size().height() / 10);

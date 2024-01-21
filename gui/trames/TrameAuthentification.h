@@ -38,6 +38,7 @@ public:
 
         usernameLineEdit = new QLineEdit(this);
         usernameLineEdit->setPlaceholderText("Username");
+        usernameLineEdit->setText("01-aa-01");
 
         passwordLineEdit = new QLineEdit(this);
         passwordLineEdit->setPlaceholderText("Password");

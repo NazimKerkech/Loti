@@ -342,7 +342,7 @@ Mat Image::houghLineTransform(float pourcentage)
     }
 
     // Affichage
-    imshow("Detected Lines", resultImage);
+    //imshow("Detected Lines", resultImage);
     return resultImage;
 }
 
@@ -352,7 +352,6 @@ Mat Image::convolution(Mat filtre) {
 
     int bord_i = filtre.rows/2;
     int bord_j = filtre.cols/2;
-    cout << "bords "<< bord_i << bord_j <<endl;
     for(int i=bord_i; i< convoluee.rows-bord_i; i++) {
         for(int j=bord_j; j< convoluee.cols-bord_j; j++) {
             for(int k=0; k<filtre.rows; k++) {
@@ -405,22 +404,17 @@ Mat Image::laplacien(int noFiltre) {
 }
 
 //Segmentation
-Mat Image::Segmentation(Mat image, double rSeuil, double gSeuil, double bSeuil) {
-    for (int i = 0; i < image.rows; ++i) {
-        for (int j = 0; j < image.cols; ++j) {
-            Vec3b &pixel = image.at<cv::Vec3b>(i, j); // référence pixel
-
+Mat Image::Segmentation(double rSeuil, double gSeuil, double bSeuil) {
+    Mat resultat = Mat::zeros(this->_img.size(), CV_8UC3);
+    for (int i = 0; i < this->rows(); ++i) {
+        for (int j = 0; j < this->cols(); ++j) {
+            Vec3b pixel = this->_img.at<Vec3b>(i, j); // référence pixel
             if (pixel[0] > bSeuil && pixel[1] > gSeuil && pixel[2] > rSeuil) {
-                pixel[0] = 255;//bleu
-                pixel[1] = 0;//green
-                pixel[2] = 0;//red
-            } else {
-
+                resultat.at<Vec3b>(i, j) = {255, 255, 255};
             }
         }
     }
-
-    return image;
+    return resultat.clone();
 }
 //Rehaussement
 Mat Image::rehaussementContour(){
@@ -430,38 +424,23 @@ Mat Image::rehaussementContour(){
     int nbComposante = _img.channels() ;
     vector<Mat> imageRehaussementComposante;
 
-    cout << "ok2" << endl;
-
     Mat contourImage= laplacien();
     Mat rehaussement;
-
-    cout << "ok3" << endl;
     // Addition de l'image originale et de l'image des contours (rehaussement)
     if(nbComposante == 1){
-
-
         rehaussement = _img + contourImage;
-        cout << "ok4" << endl;
     }else {
         split(_img, imageComposante) ;
         split(contourImage, contourComposante);
-        cout << "ok5" << endl;
         for (i = 0; i <3 ; i++) {
             imageRehaussementComposante.push_back(imageComposante[i] + contourComposante[i]);
         }
-
         merge(imageRehaussementComposante, rehaussement);
-
     }
-
-
-
     // Normalisation pour éviter des valeurs en dehors de la plage 0-255
     normalize(rehaussement, rehaussement, 0, 255, NORM_MINMAX);
-
-
     // Affichage de l'image rehaussée des contours
-   // imshow("Image avec rehaussement de contour", rehaussement);
+    // imshow("Image avec rehaussement de contour", rehaussement);
 
 
     return rehaussement;
