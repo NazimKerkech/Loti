@@ -433,7 +433,7 @@ Mat Image::rehaussementContour(){
         split(_img, imageComposante) ;
         split(contourImage, contourComposante);
         for (i = 0; i <3 ; i++) {
-            imageRehaussementComposante.push_back(imageComposante[i] + contourComposante[i]);
+            imageRehaussementComposante.push_back(imageComposante[i] - contourComposante[i]);
         }
         merge(imageRehaussementComposante, rehaussement);
     }
