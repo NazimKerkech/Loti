@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
     //vector<Image> Bibliotheque;
     //Bibliotheque = createBib(data);
 
-    Biblio Bibliotheque("defaut.bib");
+    Biblio Bibliotheque;
 
     //tri de la biblio 
 

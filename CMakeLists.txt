@@ -30,6 +30,8 @@ add_executable(LoTI
     gui/trames/TrameAuthentification.h
     gui/trames/TrameApplication.h
     gui/trames/TrameCentrale.h
+    gui/trames/QRangeSlider.cpp
+    gui/trames/QRangeSlider.hpp
 )
 
 add_definitions(-DSOURCE_DIR="${CMAKE_SOURCE_DIR}")

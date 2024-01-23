@@ -33,25 +33,20 @@ public:
         setStyleSheet("background-color: #f0f0f0; padding: 20px;");
 
         // Create UI components for the login frame
-        QLabel *titleLabel = new QLabel("Login", this);
+        QLabel *titleLabel = new QLabel("Authetification", this);
         titleLabel->setStyleSheet("font-size: 20px; font-weight: bold; margin-bottom: 20px;");
 
         usernameLineEdit = new QLineEdit(this);
-        usernameLineEdit->setPlaceholderText("Username");
+        usernameLineEdit->setPlaceholderText("Code");
         usernameLineEdit->setText("01-aa-01");
 
-        passwordLineEdit = new QLineEdit(this);
-        passwordLineEdit->setPlaceholderText("Password");
-        passwordLineEdit->setEchoMode(QLineEdit::Password);
-
-        QPushButton *loginButton = new QPushButton("Login", this);
+        QPushButton *loginButton = new QPushButton("Se connecter", this);
         connect(loginButton, &QPushButton::clicked, this, &TrameAuthentification::onLoginButtonClicked);
         messageLabel = new QLabel(this);
         // Layout setup
         QVBoxLayout *layout = new QVBoxLayout(this);
         layout->addWidget(titleLabel);
         layout->addWidget(usernameLineEdit);
-        layout->addWidget(passwordLineEdit);
         layout->addWidget(loginButton);
 
         setLayout(layout);
@@ -73,7 +68,7 @@ public:
             bool user_exist = utilisateur.login(inputValue.toStdString());
 
             if (!user_exist) {
-                messageLabel->setText("Pardon");
+                messageLabel->setText("Erreur");
             } else {
                 emit loginSuccess(inputValue.toStdString());
             }
@@ -81,7 +76,6 @@ public:
 
 private:
     QLineEdit *usernameLineEdit;
-    QLineEdit *passwordLineEdit;
     QLabel *messageLabel;
 };
 #endif //TRAMEAUTHENTIFICATION_H

@@ -21,9 +21,12 @@ using namespace std;
 using namespace cv;
 
 class TrameCentrale : public QFrame {
-private:
+    Q_OBJECT
     Biblio bibliotheque;
     Image _image;
+    int _indice;
+    signals:
+        void c_nouvelle_bibliotheque(Biblio bibliotheque);
 public:
     TrameCentrale(Biblio bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
         this->bibliotheque = bibliotheque;
@@ -53,6 +56,7 @@ public:
     }
     public slots:
         void changer_image(int indice_selectionne) {
+            _indice = indice_selectionne;
             this->update_image(bibliotheque.get_images()[indice_selectionne]);
         }
         void flouter(int taille_filtre) {
@@ -88,8 +92,8 @@ public:
             // Set the image on the label
             imageLabel->setPixmap(pixmap);
         }
-        void rehausser() {
-            Mat resultat = _image.rehaussementContour();
+        void rehausser(int noFiltre) {
+            Mat resultat = _image.rehaussementContour(noFiltre);
             Mat resultat2;
             normalize(resultat, resultat2, 0, 255, NORM_MINMAX);
 
@@ -124,9 +128,14 @@ public:
                 pixmap = QPixmap::fromImage(qtImage);
                 // Set the image on the label
                 imageLabel->setPixmap(pixmap);
-
-
             }
+        }
+        void charge_biblio(Biblio bibliotheque) {
+            this->bibliotheque = bibliotheque;
+        }
+        void suprimer_image() {
+            this->bibliotheque.delImage2(bibliotheque.get_images()[_indice].get_numero());
+            emit c_nouvelle_bibliotheque(this->bibliotheque);
         }
 private:
     QPixmap pixmap;

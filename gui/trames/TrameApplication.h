@@ -83,6 +83,15 @@ public:
         bool connected6 = connect(this->tramedroite, &TrameDroite::detection_lignes, this->tramecentrale, &TrameCentrale::detecter_lignes);
         bool connected7 = connect(this->tramedroite, &TrameDroite::rehaussement, this->tramecentrale, &TrameCentrale::rehausser);
         bool connected8 = connect(this->tramedroite, &TrameDroite::segmentation, this->tramecentrale, &TrameCentrale::segmenter);
+        connect(this->tramedroite, &TrameDroite::suprimer_image, this->tramecentrale, &TrameCentrale::suprimer_image);
+
+
+        connect(this->trameSup, &TrameSuperieure::nouvelle_bibliotheque, this->tramegauche, &TrameGauche::charge_biblio);
+        connect(this->trameSup, &TrameSuperieure::nouvelle_bibliotheque, this->tramedroite, &TrameDroite::charge_biblio);
+        connect(this->trameSup, &TrameSuperieure::nouvelle_bibliotheque, this->tramecentrale, &TrameCentrale::charge_biblio);
+
+        connect(this->tramecentrale, &TrameCentrale::c_nouvelle_bibliotheque, this->tramegauche, &TrameGauche::charge_biblio);
+        connect(this->tramecentrale, &TrameCentrale::c_nouvelle_bibliotheque, this->tramedroite, &TrameDroite::charge_biblio);
 
         //connect(trameApplication->tramegauche, &TrameGauche::demande_changer_image, trameApplication->tramecentrale, &TrameCentrale::changer_image);
         if (!connected1 || !connected2 || !connected3 || !connected4 || !connected5 || !connected6) {

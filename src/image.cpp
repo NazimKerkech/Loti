@@ -417,14 +417,14 @@ Mat Image::Segmentation(double rSeuil, double gSeuil, double bSeuil) {
     return resultat.clone();
 }
 //Rehaussement
-Mat Image::rehaussementContour(){
+Mat Image::rehaussementContour(int noFiltre){
     Mat imageComposante[3];
     Mat contourComposante[3];
     int i;
     int nbComposante = _img.channels() ;
     vector<Mat> imageRehaussementComposante;
 
-    Mat contourImage= laplacien();
+    Mat contourImage= laplacien(noFiltre);
     Mat rehaussement;
     // Addition de l'image originale et de l'image des contours (rehaussement)
     if(nbComposante == 1){

@@ -89,6 +89,14 @@ build CMakeFiles/LoTI.dir/src/utilisateur.cpp.o: CXX_COMPILER__LoTI_unscanned_De
   OBJECT_DIR = CMakeFiles/LoTI.dir
   OBJECT_FILE_DIR = CMakeFiles/LoTI.dir/src
 
+build CMakeFiles/LoTI.dir/gui/trames/QRangeSlider.cpp.o: CXX_COMPILER__LoTI_unscanned_Debug /home/thedoctor/Documents/LoTI/gui/trames/QRangeSlider.cpp || cmake_object_order_depends_target_LoTI
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DSOURCE_DIR=\"/home/thedoctor/Documents/LoTI\"
+  DEP_FILE = CMakeFiles/LoTI.dir/gui/trames/QRangeSlider.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -fPIC
+  INCLUDES = -isystem /usr/local/include/opencv4 -isystem /home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/LoTI.dir
+  OBJECT_FILE_DIR = CMakeFiles/LoTI.dir/gui/trames
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LoTI
@@ -97,7 +105,7 @@ build CMakeFiles/LoTI.dir/src/utilisateur.cpp.o: CXX_COMPILER__LoTI_unscanned_De
 #############################################
 # Link the executable LoTI
 
-build LoTI: CXX_EXECUTABLE_LINKER__LoTI_Debug CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o CMakeFiles/LoTI.dir/src/main.cpp.o CMakeFiles/LoTI.dir/src/image.cpp.o CMakeFiles/LoTI.dir/src/biblio.cpp.o CMakeFiles/LoTI.dir/src/utilisateur.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3 /usr/local/lib/libopencv_gapi.so.4.8.0 /usr/local/lib/libopencv_highgui.so.4.8.0 /usr/local/lib/libopencv_ml.so.4.8.0 /usr/local/lib/libopencv_objdetect.so.4.8.0 /usr/local/lib/libopencv_photo.so.4.8.0 /usr/local/lib/libopencv_stitching.so.4.8.0 /usr/local/lib/libopencv_video.so.4.8.0 /usr/local/lib/libopencv_videoio.so.4.8.0 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3 /usr/local/lib/libopencv_imgcodecs.so.4.8.0 /usr/local/lib/libopencv_dnn.so.4.8.0 /usr/local/lib/libopencv_calib3d.so.4.8.0 /usr/local/lib/libopencv_features2d.so.4.8.0 /usr/local/lib/libopencv_flann.so.4.8.0 /usr/local/lib/libopencv_imgproc.so.4.8.0 /usr/local/lib/libopencv_core.so.4.8.0 || LoTI_autogen LoTI_autogen_timestamp_deps
+build LoTI: CXX_EXECUTABLE_LINKER__LoTI_Debug CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o CMakeFiles/LoTI.dir/src/main.cpp.o CMakeFiles/LoTI.dir/src/image.cpp.o CMakeFiles/LoTI.dir/src/biblio.cpp.o CMakeFiles/LoTI.dir/src/utilisateur.cpp.o CMakeFiles/LoTI.dir/gui/trames/QRangeSlider.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3 /usr/local/lib/libopencv_gapi.so.4.8.0 /usr/local/lib/libopencv_highgui.so.4.8.0 /usr/local/lib/libopencv_ml.so.4.8.0 /usr/local/lib/libopencv_objdetect.so.4.8.0 /usr/local/lib/libopencv_photo.so.4.8.0 /usr/local/lib/libopencv_stitching.so.4.8.0 /usr/local/lib/libopencv_video.so.4.8.0 /usr/local/lib/libopencv_videoio.so.4.8.0 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3 /usr/local/lib/libopencv_imgcodecs.so.4.8.0 /usr/local/lib/libopencv_dnn.so.4.8.0 /usr/local/lib/libopencv_calib3d.so.4.8.0 /usr/local/lib/libopencv_features2d.so.4.8.0 /usr/local/lib/libopencv_flann.so.4.8.0 /usr/local/lib/libopencv_imgproc.so.4.8.0 /usr/local/lib/libopencv_core.so.4.8.0 || LoTI_autogen LoTI_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3  /usr/local/lib/libopencv_gapi.so.4.8.0  /usr/local/lib/libopencv_highgui.so.4.8.0  /usr/local/lib/libopencv_ml.so.4.8.0  /usr/local/lib/libopencv_objdetect.so.4.8.0  /usr/local/lib/libopencv_photo.so.4.8.0  /usr/local/lib/libopencv_stitching.so.4.8.0  /usr/local/lib/libopencv_video.so.4.8.0  /usr/local/lib/libopencv_videoio.so.4.8.0  /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3  /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3  /usr/local/lib/libopencv_imgcodecs.so.4.8.0  /usr/local/lib/libopencv_dnn.so.4.8.0  /usr/local/lib/libopencv_calib3d.so.4.8.0  /usr/local/lib/libopencv_features2d.so.4.8.0  /usr/local/lib/libopencv_flann.so.4.8.0  /usr/local/lib/libopencv_imgproc.so.4.8.0  /usr/local/lib/libopencv_core.so.4.8.0
   OBJECT_DIR = CMakeFiles/LoTI.dir

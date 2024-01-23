@@ -26,7 +26,7 @@ private:
     QTabWidget* _onglets_histogramme;
     Biblio _bibliotheque;
 
-    QSpinBox *SpinBox_flou_taille;
+    QSpinBox *SpinBox_flou_taille, *SpinBox_contour_taille,  *SpinBox_rehauss_taille;
     QSlider *seuil_r, *seuil_g, *seuil_b;
     QLabel *seuilr_label, *seuilg_label, *seuilb_label;
 
@@ -35,8 +35,9 @@ private:
         void contours(int noFiltre);
         void traitement(QString traitement);
         void detection_lignes();
-        void rehaussement();
+        void rehaussement(int noFiltre);
         void segmentation(int seuil_r, int seuil_g, int seuil_b);
+        void suprimer_image();
 public:
     TrameDroite(Biblio bibliotheque, string id, QWidget *parent = nullptr) : QFrame(parent) {
         this->_bibliotheque = bibliotheque;
@@ -74,11 +75,18 @@ public:
         QTreeWidgetItem *contours_Item = new QTreeWidgetItem(_Widget_traitementImg);
         contours_Item->setText(0, QString::fromStdString("Detection de contours"));
 
+        QLabel *taille_contour = new QLabel("Taille du filtre");
+        this->SpinBox_contour_taille = new QSpinBox;
+        SpinBox_contour_taille->setRange(1, 3);
+        SpinBox_contour_taille->setSingleStep(1);
         QPushButton *appliquer_contours = new QPushButton("Appliquer");
         connect(appliquer_contours, &QPushButton::clicked, this, &TrameDroite::onContours);
 
         QGridLayout *contours_layout = new QGridLayout;
+        contours_layout->addWidget(taille_contour, 0, 0);
+        contours_layout->addWidget(SpinBox_contour_taille, 0, 1);
         contours_layout->addWidget(appliquer_contours, 1, 1);
+
         QFrame *contours_frame = new QFrame;
         contours_frame->setLayout(contours_layout);
         QTreeWidgetItem *contours_Options = new QTreeWidgetItem(contours_Item);
@@ -102,11 +110,19 @@ public:
         QTreeWidgetItem *rehauss_Item = new QTreeWidgetItem(_Widget_traitementImg);
         rehauss_Item->setText(0, QString::fromStdString("Rehaussement de contours"));
 
+        QLabel *taille_rehauss = new QLabel("Taille du filtre");
+        this->SpinBox_rehauss_taille = new QSpinBox;
+        SpinBox_rehauss_taille->setRange(1, 3);
+        SpinBox_rehauss_taille->setSingleStep(1);
         QPushButton *appliquer_rehauss = new QPushButton("Appliquer");
         connect(appliquer_rehauss, &QPushButton::clicked, this, &TrameDroite::onRehauss);
 
         QGridLayout *rehauss_layout = new QGridLayout;
+        rehauss_layout->addWidget(taille_rehauss, 0, 0);
+        rehauss_layout->addWidget(SpinBox_rehauss_taille, 0, 1);
         rehauss_layout->addWidget(appliquer_rehauss, 1, 1);
+
+
         QFrame *rehauss_frame = new QFrame;
         rehauss_frame->setLayout(rehauss_layout);
         QTreeWidgetItem *rehauss_Options = new QTreeWidgetItem(rehauss_Item);
@@ -164,7 +180,9 @@ public:
 
             connect(_Widget_traitementImg, &QListWidget::itemDoubleClicked, this, &TrameDroite::onItemDoubleClicked);*/
 
-        _onglets_histogramme = new QTabWidget(this);
+        QPushButton *supprimer = new QPushButton("Supprimer");
+        connect(supprimer, &QPushButton::clicked, this, &TrameDroite::suprimer);
+        _onglets_histogramme = new QTabWidget();
 
         QVBoxLayout *layout = new QVBoxLayout(this);
 
@@ -176,24 +194,29 @@ public:
         string access = user.getUserAccess();
         if(user.getUserAccess() == "2") {
             layout->addWidget(_Widget_traitementImg);
+            layout->addStretch();
+            layout->addWidget(supprimer);
+            layout->addStretch();
+            layout->addWidget(_onglets_histogramme);
         }
-        layout->addStretch();
-        layout->addWidget(_onglets_histogramme);
 
         this->setFixedWidth(parent->size().width()*2/10);
     }
 public:
+    void suprimer() {
+        emit suprimer_image();
+    }
     void onflou() {
         emit flou(SpinBox_flou_taille->value());
     }
     void onContours() {
-        emit contours(2);
+        emit contours(SpinBox_contour_taille->value());
     }
     void onLignes() {
         emit detection_lignes();
     }
     void onRehauss() {
-        emit rehaussement();
+        emit rehaussement(SpinBox_rehauss_taille->value());
     }
     void onSegmentation() {
         emit segmentation(seuil_r->value(), seuil_g->value(), seuil_b->value());
@@ -236,6 +259,9 @@ public:
         QImage qtImage(image.data, image.cols, image.rows, image.step, QImage::Format_BGR888);
         pixmap = QPixmap::fromImage(qtImage);
         return pixmap;
+    }
+    void charge_biblio(Biblio bibliotheque) {
+        this->_bibliotheque = _bibliotheque;
     }
 
 protected:

@@ -33,25 +33,25 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 37,
+				"line" : 39,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 43,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 35,
+				"line" : 37,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 42,
+				"line" : 44,
 				"parent" : 0
 			}
 		]
@@ -142,7 +142,8 @@
 				1,
 				2,
 				5,
-				7
+				7,
+				16
 			]
 		}
 	],
@@ -283,7 +284,8 @@
 				1,
 				2,
 				5,
-				7
+				7,
+				16
 			]
 		},
 		{
@@ -300,21 +302,22 @@
 				12,
 				13,
 				14,
-				15
+				15,
+				17
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				16
+				18
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				17
+				19
 			]
 		}
 	],
@@ -404,6 +407,17 @@
 		{
 			"backtrace" : 1,
 			"path" : "gui/trames/TrameApplication.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "gui/trames/QRangeSlider.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "gui/trames/QRangeSlider.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

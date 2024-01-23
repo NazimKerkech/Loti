@@ -16,7 +16,7 @@ const string DATA_DIR(LOTI_DIR + "/dta/");
 // biblio.cpp
 
 Biblio::Biblio() {
-    _bibName = "defaut.bib";
+    _bibName = DATA_DIR+"defaut.bib";
     loadLibrary();
 }
 
@@ -84,7 +84,7 @@ void Biblio::delImage2(int numero) {
 }
 
 void Biblio::loadLibrary() {
-    std::vector<std::vector<std::string>> bib = loadCSV(DATA_DIR + _bibName);
+    std::vector<std::vector<std::string>> bib = loadCSV(_bibName);
     std::vector<std::vector<std::string>> descriptors = loadCSV(DATA_DIR+"descripteurs.csv");
     std::vector<std::vector<std::string>> descriptorsBib;
     for(int i = 0; i<bib.size(); i++)
