@@ -36,9 +36,9 @@ public:
         QLabel *titleLabel = new QLabel("Authetification", this);
         titleLabel->setStyleSheet("font-size: 20px; font-weight: bold; margin-bottom: 20px;");
 
-        usernameLineEdit = new QLineEdit(this);
-        usernameLineEdit->setPlaceholderText("Code");
-        usernameLineEdit->setText("01-aa-01");
+        codeLineEdit = new QLineEdit(this);
+        codeLineEdit->setPlaceholderText("Code");
+        codeLineEdit->setText("01-aa-01");
 
         QPushButton *loginButton = new QPushButton("Se connecter", this);
         connect(loginButton, &QPushButton::clicked, this, &TrameAuthentification::onLoginButtonClicked);
@@ -46,7 +46,7 @@ public:
         // Layout setup
         QVBoxLayout *layout = new QVBoxLayout(this);
         layout->addWidget(titleLabel);
-        layout->addWidget(usernameLineEdit);
+        layout->addWidget(codeLineEdit);
         layout->addWidget(loginButton);
 
         setLayout(layout);
@@ -64,7 +64,7 @@ public:
             Utilisateur utilisateur;
             utilisateur.loadCSV(LOTI_DIR+"/dta/utilisateurs.txt");
 
-            QString inputValue = usernameLineEdit->text();
+            QString inputValue = codeLineEdit->text();
             bool user_exist = utilisateur.login(inputValue.toStdString());
 
             if (!user_exist) {
@@ -75,7 +75,7 @@ public:
         }
 
 private:
-    QLineEdit *usernameLineEdit;
+    QLineEdit *codeLineEdit;
     QLabel *messageLabel;
 };
 #endif //TRAMEAUTHENTIFICATION_H

@@ -22,13 +22,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b6763ca9-ce96-40fc-900e-2d77a54f0a38" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/trames/TrameApplication.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameApplication.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/trames/TrameGauche.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameGauche.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/trames/TrameSuperieure.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameSuperieure.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/trames/TrameAuthentification.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameAuthentification.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +121,7 @@
       <workItem from="1705995589675" duration="3347000" />
       <workItem from="1705999590269" duration="8822000" />
       <workItem from="1706037821610" duration="4580000" />
-      <workItem from="1706251531788" duration="1961000" />
+      <workItem from="1706251531788" duration="4929000" />
     </task>
     <servers />
   </component>
