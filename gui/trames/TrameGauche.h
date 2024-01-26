@@ -31,14 +31,16 @@ public:
     QLabel *prix_min, *prix_max;
     QLineEdit *recherche_saisie;
     QLineEdit *source_edit, *titre_edit, *cout_edit, *numero_edit, *acces_edit;
+    string id;
     signals:
         void demande_changer_image(int indice_selectionne);
 public:
-    TrameGauche(Biblio bibliotheque, QWidget *parent = nullptr) : QFrame(parent) {
+    TrameGauche(Biblio bibliotheque, string id, QWidget *parent = nullptr) : QFrame(parent) {
         setObjectName("TrameGauche");  // Set a unique object name for the QFrame
         setStyleSheet("#TrameGauche { border: 3px solid black; }");
         // Create a QListWidget to display the list
         _Widget_bibliotheque = new QListWidget(this);
+        this->id = id;
 
         // Add items from the vector to the QListWidget
         for (const Image image : bibliotheque.get_images()) {
@@ -115,38 +117,46 @@ public:
         layout->addWidget(chercher);
         layout->addWidget(_Widget_bibliotheque);
 
-        QPushButton *ajouterImg = new QPushButton("Ajouter une image");
-        connect(ajouterImg, &QPushButton::clicked, this, &TrameGauche::ajouter_image);
+        const string LOTI_DIR(SOURCE_DIR);
+        Utilisateur user;
+        user.loadCSV(LOTI_DIR+"/dta/utilisateurs.txt");
 
-        QFrame *frame_add_img = new QFrame(this);
-        QGridLayout *layout_add_img = new QGridLayout();
-        layout_add_img->addWidget(new QLabel("Source"), 0, 0);
-        this->source_edit = new QLineEdit(this);
-        layout_add_img->addWidget(source_edit, 0, 1);
+        user.login(id);
+        string access = user.getUserAccess();
+        if(user.getUserAccess() == "2") {
+            QPushButton *ajouterImg = new QPushButton("Ajouter une image");
+            connect(ajouterImg, &QPushButton::clicked, this, &TrameGauche::ajouter_image);
 
-        layout_add_img->addWidget(new QLabel("Titre"), 0, 2);
-        this->titre_edit = new QLineEdit(this);
-        layout_add_img->addWidget(titre_edit, 0, 3);
+            QFrame *frame_add_img = new QFrame(this);
+            QGridLayout *layout_add_img = new QGridLayout();
+            layout_add_img->addWidget(new QLabel("Source"), 0, 0);
+            this->source_edit = new QLineEdit(this);
+            layout_add_img->addWidget(source_edit, 0, 1);
 
-        layout_add_img->addWidget(new QLabel("Numero"), 1, 0);
-        this->numero_edit = new QLineEdit(this);
-        layout_add_img->addWidget(numero_edit, 1, 1);
+            layout_add_img->addWidget(new QLabel("Titre"), 0, 2);
+            this->titre_edit = new QLineEdit(this);
+            layout_add_img->addWidget(titre_edit, 0, 3);
 
-        layout_add_img->addWidget(new QLabel("Cout"), 1, 2);
-        this->cout_edit = new QLineEdit(this);
-        layout_add_img->addWidget(cout_edit, 1, 3);
+            layout_add_img->addWidget(new QLabel("Numero"), 1, 0);
+            this->numero_edit = new QLineEdit(this);
+            layout_add_img->addWidget(numero_edit, 1, 1);
 
-        layout_add_img->addWidget(new QLabel("Acces"), 2, 0);
-        this->acces_edit = new QLineEdit(this);
-        layout_add_img->addWidget(acces_edit, 2, 1);
+            layout_add_img->addWidget(new QLabel("Cout"), 1, 2);
+            this->cout_edit = new QLineEdit(this);
+            layout_add_img->addWidget(cout_edit, 1, 3);
 
-        frame_add_img->setLayout(layout_add_img);
+            layout_add_img->addWidget(new QLabel("Acces"), 2, 0);
+            this->acces_edit = new QLineEdit(this);
+            layout_add_img->addWidget(acces_edit, 2, 1);
 
-        layout->addWidget(frame_add_img);
-        layout->addWidget(ajouterImg);
+            frame_add_img->setLayout(layout_add_img);
 
-        this->setFixedWidth(parent->size().width()*2/10);
-        //this->setFixedHeight(parent->size().height() * 5/ 6);
+            layout->addWidget(frame_add_img);
+            layout->addWidget(ajouterImg);
+
+            this->setFixedWidth(parent->size().width()*2/10);
+            //this->setFixedHeight(parent->size().height() * 5/ 6);
+        }
 
     }
     void ajouter_image() {

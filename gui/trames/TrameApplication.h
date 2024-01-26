@@ -44,7 +44,7 @@ public:
         // Initialisation des trames
         this->tramecentrale = new TrameCentrale(bibliotheque, this);
         this->trameSup = new TrameSuperieure(id, this);
-        this->tramegauche = new TrameGauche(bibliotheque, this);
+        this->tramegauche = new TrameGauche(bibliotheque, id, this);
         this->tramedroite = new TrameDroite(bibliotheque, id, this);
 
         //QWidget *centralWidget = new QWidget(this);

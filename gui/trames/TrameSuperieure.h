@@ -16,6 +16,9 @@ using namespace std;
 
 class TrameSuperieure : public QFrame {
     Q_OBJECT
+private:
+    QLabel *iconLabel;
+    string id;
     QFileDialog *dialogue;
 
     signals:
@@ -32,22 +35,8 @@ public:
         // Create the colored disc with user initials
         iconLabel = new QLabel(this);
         iconLabel->setFixedSize(30, 30);  // Adjust size as needed
-        //iconLabel->setAlignment(Qt::AlignCenter);
 
-        const string LOTI_DIR(SOURCE_DIR);
-        Utilisateur user;
-        user.loadCSV(LOTI_DIR+"/dta/utilisateurs.txt");
-
-        user.login(id);
-        string access = user.getUserAccess();
-        if(user.getUserAccess() == "2") {
-            updateIcon("");  // Replace with user's initials
-        }
-        else {
-            updateIcon("");  // Replace with user's initials
-        }
-
-
+        updateIcon();
 
         // Create a label for the user's name
         QLabel *nameLabel = new QLabel(QString::fromStdString(id), this);  // Replace with the user's name
@@ -85,19 +74,32 @@ public:
         QString file_name = dialogue->getOpenFileName();
         cout<<file_name.toStdString()<<endl;
     }*/
-    void updateIcon(string couleur) {
+    void updateIcon() {
+        const string LOTI_DIR(SOURCE_DIR);
+        Utilisateur user;
+        user.loadCSV(LOTI_DIR+"/dta/utilisateurs.txt");
+
+        user.login(id);
+        string access = user.getUserAccess();
+        QColor couleur;
+        if(user.getUserAccess() == "2") {
+            couleur = QColor(Qt::green);
+        }
+        else {
+            couleur = QColor(Qt::red);
+        }
         // Function to update the colored disc with user initials
-        QPixmap pixmap(30, 30);  // Adjust size as needed
+        QPixmap pixmap(20, 20);  // Adjust size as needed
         pixmap.fill(QColor("#00FFFFFF"));  // Replace with the desired color
 
-        QPen pen(Qt::red);
-        pen.setBrush(Qt::red);  // Set brush color (fill color)
+        QPen pen(couleur);
+        pen.setBrush(couleur);  // Set brush color (fill color)
         pen.setColor(QColor(0, 0, 0, 0));  // Set pen color (border color) with alpha 0 for transparency
 
         QPainter painter(&pixmap);
         painter.setPen(pen);
-        painter.setBrush(Qt::red);
-        painter.drawEllipse(0, 0, 25, 25);  // Example: Draw an ellipse
+        painter.setBrush(couleur);
+        painter.drawEllipse(0, 0, 10, 10);  // Example: Draw an ellipse
 
         painter.setRenderHint(QPainter::Antialiasing, true);
         //painter.setBrush(Qt::red);
@@ -108,9 +110,7 @@ public:
 
         iconLabel->setPixmap(pixmap);
     }
-private:
-    QLabel *iconLabel;
-    string id;
+
 };
 
 #endif //TRAMESUPERIEURE_H
