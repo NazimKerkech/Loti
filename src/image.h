@@ -51,7 +51,7 @@ public:
 
 vector<vector<string>> loadCSV(string);
 void writeCSV(string, vector<vector<string>>);
-void appendCSV(vector<vector<string>>);
+void appendCSV(string filename, vector<string> ligne);
 
 vector<Image> createBib(vector<vector<string>>);
 

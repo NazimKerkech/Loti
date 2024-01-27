@@ -93,6 +93,9 @@ public:
         connect(this->tramecentrale, &TrameCentrale::c_nouvelle_bibliotheque, this->tramegauche, &TrameGauche::charge_biblio);
         connect(this->tramecentrale, &TrameCentrale::c_nouvelle_bibliotheque, this->tramedroite, &TrameDroite::charge_biblio);
 
+        connect(this->tramegauche, &TrameGauche::nouvelle_bibliotheque, this->tramedroite, &TrameDroite::charge_biblio);
+        connect(this->tramegauche, &TrameGauche::nouvelle_bibliotheque, this->tramecentrale, &TrameCentrale::charge_biblio);
+
         //connect(trameApplication->tramegauche, &TrameGauche::demande_changer_image, trameApplication->tramecentrale, &TrameCentrale::changer_image);
         if (!connected1 || !connected2 || !connected3 || !connected4 || !connected5 || !connected6) {
             qDebug() << "Failed to connect the signal and slot!";

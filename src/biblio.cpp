@@ -107,11 +107,13 @@ void Biblio::saveLibrary() {
 
     for (auto& image : _bib) {
         std::vector<std::string> imageDescriptors;
-        imageDescriptors.push_back(image.get_titre());
-        imageDescriptors.push_back(image.get_titre());
-        imageDescriptors.push_back(std::to_string(image.rows()));
-        imageDescriptors.push_back(std::to_string(image.cols()));
-        imageDescriptors.push_back(std::to_string(image.getImg().type()));
+        //imageDescriptors.push_back(image.get_titre());
+        //imageDescriptors.push_back(image.get_titre());
+        //imageDescriptors.push_back(std::to_string(image.rows()));
+        //imageDescriptors.push_back(std::to_string(image.cols()));
+        //imageDescriptors.push_back(std::to_string(image.getImg().type()));
+
+        imageDescriptors.push_back(std::to_string(image.get_numero()));
         descriptors.push_back(imageDescriptors);
     }
 
@@ -121,7 +123,20 @@ void Biblio::saveLibrary() {
 void Biblio::updateCSV() {
     saveLibrary();
 }
-void Biblio::ajouter_image(Image img) {
+void Biblio::ajouter_image(Image img, string path) {
+    vector<string> descripteurs;
+    descripteurs.push_back(img.get_source()); // source
+    descripteurs.push_back(img.get_titre()); // titre
+    descripteurs.push_back(to_string(img.get_numero())); // numero par defaut
+    descripteurs.push_back(to_string(img.get_cout())); // cout
+    descripteurs.push_back(to_string(img.get_acces())); // acces
+    appendCSV(DATA_DIR + "descripteurs.csv", descripteurs);
+
+    std::filesystem::path pathObj(path);
+    std::string extension = pathObj.extension().string();
+
+    std::filesystem::copy_file(path, DATA_DIR+to_string(img.get_numero())+extension, std::filesystem::copy_options::overwrite_existing);
+
     this->_bib.push_back(img);
 }
 

@@ -34,7 +34,7 @@ public:
 
     // MAJ du filtre CSV
     void updateCSV();
-    void ajouter_image(Image img);
+    void ajouter_image(Image img, string path);
 };
 
 #endif // BIBLIO_H

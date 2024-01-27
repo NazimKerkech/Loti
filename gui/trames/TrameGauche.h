@@ -177,7 +177,7 @@ public:
         descripteurs.push_back(cout_edit->text().toStdString());
         descripteurs.push_back(acces_edit->text().toStdString());
         Image nouvelle_img = Image(descripteurs);
-        this->_bibliotheque.ajouter_image(nouvelle_img);
+        this->_bibliotheque.ajouter_image(nouvelle_img, fichier);
         this->_bibliotheque.updateCSV();
         this->charge_biblio(_bibliotheque);
         emit nouvelle_bibliotheque(_bibliotheque);
