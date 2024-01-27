@@ -430,7 +430,7 @@ Mat Image::rehaussementContour(int noFiltre){
     Mat rehaussement;
     // Addition de l'image originale et de l'image des contours (rehaussement)
     if(nbComposante == 1){
-        rehaussement = _img + contourImage;
+        rehaussement = _img - contourImage;
     }else {
         split(_img, imageComposante) ;
         split(contourImage, contourComposante);
@@ -467,7 +467,6 @@ tuple<Mat, Mat, Mat, Mat> Image::histogramme() {
     int maxCount = *max_element(hist.begin(), hist.end());
     for (int i = 0; i < 256; i++) {
         int barHeight = static_cast<int>(hist[i] * 256.0 / maxCount);
-        //line(histImage, Point(i, 256), Point(i, 256 - barHeight), Scalar(255, 255, 255));
         // Choisissez la couleur en fonction du canal
         Scalar color;
         color = Scalar(255, 255, 255);
@@ -480,8 +479,6 @@ tuple<Mat, Mat, Mat, Mat> Image::histogramme() {
     Mat histImageRed = Mat::zeros(256, 256, CV_8UC3);
     Mat histImageGreen = Mat::zeros(256, 256, CV_8UC3);
     Mat histImageBlue = Mat::zeros(256, 256, CV_8UC3);
-
-    //Mat histImageCombined;
     
     // Calculez et affichez l'histogramme pour chaque canal
     for (int channel = 0; channel < image.channels(); ++channel) {
@@ -498,7 +495,6 @@ tuple<Mat, Mat, Mat, Mat> Image::histogramme() {
         int maxCount = *max_element(hist.begin(), hist.end());
         for (int i = 0; i < 256; i++) {
             int barHeight = static_cast<int>(hist[i] * 256.0 / maxCount);
-            //line(histImage, Point(i, 256), Point(i, 256 - barHeight), Scalar(255, 255, 255));
             // Choisissez la couleur en fonction du canal
             Scalar color;
             if (channel == 0)      // canal bleu
@@ -517,14 +513,5 @@ tuple<Mat, Mat, Mat, Mat> Image::histogramme() {
                 line(histImageRed, Point(i, 256), Point(i, 256 - barHeight), color);
         }
     }
-
-    //vector<Mat> channels;
-    //channels.push_back(histImageRed);
-    //channels.push_back(histImageGreen);
-    //channels.push_back(histImageBlue);
-
-    //Mat histImageCombined;
-    //cv::merge(channels, histImageCombined);
-
     return make_tuple(histImageBlue, histImageGreen, histImageRed, histImage);
 }
