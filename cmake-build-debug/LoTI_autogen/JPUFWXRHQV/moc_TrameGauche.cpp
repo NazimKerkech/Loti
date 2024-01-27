@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_TrameGauche_t {
-    QByteArrayData data[4];
-    char stringdata0[54];
+    QByteArrayData data[7];
+    char stringdata0[96];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,11 +35,15 @@ static const qt_meta_stringdata_TrameGauche_t qt_meta_stringdata_TrameGauche = {
 QT_MOC_LITERAL(0, 0, 11), // "TrameGauche"
 QT_MOC_LITERAL(1, 12, 21), // "demande_changer_image"
 QT_MOC_LITERAL(2, 34, 0), // ""
-QT_MOC_LITERAL(3, 35, 18) // "indice_selectionne"
+QT_MOC_LITERAL(3, 35, 18), // "indice_selectionne"
+QT_MOC_LITERAL(4, 54, 21), // "nouvelle_bibliotheque"
+QT_MOC_LITERAL(5, 76, 6), // "Biblio"
+QT_MOC_LITERAL(6, 83, 12) // "bibliotheque"
 
     },
     "TrameGauche\0demande_changer_image\0\0"
-    "indice_selectionne"
+    "indice_selectionne\0nouvelle_bibliotheque\0"
+    "Biblio\0bibliotheque"
 };
 #undef QT_MOC_LITERAL
 
@@ -49,18 +53,20 @@ static const uint qt_meta_data_TrameGauche[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   19,    2, 0x06 /* Public */,
+       1,    1,   24,    2, 0x06 /* Public */,
+       4,    1,   27,    2, 0x06 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void, 0x80000000 | 5,    6,
 
        0        // eod
 };
@@ -72,6 +78,7 @@ void TrameGauche::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         (void)_t;
         switch (_id) {
         case 0: _t->demande_changer_image((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->nouvelle_bibliotheque((*reinterpret_cast< Biblio(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -80,6 +87,13 @@ void TrameGauche::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
             using _t = void (TrameGauche::*)(int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&TrameGauche::demande_changer_image)) {
                 *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (TrameGauche::*)(Biblio );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&TrameGauche::nouvelle_bibliotheque)) {
+                *result = 1;
                 return;
             }
         }
@@ -115,13 +129,13 @@ int TrameGauche::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
@@ -131,6 +145,13 @@ void TrameGauche::demande_changer_image(int _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void TrameGauche::nouvelle_bibliotheque(Biblio _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

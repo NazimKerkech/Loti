@@ -121,4 +121,8 @@ void Biblio::saveLibrary() {
 void Biblio::updateCSV() {
     saveLibrary();
 }
+void Biblio::ajouter_image(Image img) {
+    this->_bib.push_back(img);
+}
+
 

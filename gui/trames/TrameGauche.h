@@ -21,6 +21,7 @@
 #include "../../src/biblio.h"
 #include <QLineEdit>
 #include <QFileDialog>
+#include <filesystem>
 using namespace std;
 
 class TrameGauche: public QFrame {
@@ -32,8 +33,10 @@ public:
     QLineEdit *recherche_saisie;
     QLineEdit *source_edit, *titre_edit, *cout_edit, *numero_edit, *acces_edit;
     string id;
+    Biblio _bibliotheque;
     signals:
         void demande_changer_image(int indice_selectionne);
+        void nouvelle_bibliotheque(Biblio bibliotheque);
 public:
     TrameGauche(Biblio bibliotheque, string id, QWidget *parent = nullptr) : QFrame(parent) {
         setObjectName("TrameGauche");  // Set a unique object name for the QFrame
@@ -41,6 +44,7 @@ public:
         // Create a QListWidget to display the list
         _Widget_bibliotheque = new QListWidget(this);
         this->id = id;
+        _bibliotheque = bibliotheque;
 
         // Add items from the vector to the QListWidget
         for (const Image image : bibliotheque.get_images()) {
@@ -137,17 +141,13 @@ public:
             this->titre_edit = new QLineEdit(this);
             layout_add_img->addWidget(titre_edit, 0, 3);
 
-            layout_add_img->addWidget(new QLabel("Numero"), 1, 0);
-            this->numero_edit = new QLineEdit(this);
-            layout_add_img->addWidget(numero_edit, 1, 1);
-
-            layout_add_img->addWidget(new QLabel("Cout"), 1, 2);
+            layout_add_img->addWidget(new QLabel("Cout"), 1, 0);
             this->cout_edit = new QLineEdit(this);
-            layout_add_img->addWidget(cout_edit, 1, 3);
+            layout_add_img->addWidget(cout_edit, 1, 1);
 
-            layout_add_img->addWidget(new QLabel("Acces"), 2, 0);
+            layout_add_img->addWidget(new QLabel("Acces"), 1, 2);
             this->acces_edit = new QLineEdit(this);
-            layout_add_img->addWidget(acces_edit, 2, 1);
+            layout_add_img->addWidget(acces_edit, 1, 3);
 
             frame_add_img->setLayout(layout_add_img);
 
@@ -166,16 +166,24 @@ public:
         QString file_name = dialogue->getOpenFileName(this, QString::fromStdString(DATA_DIR), tr("Bibliotheque (*.bib)"));
         string fichier = file_name.toStdString();
 
+        std::filesystem::path pathObj(fichier);
+        std::string fileNameWithoutExtension = pathObj.stem().string();
+
+
         vector<string> descripteurs;
         descripteurs.push_back(source_edit->text().toStdString());
         descripteurs.push_back(titre_edit->text().toStdString());
-        descripteurs.push_back(numero_edit->text().toStdString());
+        descripteurs.push_back(fileNameWithoutExtension);
         descripteurs.push_back(cout_edit->text().toStdString());
         descripteurs.push_back(acces_edit->text().toStdString());
-        Image *nouvelle_img = new Image(descripteurs);
-
+        Image nouvelle_img = Image(descripteurs);
+        this->_bibliotheque.ajouter_image(nouvelle_img);
+        this->_bibliotheque.updateCSV();
+        this->charge_biblio(_bibliotheque);
+        emit nouvelle_bibliotheque(_bibliotheque);
     }
     void charge_biblio(Biblio bibliotheque) {
+        this->_bibliotheque = bibliotheque;
         _Widget_bibliotheque->clear();
         for (const Image image : bibliotheque.get_images()) {
 

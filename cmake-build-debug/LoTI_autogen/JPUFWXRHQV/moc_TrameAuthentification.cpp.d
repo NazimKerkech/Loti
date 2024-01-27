@@ -43,6 +43,10 @@
   /usr/include/c++/11/bits/exception.h \
   /usr/include/c++/11/bits/exception_defines.h \
   /usr/include/c++/11/bits/exception_ptr.h \
+  /usr/include/c++/11/bits/fs_dir.h \
+  /usr/include/c++/11/bits/fs_fwd.h \
+  /usr/include/c++/11/bits/fs_ops.h \
+  /usr/include/c++/11/bits/fs_path.h \
   /usr/include/c++/11/bits/functexcept.h \
   /usr/include/c++/11/bits/functional_hash.h \
   /usr/include/c++/11/bits/hash_bytes.h \
@@ -127,6 +131,7 @@
   /usr/include/c++/11/climits \
   /usr/include/c++/11/clocale \
   /usr/include/c++/11/cmath \
+  /usr/include/c++/11/codecvt \
   /usr/include/c++/11/compare \
   /usr/include/c++/11/complex \
   /usr/include/c++/11/concepts \
@@ -150,6 +155,7 @@
   /usr/include/c++/11/ext/numeric_traits.h \
   /usr/include/c++/11/ext/string_conversions.h \
   /usr/include/c++/11/ext/type_traits.h \
+  /usr/include/c++/11/filesystem \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/initializer_list \
   /usr/include/c++/11/iomanip \
@@ -181,6 +187,7 @@
   /usr/include/c++/11/streambuf \
   /usr/include/c++/11/string \
   /usr/include/c++/11/string_view \
+  /usr/include/c++/11/system_error \
   /usr/include/c++/11/tr1/bessel_function.tcc \
   /usr/include/c++/11/tr1/beta_function.tcc \
   /usr/include/c++/11/tr1/ell_integral.tcc \

@@ -43,9 +43,18 @@ public:
         //nameLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
         //layout->setDirection(QBoxLayout::RightToLeft);
-        QPushButton *openButton = new QPushButton("Ouvrir une bibliotheque", this);
-        connect(openButton, &QPushButton::clicked, this, &TrameSuperieure::openFile);
-        layout->addWidget(openButton);
+        const string LOTI_DIR(SOURCE_DIR);
+        Utilisateur user;
+        user.loadCSV(LOTI_DIR+"/dta/utilisateurs.txt");
+
+        user.login(id);
+        string access = user.getUserAccess();
+        QColor couleur;
+        if(user.getUserAccess() == "2") {
+            QPushButton *openButton = new QPushButton("Ouvrir une bibliotheque", this);
+            connect(openButton, &QPushButton::clicked, this, &TrameSuperieure::openFile);
+            layout->addWidget(openButton);
+        }
         layout->addStretch();
         layout->addWidget(iconLabel);
         layout->addWidget(nameLabel);
@@ -62,7 +71,7 @@ public:
         const string LOTI_DIR(SOURCE_DIR);
         const string DATA_DIR(LOTI_DIR+"/dta/");
 
-        QString file_name = dialogue->getOpenFileName(this, QString::fromStdString(DATA_DIR), tr("Bibliotheque (*.bib)"));
+        QString file_name = dialogue->getOpenFileName(this, QString::fromStdString(DATA_DIR), tr("Image"));
         string fichier = file_name.toStdString();
 
         Biblio Bibliotheque(fichier);
