@@ -428,7 +428,7 @@ Mat Image::rehaussementContour(int noFiltre){
     Mat rehaussement;
     // Addition de l'image originale et de l'image des contours (rehaussement)
     if(nbComposante == 1){
-        rehaussement = _img + contourImage;
+        rehaussement = _img - contourImage;
     }else {
         split(_img, imageComposante) ;
         split(contourImage, contourComposante);
