@@ -31,6 +31,8 @@ public:
 
     // enregistrer la biblio au csv
     void saveLibrary();
+    // enregistrer des .bib à partir d'une bibliotheque
+    void saveLibraryWithImages();
 
     // MAJ du fichier CSV
     void updateCSV();
