@@ -124,6 +124,26 @@ void Biblio::saveLibrary() {
     writeCSV(_bibName, descriptors);
 }
 
+//save les .bib a partir dune bibliotheque
+
+void Biblio::saveLibraryWithImages() {
+    ofstream bibFile(_bibName);
+    if (bibFile.is_open()) {
+        for (auto& image : _bib) {
+            bibFile << "Titre: " << image.get_titre() << endl;
+            // Enregistrer l'image
+            string imageFileName = "images/" + image.get_titre() + ".jpg";
+            cv::imwrite(imageFileName, image.getImg());
+            bibFile << "Chemin de l'image: " << imageFileName << endl;
+            bibFile << "\n";
+        }
+        bibFile.close();
+    } else {
+        cerr << "Erreur : Impossible d'ouvrir le fichier" << endl; //message derreur
+    }
+}
+
+
 void Biblio::updateCSV() {
     saveLibrary();
 }
