@@ -84,3 +84,12 @@
 924	5571	1706637097457825679	CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o	9bfa4fef89cde1ef
 5571	10415	1706637102301788812	CMakeFiles/LoTI.dir/src/main.cpp.o	2ff3262b83f3c6d3
 10416	11253	1706637103133782481	LoTI	65ef3ad1b73cde6f
+37	1835	1706644544326833672	LoTI_autogen/timestamp	c4690bd02d960c9f
+37	1835	1706644544326833672	LoTI_autogen/mocs_compilation.cpp	c4690bd02d960c9f
+37	1835	1706644544326833672	/home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/timestamp	c4690bd02d960c9f
+37	1835	1706644544326833672	/home/thedoctor/Documents/LoTI/cmake-build-debug/LoTI_autogen/mocs_compilation.cpp	c4690bd02d960c9f
+6	6727	1706645053840772676	CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o	9bfa4fef89cde1ef
+6730	13116	1706645060228427766	CMakeFiles/LoTI.dir/src/main.cpp.o	2ff3262b83f3c6d3
+13116	17260	1706645064380244905	CMakeFiles/LoTI.dir/src/image.cpp.o	a893fb3b487760e3
+17260	20817	1706645067940110229	CMakeFiles/LoTI.dir/src/biblio.cpp.o	772a580cc10b37b3
+20817	21764	1706645068884077734	LoTI	65ef3ad1b73cde6f

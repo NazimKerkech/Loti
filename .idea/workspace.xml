@@ -22,12 +22,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b6763ca9-ce96-40fc-900e-2d77a54f0a38" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/biblio.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/biblio.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/image.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/image.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI_autogen.dir/ParseCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI_autogen.dir/ParseCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dta/descripteurs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dta/descripteurs.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/trames/TrameGauche.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameGauche.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/biblio.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/biblio.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/biblio.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/biblio.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/image.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/image.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/image.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/image.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +93,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "CMake Application.LoTI.executor": "Run",
+    "CMake Application.LoTI.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -97,7 +101,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/thedoctor/Documents/LoTI/gui/trames",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -146,6 +150,7 @@
       <workItem from="1706357798737" duration="27000" />
       <workItem from="1706623162583" duration="2024000" />
       <workItem from="1706632898510" duration="2864000" />
+      <workItem from="1706645018725" duration="398000" />
     </task>
     <servers />
   </component>
