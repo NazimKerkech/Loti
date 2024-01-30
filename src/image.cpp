@@ -351,10 +351,16 @@ void Image::set_acces(string acces)
 }
 
 
-void Image::tri_Cout(vector<Image>& bibliotheque) { // Tri d'images par ordre décroissant
-    sort(bibliotheque.begin(), bibliotheque.end(), [](const Image& img1, const Image& img2) {
-        return img1._cout > img2._cout;
-    });
+bool compareImages(const Image& img1, const Image& img2,double coutMin, double coutMax){
+    return img1.get_cout() >= coutMin && img1.get_cout() <= coutMax &&
+           img2.get_cout() >= coutMin && img2.get_cout() <= coutMax &&
+           img1.get_cout() > img2.get_cout();
+}
+
+void Image::tri_Cout(vector<Image>& biblio, double coutMin, double coutMax) {
+        sort(biblio.begin(), biblio.end(), [coutMin, coutMax](const Image &img1, const Image &img2) {
+            return compareImages(img1, img2, coutMin, coutMax);
+        });
 }
 
 // Traitement d'image
