@@ -12,7 +12,7 @@
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QHeaderView>
-
+#include <ctime>
 #include <string>
 #include "QRangeSlider.hpp"
 //class FenetrePrincipale;
@@ -23,6 +23,7 @@
 #include <QFileDialog>
 #include <filesystem>
 using namespace std;
+namespace fs = std::filesystem;
 
 class TrameGauche: public QFrame {
     Q_OBJECT
@@ -163,24 +164,34 @@ public:
         const string LOTI_DIR(SOURCE_DIR);
         const string DATA_DIR(LOTI_DIR+"/dta/");
         QFileDialog *dialogue = new QFileDialog();
-        QString file_name = dialogue->getOpenFileName(this, QString::fromStdString(DATA_DIR), tr("Bibliotheque (*.bib)"));
-        string fichier = file_name.toStdString();
+        QString file_name = dialogue->getOpenFileName(this, "ouvrir une bibliotheque", QString::fromStdString(DATA_DIR), tr("Images (*.png *.jpg *.bmp *.tif *.tiff *.jpeg)"));
 
+        string fichier = file_name.toStdString();
+        if (fichier==""){
+            return;
+        }
         std::filesystem::path pathObj(fichier);
         std::string fileNameWithoutExtension = pathObj.stem().string();
 
-
+        std::hash<std::string> hasher;  // Hash function for strings
+        time_t now = time(0); // unique id
+        string numeroImage = to_string(now);
         vector<string> descripteurs;
         descripteurs.push_back(source_edit->text().toStdString());
         descripteurs.push_back(titre_edit->text().toStdString());
-        descripteurs.push_back(fileNameWithoutExtension);
+        descripteurs.push_back(numeroImage);
         descripteurs.push_back(cout_edit->text().toStdString());
         descripteurs.push_back(acces_edit->text().toStdString());
+
+        std::filesystem::path pathObj2(fichier);
+        std::string extension = pathObj2.extension().string();
+        std::filesystem::copy_file(fichier, DATA_DIR+numeroImage+extension, std::filesystem::copy_options::overwrite_existing);
+
         Image nouvelle_img = Image(descripteurs);
-        this->_bibliotheque.ajouter_image(nouvelle_img, fichier);
+        this->_bibliotheque.ajouter_image(nouvelle_img);
         this->_bibliotheque.updateCSV();
         this->charge_biblio(_bibliotheque);
-        emit nouvelle_bibliotheque(_bibliotheque);
+        emit this->nouvelle_bibliotheque(_bibliotheque);
     }
     void charge_biblio(Biblio bibliotheque) {
         this->_bibliotheque = bibliotheque;

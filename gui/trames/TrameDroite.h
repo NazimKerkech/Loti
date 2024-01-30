@@ -261,7 +261,7 @@ public:
         return pixmap;
     }
     void charge_biblio(Biblio bibliotheque) {
-        this->_bibliotheque = _bibliotheque;
+        this->_bibliotheque = bibliotheque;
     }
 
 protected:

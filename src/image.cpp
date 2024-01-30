@@ -22,13 +22,12 @@ const string DATA_DIR(LOTI_DIR + "/dta/");
 
 Image::Image(vector<string> listDescripteurs)
 {
-    std::hash<std::string> hasher;  // Hash function for strings
 
     _img = loadImage(DATA_DIR + listDescripteurs[2]); //ouverture avec le numero de l'image
 
     _source = listDescripteurs[0];
     _titre  = listDescripteurs[1];
-    _numero = hasher(listDescripteurs[2]); //convertir str en int
+    _numero = stoi(listDescripteurs[2]); //convertir str en int
     _cout   = stod(listDescripteurs[3]);
     _acces  = listDescripteurs[4][0]; // normalement un seul charactere
 }
@@ -151,7 +150,7 @@ Mat loadImage(const string& imageName) //permet de charger une image avec seulem
 
     for (const auto& ext : extensions) {
         string fullPath = imageName + ext;
-        
+
         if (filesystem::exists(fullPath))
         {
             image = imread(fullPath);

@@ -71,9 +71,11 @@ public:
         const string LOTI_DIR(SOURCE_DIR);
         const string DATA_DIR(LOTI_DIR+"/dta/");
 
-        QString file_name = dialogue->getOpenFileName(this, QString::fromStdString(DATA_DIR), tr("Image"));
+        QString file_name = dialogue->getOpenFileName(this, "ouvrir une bibliotheque", QString::fromStdString(DATA_DIR), tr("Bibliotheque (*.bib)"));
         string fichier = file_name.toStdString();
-
+        if (fichier==""){
+            return;
+        }
         Biblio Bibliotheque(fichier);
         emit nouvelle_bibliotheque(Bibliotheque);
         // ouvrir la biblio

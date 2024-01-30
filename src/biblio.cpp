@@ -123,7 +123,7 @@ void Biblio::saveLibrary() {
 void Biblio::updateCSV() {
     saveLibrary();
 }
-void Biblio::ajouter_image(Image img, string path) {
+void Biblio::ajouter_image(Image img) {
     vector<string> descripteurs;
     descripteurs.push_back(img.get_source()); // source
     descripteurs.push_back(img.get_titre()); // titre
@@ -132,10 +132,6 @@ void Biblio::ajouter_image(Image img, string path) {
     descripteurs.push_back(to_string(img.get_acces())); // acces
     appendCSV(DATA_DIR + "descripteurs.csv", descripteurs);
 
-    std::filesystem::path pathObj(path);
-    std::string extension = pathObj.extension().string();
-
-    std::filesystem::copy_file(path, DATA_DIR+to_string(img.get_numero())+extension, std::filesystem::copy_options::overwrite_existing);
 
     this->_bib.push_back(img);
 }
