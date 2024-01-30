@@ -483,7 +483,8 @@ Mat Image::laplacien(int noFiltre) {
                    0   , 0.0625   , 0.1250,    0.0625,         0);
 }
     Mat laplacien_res;
-    cv::filter2D(_img, laplacien_res, -1, kernel);
+    //cv::filter2D(_img, laplacien_res, -1, kernel);
+    laplacien_res = convolution(kernel);
 
     return laplacien_res;
 }
