@@ -35,6 +35,10 @@ public:
     // MAJ du filtre CSV
     void updateCSV();
     void ajouter_image(Image img);
+    // tri d'images dans la biblio
+    vector<Image> filterImages(const string& sourceMin, const string& sourceMax,
+                               int numeroMin, int numeroMax,
+                               double coutMin, double coutMax);
 };
 
 #endif // BIBLIO_H
