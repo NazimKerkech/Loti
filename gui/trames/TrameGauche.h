@@ -48,8 +48,8 @@ public:
         _bibliotheque = bibliotheque;
 
         // Add items from the vector to the QListWidget
-        for (const Image image : bibliotheque.get_images()) {
-
+        int indice = 0;
+        for ( Image image : bibliotheque.get_images()) {
             //init tableau
             QTableWidget* tableau = new QTableWidget();
             tableau->setRowCount(5);
@@ -70,6 +70,40 @@ public:
             tableau->setItem(3, col, new QTableWidgetItem(QString(to_string(image.get_cout()).c_str())));
             tableau->setItem(4, col, new QTableWidgetItem(QString(image.get_acces())));
 
+            
+            Image *image_temp = &image;
+            qDebug() << image.get_numero() << endl;
+            qDebug() << image_temp->get_numero() << endl;
+
+            //maj des valeurs dans la base de donne si modification
+            QObject::connect(tableau, &QTableWidget::cellChanged, this, [tableau, indice, this](int row, int column) {
+                QTableWidgetItem* item = tableau->item(row, column);
+                
+                if (item) {
+                    qDebug() << "Cell changed at" << row << "," << column << "New value:" << item->text();
+                    switch (row) {
+                    case 0:
+                        _bibliotheque.get_images()[indice].set_source(item->text().toStdString());
+                        break;
+                    case 1:
+                        _bibliotheque.get_images()[indice].set_titre(item->text().toStdString());
+                        break;
+                    case 2:
+                        _bibliotheque.get_images()[indice].set_numero(item->text().toStdString());
+                        break;
+                    case 3:
+                        _bibliotheque.get_images()[indice].set_cout(item->text().toStdString());
+                        break;
+                    case 4:
+                        _bibliotheque.get_images()[indice].set_acces(item->text().toStdString());
+                        break;
+                    default:
+                        qDebug() << "Erreur maj valeur tableau" << endl;
+                        break;
+                    }
+                }
+                });
+
             //QListWidgetItem *listItem = new QListWidgetItem(QString::fromStdString(image._titre));
             //_Widget_bibliotheque->addItem(new QListWidgetItem(QString::fromStdString(image.get_titre())));
 
@@ -88,6 +122,7 @@ public:
 
             _Widget_bibliotheque->addItem(listWidgetItem);
             _Widget_bibliotheque->setItemWidget(listWidgetItem, tableau);
+            indice++;
         }
         connect(_Widget_bibliotheque, &QListWidget::itemSelectionChanged, this, &TrameGauche::onItemSelectionChanged);
         // Set up layout

@@ -35,6 +35,12 @@ public:
 	string get_titre() const;
 	char get_acces() const;
 
+	void set_source(string) ;
+	void set_numero(string) ;
+	void set_cout(string) ;
+	void set_titre(string) ;
+	void set_acces(string) ;
+
 	//pour le tri des images
     static void tri_Cout(vector<Image>& bibliotheque); //il demandait static
 	/*

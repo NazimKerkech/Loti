@@ -28,6 +28,10 @@ vector<Image> Biblio::get_images()
 {
     return _bib;
 }
+void Biblio::set_images(int i, Image image)
+{
+    _bib[i] = image;
+}
 
 void Biblio::displayDescriptors() {
     for (auto& image : _bib) {
