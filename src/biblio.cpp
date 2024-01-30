@@ -180,4 +180,41 @@ void Biblio::saveBib() {
 
     bibFile.close();
 }
+////////////////
+// fonction getprix max
+double Biblio::getPrixMax() {
+    if (_bib.empty()) {
+        std::cerr << "Erreur : La bibliothèque est vide." << std::endl;
+            return 0.0;  
+    }
 
+    double prixMax = _bib[0].get_cout();
+
+    for (const auto& image : _bib) {
+        double prix = image.get_cout();
+        if (prix > prixMax) {
+            prixMax = prix;
+        }
+    }
+
+    return prixMax;
+}
+
+// fct get prix min
+double Biblio::getPrixMin(){
+    if (_bib.empty()) {
+        std::cerr << "Erreur : La bibliothèque est vide." << std::endl;
+            return 0.0;  
+    }
+
+    double prixMin = _bib[0].get_cout();
+
+    for (const auto& image : _bib) {
+        double prix = image.get_cout();
+        if (prix < prixMin) {
+            prixMin = prix;
+        }
+    }
+
+    return prixMin;
+}
