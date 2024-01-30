@@ -22,18 +22,16 @@ const string DATA_DIR(LOTI_DIR + "/dta/");
 
 Image::Image(vector<string> listDescripteurs)
 {
-    std::hash<std::string> hasher;  // Hash function for strings
 
     _img = loadImage(DATA_DIR + listDescripteurs[2]); //ouverture avec le numero de l'image
 
     _source = listDescripteurs[0];
     _titre  = listDescripteurs[1];
-    _numero = hasher(listDescripteurs[2]); //convertir str en int
+    _numero = stoi(listDescripteurs[2]); //convertir str en int
     _cout   = stod(listDescripteurs[3]);
     _acces  = listDescripteurs[4][0]; // normalement un seul charactere
 }
 Image::Image() {}
-
 
 vector<vector<string>> loadCSV(string filename)
 {
@@ -274,6 +272,85 @@ char Image::get_acces() const
 {
     return _acces;
 }
+void Image::set_source(string source)
+{
+    vector<vector<string>> tableau = loadCSV(DATA_DIR + "descripteurs.csv");
+    for (int i = 0; i < tableau.size(); i++)
+    {
+        if (tableau[i][2] == to_string(_numero))
+        {
+            tableau[i][0] = source;
+            writeCSV(DATA_DIR + "descripteurs.csv", tableau);
+            _source = source;
+            return;
+        }
+    }
+    cout << "Erreur maj descipteur" << endl;
+}
+void Image::set_titre(string titre)
+{
+    vector<vector<string>> tableau = loadCSV(DATA_DIR + "descripteurs.csv");
+    for (int i = 0; i < tableau.size(); i++)
+    {
+        if (tableau[i][2] == to_string(_numero))
+        {
+            tableau[i][1] = titre;
+            writeCSV(DATA_DIR + "descripteurs.csv", tableau);
+            _titre = titre;
+            return;
+        }
+    }
+    cout << "Erreur maj descipteur" << endl;
+
+}
+void Image::set_numero(string numero)
+{
+    vector<vector<string>> tableau = loadCSV(DATA_DIR + "descripteurs.csv");
+    for (int i = 0; i < tableau.size(); i++)
+    {
+        if (tableau[i][2] == to_string(_numero))
+        {
+            tableau[i][2] = numero;
+            writeCSV(DATA_DIR + "descripteurs.csv", tableau);
+            _numero = stoi(numero);
+            return;
+        }
+    }
+    cout << "Erreur maj descipteur" << endl;
+    
+}
+void Image::set_cout(string coutt)
+{
+    vector<vector<string>> tableau = loadCSV(DATA_DIR + "descripteurs.csv");
+    for (int i = 0; i < tableau.size(); i++)
+    {
+        if (tableau[i][2] == to_string(_numero))
+        {
+            tableau[i][3] = coutt;
+            writeCSV(DATA_DIR + "descripteurs.csv", tableau);
+            _cout = stod(coutt);
+            return;
+        }
+    }
+    cout << "Erreur maj descipteur" << endl;
+}
+void Image::set_acces(string acces)
+{
+    vector<vector<string>> tableau = loadCSV(DATA_DIR + "descripteurs.csv");
+    for (int i = 0; i < tableau.size(); i++)
+    {
+        if (tableau[i][2] == to_string(_numero))
+        {
+            tableau[i][4] = acces;
+            writeCSV(DATA_DIR + "descripteurs.csv", tableau);
+            _acces = acces[0];
+            return;
+        }
+    }
+    cout << "Erreur maj descipteur" << endl;
+}
+
+
 void Image::tri_Cout(vector<Image>& bibliotheque) { // Tri d'images par ordre décroissant
     sort(bibliotheque.begin(), bibliotheque.end(), [](const Image& img1, const Image& img2) {
         return img1._cout > img2._cout;
