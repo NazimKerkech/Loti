@@ -42,7 +42,10 @@ public:
 	void set_acces(string) ;
 
 	//pour le tri des images
-    static void tri_Cout(vector<Image>& bibliotheque); //il demandait static
+    	
+   	bool compareImages(const Image& img1, const Image& img2,double coutMin, double coutMax);
+    	void tri_Cout(vector<Image>& biblio, double coutMin, double coutMax);
+
 	/*
 		Traitement d'image :
 	*/
