@@ -32,13 +32,16 @@ public:
     // enregistrer la biblio au csv
     void saveLibrary();
 
-    // MAJ du filtre CSV
+    // MAJ du fichier CSV
     void updateCSV();
     void ajouter_image(Image img);
     // tri d'images dans la biblio
     vector<Image> filterImages(const string& sourceMin, const string& sourceMax,
                                int numeroMin, int numeroMax,
                                double coutMin, double coutMax);
+
+    // save le.bib
+    void saveBib();
 };
 
 #endif // BIBLIO_H
