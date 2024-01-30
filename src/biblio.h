@@ -42,6 +42,8 @@ public:
 
     // save le.bib
     void saveBib();
+    double getPrixMax();
+    double getPrixMin();
 };
 
 #endif // BIBLIO_H
