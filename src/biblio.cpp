@@ -139,5 +139,28 @@ void Biblio::ajouter_image(Image img) {
 
     this->_bib.push_back(img);
 }
+\\ tri des images en fct de leur numero,cout et source 
+vector<Image> Biblio::filterImages(const string& sourceMin, const string& sourceMax,
+                                   int numeroMin, int numeroMax,
+                                   double coutMin, double coutMax) {
+    vector<Image> filteredImages;
+
+    for (const auto& image : _bib) {
+
+        if (image.get_source() >= sourceMin && image.get_source() <= sourceMax) {
+
+            if (image.get_numero() >= numeroMin && image.get_numero() <= numeroMax) {
+
+                if (image.get_cout() >= coutMin && image.get_cout() <= coutMax) {
+
+                    filteredImages.push_back(image);
+                }
+            }
+        }
+    }
+
+    return filteredImages;
+}
+
 
 
