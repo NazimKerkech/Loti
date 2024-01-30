@@ -163,7 +163,7 @@ vector<Image> Biblio::filterImages(const string& sourceMin, const string& source
 }
 
 //enregistrer un .bib a partir d'une bibliotheque
-void Biblio::saveLibraryAsBib() {
+void Biblio::saveBib() {
     std::ofstream bibFile(_bibName + ".bib");
 
     if (!bibFile.is_open()) {
