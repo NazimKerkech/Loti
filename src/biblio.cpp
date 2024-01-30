@@ -162,5 +162,22 @@ vector<Image> Biblio::filterImages(const string& sourceMin, const string& source
     return filteredImages;
 }
 
+//enregistrer un .bib a partir d'une bibliotheque
+void Biblio::saveLibraryAsBib() {
+    std::ofstream bibFile(_bibName + ".bib");
 
+    if (!bibFile.is_open()) {
+        std::cerr << "Erreur : Impossible d'ouvrir le fichier .bib" << std::endl;
+            return;
+    }
+
+    // Écrire le contenu du fichier .bib
+    for (const auto& image : _bib) {
+        bibFile << "Titre: " << image.get_titre() << std::endl;
+        bibFile << "Numero: " << image.get_numero() << std::endl;
+        bibFile << std::endl;  
+    }
+
+    bibFile.close();
+}
 
