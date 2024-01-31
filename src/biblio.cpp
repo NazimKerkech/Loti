@@ -159,7 +159,7 @@ void Biblio::ajouter_image(Image img) {
 
     this->_bib.push_back(img);
 }
-\\ tri des images en fct de leur numero,cout et source 
+// tri des images en fct de leur numero,cout et source 
 vector<Image> Biblio::filterImages(const string& sourceMin, const string& sourceMax,
                                    int numeroMin, int numeroMax,
                                    double coutMin, double coutMax) {

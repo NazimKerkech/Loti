@@ -19,6 +19,7 @@
 #include "TrameCentrale.h"
 #include "../../src/image.h"
 #include "../../src/biblio.h"
+#include "../../src/utilisateur.h"
 #include <QLineEdit>
 #include <QFileDialog>
 #include <filesystem>
@@ -35,9 +36,13 @@ public:
     QLineEdit *source_edit, *titre_edit, *cout_edit, *numero_edit, *acces_edit;
     string id;
     Biblio _bibliotheque;
+    QTableWidget* _tableau;
+
     signals:
         void demande_changer_image(int indice_selectionne);
         void nouvelle_bibliotheque(Biblio bibliotheque);
+        //void majTableau(int row, int column, string text, int indice);
+        
 public:
     TrameGauche(Biblio bibliotheque, string id, QWidget *parent = nullptr) : QFrame(parent) {
         setObjectName("TrameGauche");  // Set a unique object name for the QFrame
@@ -46,15 +51,15 @@ public:
         _Widget_bibliotheque = new QListWidget(this);
         this->id = id;
         _bibliotheque = bibliotheque;
-
         // Add items from the vector to the QListWidget
         int indice = 0;
+        std::unordered_map<int, QString> initialValues;
         for ( Image image : bibliotheque.get_images()) {
             //init tableau
-            QTableWidget* tableau = new QTableWidget();
-            tableau->setRowCount(5);
-            tableau->setColumnCount(1);
-
+            
+            QTableWidget* _tableau = new QTableWidget();
+            _tableau->setRowCount(5);
+            _tableau->setColumnCount(1);
             // Remplir le tableau avec des donn�es de d�monstration
             /*
             tableau->setItem(0, 0, new QTableWidgetItem(QString("Source")));
@@ -64,65 +69,123 @@ public:
             tableau->setItem(4, 0, new QTableWidgetItem(QString("Acces")));
             */
             const int col = 0;
-            tableau->setItem(0, col, new QTableWidgetItem(QString(image.get_source().c_str())));
-            tableau->setItem(1, col, new QTableWidgetItem(QString(image.get_titre().c_str())));
-            tableau->setItem(2, col, new QTableWidgetItem(QString(to_string(image.get_numero()).c_str())));
-            tableau->setItem(3, col, new QTableWidgetItem(QString(to_string(image.get_cout()).c_str())));
-            tableau->setItem(4, col, new QTableWidgetItem(QString(image.get_acces())));
-
+            _tableau->setItem(0, col, new QTableWidgetItem(QString(image.get_source().c_str())));
+            _tableau->setItem(1, col, new QTableWidgetItem(QString(image.get_titre().c_str())));
+            _tableau->setItem(2, col, new QTableWidgetItem(QString(to_string(image.get_numero()).c_str())));
+            _tableau->setItem(3, col, new QTableWidgetItem(QString(to_string(image.get_cout()).c_str())));
+            _tableau->setItem(4, col, new QTableWidgetItem(QString(image.get_acces())));
             
-            Image *image_temp = &image;
-            qDebug() << image.get_numero() << endl;
-            qDebug() << image_temp->get_numero() << endl;
+            _tableau->item(2, col)->setFlags(_tableau->item(2, col)->flags() & ~Qt::ItemIsEditable);
 
             //maj des valeurs dans la base de donne si modification
-            QObject::connect(tableau, &QTableWidget::cellChanged, this, [tableau, indice, this](int row, int column) {
-                QTableWidgetItem* item = tableau->item(row, column);
+            QObject::connect(_tableau, &QTableWidget::cellChanged, this, [_tableau, indice, this](int row, int column) {
+                QTableWidgetItem* item = _tableau->item(row, column);
                 
+
                 if (item) {
                     qDebug() << "Cell changed at" << row << "," << column << "New value:" << item->text();
+                    //majTableau(row, column, item->text().toStdString(), indice);
+                    //QTableWidgetItem* newItem = new QTableWidgetItem("New Value");
+                    string text = item->text().toStdString();
+                    std::istringstream iss(text);
+                    string premierMot;
+                   
+                    QString newValue = "New Value";
                     switch (row) {
                     case 0:
-                        _bibliotheque.get_images()[indice].set_source(item->text().toStdString());
+                        
+                        iss >> premierMot;
+                        
+                        // Nouvelle valeur à mettre dans la cellule
+                        item->setText(QString::fromStdString(premierMot));
+                        this->_bibliotheque.get_images()[indice].set_source(premierMot);
                         break;
                     case 1:
-                        _bibliotheque.get_images()[indice].set_titre(item->text().toStdString());
+                        _bibliotheque.get_images()[indice].set_titre(text);
                         break;
                     case 2:
-                        _bibliotheque.get_images()[indice].set_numero(item->text().toStdString());
+                        try {
+                            size_t pos = 0;
+                            std::stoi(item->text().toStdString(), &pos);
+                            if (pos == text.size()) {
+                                //_bibliotheque.get_images()[indice].set_numero(text);
+                            }
+                            else {
+                                cout << "Ce n'est pas completement un entier";
+                                time_t now = time(0);
+                                item->setText(QString::fromStdString(to_string(now)));
+                                //_bibliotheque.get_images()[indice].set_numero(to_string(now));
+                            }
+                        }
+                        catch (...) {
+                            cout<< "Ce n'est pas un entier"; // La conversion a échoué
+                            time_t now = time(0);
+                            item->setText(QString::fromStdString(to_string(now)));
+                            //_bibliotheque.get_images()[indice].set_numero(to_string(now));
+
+                        }
                         break;
                     case 3:
-                        _bibliotheque.get_images()[indice].set_cout(item->text().toStdString());
+                        try {
+                            size_t pos = 0;
+                            std::stod(item->text().toStdString(), &pos);
+                            if (pos == text.size()) {
+                                _bibliotheque.get_images()[indice].set_cout(text);;
+                            }
+                            else {
+                                cout << "Ce n'est pas completement un nombre reel";
+                                item->setText("0.0");
+                                _bibliotheque.get_images()[indice].set_cout("0.0");
+                            }
+                        }
+                        catch (...) {
+                            cout << "Ce n'est pas un nombre reel"; // La conversion a échoué
+                            item->setText("0.0");
+                            _bibliotheque.get_images()[indice].set_numero("0.0");
+                        }
+                        
                         break;
                     case 4:
-                        _bibliotheque.get_images()[indice].set_acces(item->text().toStdString());
+                        if ((item->text().toStdString()[0] == 'L') || (item->text().toStdString()[0] == 'R'))
+                        {
+                            _bibliotheque.get_images()[indice].set_acces(text);
+                            item->setText(QString(item->text().toStdString()[0]));
+                        }
+                        else
+                        {
+                            _bibliotheque.get_images()[indice].set_acces("R");
+                            item->setText("R");
+                        }
                         break;
                     default:
                         qDebug() << "Erreur maj valeur tableau" << endl;
                         break;
                     }
-                }
-                });
 
+                }
+             });
+            
             //QListWidgetItem *listItem = new QListWidgetItem(QString::fromStdString(image._titre));
             //_Widget_bibliotheque->addItem(new QListWidgetItem(QString::fromStdString(image.get_titre())));
 
-            tableau->setSelectionMode(QAbstractItemView::NoSelection);
-            tableau->horizontalHeader()->setVisible(false);
-            tableau->setVerticalHeaderLabels(QString("Source;Titre;Numero;Cout;Acces").split(";"));
-            tableau->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+            _tableau->setSelectionMode(QAbstractItemView::NoSelection);
+            _tableau->horizontalHeader()->setVisible(false);
+            _tableau->setVerticalHeaderLabels(QString("Source;Titre;Numero;Cout;Acces").split(";"));
+            _tableau->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-            QSize tableSize = tableau->sizeHint();
+            QSize tableSize = _tableau->sizeHint();
             QListWidgetItem* listWidgetItem = new QListWidgetItem();
             
-            tableSize.setHeight(tableau->rowHeight(0) * tableau->rowCount()+5);
+            tableSize.setHeight(_tableau->rowHeight(0) * _tableau->rowCount()+5);
             listWidgetItem->setSizeHint(tableSize);
             //listWidgetItem->setSizeHint(tableau->sizeHintForColumn(0) + QSize(5, 5));
                        
 
             _Widget_bibliotheque->addItem(listWidgetItem);
-            _Widget_bibliotheque->setItemWidget(listWidgetItem, tableau);
+            _Widget_bibliotheque->setItemWidget(listWidgetItem, _tableau);
+
             indice++;
+
         }
         connect(_Widget_bibliotheque, &QListWidget::itemSelectionChanged, this, &TrameGauche::onItemSelectionChanged);
         // Set up layout
@@ -212,11 +275,38 @@ public:
         time_t now = time(0); // unique id
         string numeroImage = to_string(now);
         vector<string> descripteurs;
-        descripteurs.push_back(source_edit->text().toStdString());
+        std::istringstream iss(source_edit->text().toStdString());
+        string premierMot;
+        iss >> premierMot;
+        descripteurs.push_back(premierMot);
         descripteurs.push_back(titre_edit->text().toStdString());
         descripteurs.push_back(numeroImage);
-        descripteurs.push_back(cout_edit->text().toStdString());
-        descripteurs.push_back(acces_edit->text().toStdString());
+        string text = cout_edit->text().toStdString();
+        try {
+            size_t pos = 0;
+            std::stod(text, &pos);
+            if (pos == text.size()) {
+                descripteurs.push_back(cout_edit->text().toStdString());
+            }
+            else {
+                cout << "Ce n'est pas completement un nombre reel";
+                descripteurs.push_back("0.00");
+            }
+        }
+        catch (...) {
+            cout << "Ce n'est pas un nombre reel"; // La conversion a échoué
+            descripteurs.push_back("0.00");
+        }
+
+        if ((acces_edit->text().toStdString()[0] == 'L') || (acces_edit->text().toStdString()[0] == 'R'))
+        {
+            descripteurs.push_back(to_string(acces_edit->text().toStdString()[0]));
+        }
+        else
+        {
+            descripteurs.push_back("R");
+        }
+        
 
         std::filesystem::path pathObj2(fichier);
         std::string extension = pathObj2.extension().string();
@@ -231,6 +321,7 @@ public:
     void charge_biblio(Biblio bibliotheque) {
         this->_bibliotheque = bibliotheque;
         _Widget_bibliotheque->clear();
+        int indice = 0;
         for (const Image image : bibliotheque.get_images()) {
 
             //init tableau
@@ -243,6 +334,96 @@ public:
             tableau->setItem(2, col, new QTableWidgetItem(QString(to_string(image.get_numero()).c_str())));
             tableau->setItem(3, col, new QTableWidgetItem(QString(to_string(image.get_cout()).c_str())));
             tableau->setItem(4, col, new QTableWidgetItem(QString(image.get_acces())));
+
+            tableau->item(2, col)->setFlags(tableau->item(2, col)->flags() & ~Qt::ItemIsEditable);
+            
+            //maj des valeurs dans la base de donne si modification
+            QObject::connect(tableau, &QTableWidget::cellChanged, this, [tableau,indice, this](int row, int column) {
+                QTableWidgetItem* item = tableau->item(row, column);
+
+
+                if (item) {
+                    qDebug() << "Cell changed at" << row << "," << column << "New value:" << item->text();
+                    //majTableau(row, column, item->text().toStdString(), indice);
+                    //QTableWidgetItem* newItem = new QTableWidgetItem("New Value");
+                    string text = item->text().toStdString();
+                    std::istringstream iss(text);
+                    string premierMot;
+
+                    QString newValue = "New Value";
+                    switch (row) {
+                    case 0:
+
+                        iss >> premierMot;
+
+                        // Nouvelle valeur à mettre dans la cellule
+                        item->setText(QString::fromStdString(premierMot));
+                        this->_bibliotheque.get_images()[indice].set_source(premierMot);
+                        break;
+                    case 1:
+                        _bibliotheque.get_images()[indice].set_titre(text);
+                        break;
+                    case 2:
+                        try {
+                            size_t pos = 0;
+                            std::stoi(item->text().toStdString(), &pos);
+                            if (pos == text.size()) {
+                                //_bibliotheque.get_images()[indice].set_numero(text);
+                            }
+                            else {
+                                cout << "Ce n'est pas completement un entier";
+                                time_t now = time(0);
+                                item->setText(QString::fromStdString(to_string(now)));
+                                //_bibliotheque.get_images()[indice].set_numero(to_string(now));
+                            }
+                        }
+                        catch (...) {
+                            cout << "Ce n'est pas un entier"; // La conversion a échoué
+                            time_t now = time(0);
+                            item->setText(QString::fromStdString(to_string(now)));
+                            //_bibliotheque.get_images()[indice].set_numero(to_string(now));
+
+                        }
+                        break;
+                    case 3:
+                        try {
+                            size_t pos = 0;
+                            std::stod(item->text().toStdString(), &pos);
+                            if (pos == text.size()) {
+                                _bibliotheque.get_images()[indice].set_cout(text);;
+                            }
+                            else {
+                                cout << "Ce n'est pas completement un nombre reel";
+                                item->setText("0.0");
+                                _bibliotheque.get_images()[indice].set_cout("0.0");
+                            }
+                        }
+                        catch (...) {
+                            cout << "Ce n'est pas un nombre reel"; // La conversion a échoué
+                            item->setText("0.0");
+                            _bibliotheque.get_images()[indice].set_numero("0.0");
+                        }
+
+                        break;
+                    case 4:
+                        if ((item->text().toStdString()[0] == 'L') || (item->text().toStdString()[0] == 'R'))
+                        {
+                            _bibliotheque.get_images()[indice].set_acces(text);
+                            item->setText(QString(item->text().toStdString()[0]));
+                        }
+                        else
+                        {
+                            _bibliotheque.get_images()[indice].set_acces("R");
+                            item->setText("R");
+                        }
+                        break;
+                    default:
+                        qDebug() << "Erreur maj valeur tableau" << endl;
+                        break;
+                    }
+
+                }
+                });
 
             tableau->setSelectionMode(QAbstractItemView::NoSelection);
             tableau->horizontalHeader()->setVisible(false);
@@ -257,6 +438,7 @@ public:
 
             _Widget_bibliotheque->addItem(listWidgetItem);
             _Widget_bibliotheque->setItemWidget(listWidgetItem, tableau);
+            indice++;
         }
     }
     void slide_prix() {
