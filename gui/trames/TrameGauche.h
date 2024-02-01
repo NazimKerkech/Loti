@@ -23,6 +23,7 @@
 #include <QLineEdit>
 #include <QFileDialog>
 #include <filesystem>
+#include <cmath>
 using namespace std;
 namespace fs = std::filesystem;
 
@@ -88,6 +89,12 @@ public:
 
                 _tableau->item(2, col)->setFlags(_tableau->item(2, col)->flags() & ~Qt::ItemIsEditable);
 
+                if(user.getUserAccess() == "1") {
+                    _tableau->item(0, col)->setFlags(_tableau->item(0, col)->flags() & ~Qt::ItemIsEditable);
+                    _tableau->item(1, col)->setFlags(_tableau->item(1, col)->flags() & ~Qt::ItemIsEditable);
+                    _tableau->item(3, col)->setFlags(_tableau->item(3, col)->flags() & ~Qt::ItemIsEditable);
+                    _tableau->item(4, col)->setFlags(_tableau->item(4, col)->flags() & ~Qt::ItemIsEditable);
+                }
                 //maj des valeurs dans la base de donne si modification
                 QObject::connect(_tableau, &QTableWidget::cellChanged, this, [_tableau, indice, this](int row, int column) {
                     QTableWidgetItem* item = _tableau->item(row, column);
@@ -204,14 +211,14 @@ public:
         // Set up layout
 
         slider_prix = new QRangeSlider(this);
-        slider_prix->setLowValue(this->_bibliotheque.getPrixMin());
-        slider_prix->setHighValue(this->_bibliotheque.getPrixMax());
-        slider_prix->setRange(this->_bibliotheque.getPrixMin(), this->_bibliotheque.getPrixMax());
+        slider_prix->setLowValue(floor(this->_bibliotheque.getPrixMin()));
+        slider_prix->setHighValue(ceil(this->_bibliotheque.getPrixMax()));
+        slider_prix->setRange(floor(this->_bibliotheque.getPrixMin()), ceil(this->_bibliotheque.getPrixMax()));
 
-        prix_min = new QLabel(QString::fromStdString(to_string(this->_bibliotheque.getPrixMin())));
-        prix_max = new QLabel(QString::fromStdString(to_string(this->_bibliotheque.getPrixMin())));
-        this->prix_min->setText(QString::fromStdString(to_string(slider_prix->lowValue())));
-        this->prix_max->setText(QString::fromStdString(to_string(slider_prix->highValue())));
+        prix_min = new QLabel(QString::fromStdString(to_string(floor(this->_bibliotheque.getPrixMin()))));
+        prix_max = new QLabel(QString::fromStdString(to_string(ceil(this->_bibliotheque.getPrixMax()))));
+        this->prix_min->setText(QString::fromStdString(to_string(floor(slider_prix->lowValue()))));
+        this->prix_max->setText(QString::fromStdString(to_string(ceil(slider_prix->highValue()))));
 
         connect(slider_prix, &QRangeSlider::lowValueChange, this, &TrameGauche::slide_prix);
         connect(slider_prix, &QRangeSlider::highValueChange, this, &TrameGauche::slide_prix);
@@ -365,6 +372,12 @@ public:
 
                 tableau->item(2, col)->setFlags(tableau->item(2, col)->flags() & ~Qt::ItemIsEditable);
 
+                if(user.getUserAccess() == "1") {
+                    tableau->item(0, col)->setFlags(tableau->item(0, col)->flags() & ~Qt::ItemIsEditable);
+                    tableau->item(1, col)->setFlags(tableau->item(1, col)->flags() & ~Qt::ItemIsEditable);
+                    tableau->item(3, col)->setFlags(tableau->item(3, col)->flags() & ~Qt::ItemIsEditable);
+                    tableau->item(4, col)->setFlags(tableau->item(4, col)->flags() & ~Qt::ItemIsEditable);
+                }
                 //maj des valeurs dans la base de donne si modification
                 QObject::connect(tableau, &QTableWidget::cellChanged, this, [tableau, indice, this](int row, int column) {
                     QTableWidgetItem* item = tableau->item(row, column);
@@ -491,8 +504,11 @@ public:
         // This function will be called when an item is selected in the QListWidget
         QListWidgetItem *selectedItem = _Widget_bibliotheque->currentItem();
 
+        int c = _bibliotheque.get_images().size();
         if (selectedItem) {
-            emit demande_changer_image(_Widget_bibliotheque->row(selectedItem));
+            if (_Widget_bibliotheque->row(selectedItem) < _bibliotheque.get_images().size()) {
+                emit demande_changer_image(_Widget_bibliotheque->row(selectedItem));
+            }
         }
     }
     void chercher() {

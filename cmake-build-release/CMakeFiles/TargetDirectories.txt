@@ -1,0 +1,5 @@
+/home/thedoctor/Documents/LoTI/cmake-build-release/CMakeFiles/LoTI.dir
+/home/thedoctor/Documents/LoTI/cmake-build-release/CMakeFiles/edit_cache.dir
+/home/thedoctor/Documents/LoTI/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/home/thedoctor/Documents/LoTI/cmake-build-release/CMakeFiles/LoTI_autogen_timestamp_deps.dir
+/home/thedoctor/Documents/LoTI/cmake-build-release/CMakeFiles/LoTI_autogen.dir
