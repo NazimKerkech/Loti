@@ -96,92 +96,7 @@ public:
                     _tableau->item(4, col)->setFlags(_tableau->item(4, col)->flags() & ~Qt::ItemIsEditable);
                 }
                 //maj des valeurs dans la base de donne si modification
-                QObject::connect(_tableau, &QTableWidget::cellChanged, this, [_tableau, indice, this](int row, int column) {
-                    QTableWidgetItem* item = _tableau->item(row, column);
-
-
-                    if (item) {
-                        qDebug() << "Cell changed at" << row << "," << column << "New value:" << item->text();
-                        //majTableau(row, column, item->text().toStdString(), indice);
-                        //QTableWidgetItem* newItem = new QTableWidgetItem("New Value");
-                        string text = item->text().toStdString();
-                        std::istringstream iss(text);
-                        string premierMot;
-
-                        QString newValue = "New Value";
-                        switch (row) {
-                        case 0:
-
-                            iss >> premierMot;
-
-                            // Nouvelle valeur à mettre dans la cellule
-                            item->setText(QString::fromStdString(premierMot));
-                            this->_bibliotheque.get_images()[indice].set_source(premierMot);
-                            break;
-                        case 1:
-                            _bibliotheque.get_images()[indice].set_titre(text);
-                            break;
-                        case 2:
-                            try {
-                                size_t pos = 0;
-                                std::stoi(item->text().toStdString(), &pos);
-                                if (pos == text.size()) {
-                                    //_bibliotheque.get_images()[indice].set_numero(text);
-                                }
-                                else {
-                                    cout << "Ce n'est pas completement un entier";
-                                    time_t now = time(0);
-                                    item->setText(QString::fromStdString(to_string(now)));
-                                    //_bibliotheque.get_images()[indice].set_numero(to_string(now));
-                                }
-                            }
-                            catch (...) {
-                                cout << "Ce n'est pas un entier"; // La conversion a échoué
-                                time_t now = time(0);
-                                item->setText(QString::fromStdString(to_string(now)));
-                                //_bibliotheque.get_images()[indice].set_numero(to_string(now));
-
-                            }
-                            break;
-                        case 3:
-                            try {
-                                size_t pos = 0;
-                                std::stod(item->text().toStdString(), &pos);
-                                if (pos == text.size()) {
-                                    _bibliotheque.get_images()[indice].set_cout(text);;
-                                }
-                                else {
-                                    cout << "Ce n'est pas completement un nombre reel";
-                                    item->setText("0.0");
-                                    _bibliotheque.get_images()[indice].set_cout("0.0");
-                                }
-                            }
-                            catch (...) {
-                                cout << "Ce n'est pas un nombre reel"; // La conversion a échoué
-                                item->setText("0.0");
-                                _bibliotheque.get_images()[indice].set_numero("0.0");
-                            }
-
-                            break;
-                        case 4:
-                            if ((item->text().toStdString()[0] == 'L') || (item->text().toStdString()[0] == 'R'))
-                            {
-                                _bibliotheque.get_images()[indice].set_acces(text);
-                                item->setText(QString(item->text().toStdString()[0]));
-                            }
-                            else
-                            {
-                                _bibliotheque.get_images()[indice].set_acces("R");
-                                item->setText("R");
-                            }
-                            break;
-                        default:
-                            qDebug() << "Erreur maj valeur tableau" << endl;
-                            break;
-                        }
-
-                    }
-                    });
+                connect(_tableau, &QTableWidget::cellChanged, this, &TrameGauche::maj_tableau);
 
                 //QListWidgetItem *listItem = new QListWidgetItem(QString::fromStdString(image._titre));
                 //_Widget_bibliotheque->addItem(new QListWidgetItem(QString::fromStdString(image.get_titre())));
@@ -208,17 +123,18 @@ public:
 
         }
         connect(_Widget_bibliotheque, &QListWidget::itemSelectionChanged, this, &TrameGauche::onItemSelectionChanged);
+
         // Set up layout
 
         slider_prix = new QRangeSlider(this);
         slider_prix->setLowValue(floor(this->_bibliotheque.getPrixMin()));
-        slider_prix->setHighValue(ceil(this->_bibliotheque.getPrixMax()));
-        slider_prix->setRange(floor(this->_bibliotheque.getPrixMin()), ceil(this->_bibliotheque.getPrixMax()));
+        slider_prix->setHighValue(int(ceil(this->_bibliotheque.getPrixMax())));
+        slider_prix->setRange(floor(this->_bibliotheque.getPrixMin()), int(ceil(this->_bibliotheque.getPrixMax())));
 
-        prix_min = new QLabel(QString::fromStdString(to_string(floor(this->_bibliotheque.getPrixMin()))));
-        prix_max = new QLabel(QString::fromStdString(to_string(ceil(this->_bibliotheque.getPrixMax()))));
-        this->prix_min->setText(QString::fromStdString(to_string(floor(slider_prix->lowValue()))));
-        this->prix_max->setText(QString::fromStdString(to_string(ceil(slider_prix->highValue()))));
+        prix_min = new QLabel(QString::fromStdString(to_string(int(floor(this->_bibliotheque.getPrixMin())))));
+        prix_max = new QLabel(QString::fromStdString(to_string(int(ceil(this->_bibliotheque.getPrixMax())))));
+        this->prix_min->setText(QString::fromStdString(to_string(int(floor(slider_prix->lowValue())))));
+        this->prix_max->setText(QString::fromStdString(to_string(int(ceil(slider_prix->highValue())))));
 
         connect(slider_prix, &QRangeSlider::lowValueChange, this, &TrameGauche::slide_prix);
         connect(slider_prix, &QRangeSlider::highValueChange, this, &TrameGauche::slide_prix);
@@ -236,15 +152,15 @@ public:
         QPushButton *chercher = new QPushButton("chercher");
         connect(chercher, &QPushButton::clicked, this, &TrameGauche::chercher);
 
-        QPushButton *abandonner = new QPushButton("abandonner");
-        connect(abandonner, &QPushButton::clicked, this, &TrameGauche::abandon);
+        QPushButton *trier = new QPushButton("trie decroissant");
+        connect(trier, &QPushButton::clicked, this, &TrameGauche::trie);
 
         recherche_saisie = new QLineEdit(this);
 
         layout->addWidget(recherche_saisie);
         layout->addWidget(prix_frame);
         layout->addWidget(chercher);
-        layout->addWidget(abandonner);
+        layout->addWidget(trier);
         layout->addWidget(_Widget_bibliotheque);
 
         const string LOTI_DIR(SOURCE_DIR);
@@ -283,6 +199,103 @@ public:
             this->setFixedWidth(parent->size().width()*2/10);
             //this->setFixedHeight(parent->size().height() * 5/ 6);
         }
+    }
+    public slots:
+    void maj_tableau(int row, int column) {//()[_tableau, indice, this]
+        QListWidgetItem *selectedItem = _Widget_bibliotheque->currentItem();
+        int indice = _Widget_bibliotheque->row(selectedItem);
+
+        QListWidgetItem* item1 = _Widget_bibliotheque->item(indice);
+        QTableWidget* tableau = dynamic_cast<QTableWidget*>(_Widget_bibliotheque->itemWidget(item1));
+        QTableWidgetItem* item = tableau->item(row, column);
+
+        if (item) {
+            qDebug() << "Cell changed at" << row << "," << column << "New value:" << item->text();
+            //majTableau(row, column, item->text().toStdString(), indice);
+            //QTableWidgetItem* newItem = new QTableWidgetItem("New Value");
+            string text = item->text().toStdString();
+            std::istringstream iss(text);
+            string premierMot;
+
+            QString newValue = "New Value";
+            switch (row) {
+            case 0:
+
+                iss >> premierMot;
+
+                // Nouvelle valeur à mettre dans la cellule
+                item->setText(QString::fromStdString(premierMot));
+                (*this->_bibliotheque.get_imagespointer())[indice].set_source(premierMot);
+                break;
+            case 1:
+                (*this->_bibliotheque.get_imagespointer())[indice].set_titre(text);
+                break;
+            case 2:
+                try {
+                    size_t pos = 0;
+                    std::stoi(item->text().toStdString(), &pos);
+                    if (pos == text.size()) {
+                        //_bibliotheque.get_imagespointer()[indice].set_numero(text);
+                    }
+                    else {
+                        cout << "Ce n'est pas completement un entier";
+                        time_t now = time(0);
+                        item->setText(QString::fromStdString(to_string(now)));
+                        //_bibliotheque.get_images()[indice].set_numero(to_string(now));
+                    }
+                }
+                catch (...) {
+                    cout << "Ce n'est pas un entier"; // La conversion a échoué
+                    time_t now = time(0);
+                    item->setText(QString::fromStdString(to_string(now)));
+                    //_bibliotheque.get_images()[indice].set_numero(to_string(now));
+
+                }
+                break;
+            case 3:
+                try {
+                    size_t pos = 0;
+                    std::stod(item->text().toStdString(), &pos);
+                    if (pos == text.size()) {
+                        (*_bibliotheque.get_imagespointer())[indice].set_cout(text);;
+                    }
+                    else {
+                        cout << "Ce n'est pas completement un nombre reel";
+                        item->setText("0.0");
+                        (*_bibliotheque.get_imagespointer())[indice].set_cout("0.0");
+                    }
+                }
+                catch (...) {
+                    cout << "Ce n'est pas un nombre reel"; // La conversion a échoué
+                    item->setText("0.0");
+                    (*_bibliotheque.get_imagespointer())[indice].set_numero("0.0");
+                }
+
+                break;
+            case 4:
+                if ((item->text().toStdString()[0] == 'L') || (item->text().toStdString()[0] == 'R'))
+                {
+                    (*_bibliotheque.get_imagespointer())[indice].set_acces(text);
+                    item->setText(QString(item->text().toStdString()[0]));
+                }
+                else
+                {
+                    (*_bibliotheque.get_imagespointer())[indice].set_acces("R");
+                    item->setText("R");
+                }
+                break;
+            default:
+                qDebug() << "Erreur maj valeur tableau" << endl;
+                break;
+            }
+            this->charge_biblio(_bibliotheque);
+            emit this->nouvelle_bibliotheque(_bibliotheque);
+            this->charger_biblio_externe(_bibliotheque);
+        }
+    }
+
+    void enregistere_bib(string path) {
+        this->_bibliotheque.sauvgarder(path);
     }
     void ajouter_image() {
         const string LOTI_DIR(SOURCE_DIR);
@@ -379,92 +392,7 @@ public:
                     tableau->item(4, col)->setFlags(tableau->item(4, col)->flags() & ~Qt::ItemIsEditable);
                 }
                 //maj des valeurs dans la base de donne si modification
-                QObject::connect(tableau, &QTableWidget::cellChanged, this, [tableau, indice, this](int row, int column) {
-                    QTableWidgetItem* item = tableau->item(row, column);
-
-
-                    if (item) {
-                        qDebug() << "Cell changed at" << row << "," << column << "New value:" << item->text();
-                        //majTableau(row, column, item->text().toStdString(), indice);
-                        //QTableWidgetItem* newItem = new QTableWidgetItem("New Value");
-                        string text = item->text().toStdString();
-                        std::istringstream iss(text);
-                        string premierMot;
-
-                        QString newValue = "New Value";
-                        switch (row) {
-                        case 0:
-
-                            iss >> premierMot;
-
-                            // Nouvelle valeur à mettre dans la cellule
-                            item->setText(QString::fromStdString(premierMot));
-                            this->_bibliotheque.get_images()[indice].set_source(premierMot);
-                            break;
-                        case 1:
-                            _bibliotheque.get_images()[indice].set_titre(text);
-                            break;
-                        case 2:
-                            try {
-                                size_t pos = 0;
-                                std::stoi(item->text().toStdString(), &pos);
-                                if (pos == text.size()) {
-                                    //_bibliotheque.get_images()[indice].set_numero(text);
-                                }
-                                else {
-                                    cout << "Ce n'est pas completement un entier";
-                                    time_t now = time(0);
-                                    item->setText(QString::fromStdString(to_string(now)));
-                                    //_bibliotheque.get_images()[indice].set_numero(to_string(now));
-                                }
-                            }
-                            catch (...) {
-                                cout << "Ce n'est pas un entier"; // La conversion a échoué
-                                time_t now = time(0);
-                                item->setText(QString::fromStdString(to_string(now)));
-                                //_bibliotheque.get_images()[indice].set_numero(to_string(now));
-
-                            }
-                            break;
-                        case 3:
-                            try {
-                                size_t pos = 0;
-                                std::stod(item->text().toStdString(), &pos);
-                                if (pos == text.size()) {
-                                    _bibliotheque.get_images()[indice].set_cout(text);;
-                                }
-                                else {
-                                    cout << "Ce n'est pas completement un nombre reel";
-                                    item->setText("0.0");
-                                    _bibliotheque.get_images()[indice].set_cout("0.0");
-                                }
-                            }
-                            catch (...) {
-                                cout << "Ce n'est pas un nombre reel"; // La conversion a échoué
-                                item->setText("0.0");
-                                _bibliotheque.get_images()[indice].set_numero("0.0");
-                            }
-
-                            break;
-                        case 4:
-                            if ((item->text().toStdString()[0] == 'L') || (item->text().toStdString()[0] == 'R'))
-                            {
-                                _bibliotheque.get_images()[indice].set_acces(text);
-                                item->setText(QString(item->text().toStdString()[0]));
-                            }
-                            else
-                            {
-                                _bibliotheque.get_images()[indice].set_acces("R");
-                                item->setText("R");
-                            }
-                            break;
-                        default:
-                            qDebug() << "Erreur maj valeur tableau" << endl;
-                            break;
-                        }
-
-                    }
-                    });
+                connect(tableau, &QTableWidget::cellChanged, this, &TrameGauche::maj_tableau);
 
                 tableau->setSelectionMode(QAbstractItemView::NoSelection);
                 tableau->horizontalHeader()->setVisible(false);
@@ -482,23 +410,24 @@ public:
             }
             indice++;
         }
-        slider_prix->setLowValue(this->_bibliothequeStoquee.getPrixMin());
-        slider_prix->setHighValue(this->_bibliothequeStoquee.getPrixMax());
-        slider_prix->setRange(this->_bibliothequeStoquee.getPrixMin(), this->_bibliothequeStoquee.getPrixMax());
-        this->prix_min->setText(QString::fromStdString(to_string(slider_prix->lowValue())));
-        this->prix_max->setText(QString::fromStdString(to_string(slider_prix->highValue())));
+        slider_prix->setLowValue(int(floor(this->_bibliothequeStoquee.getPrixMin())));
+        slider_prix->setHighValue(int(ceil(this->_bibliothequeStoquee.getPrixMax())));
+        slider_prix->setRange(int(floor(this->_bibliothequeStoquee.getPrixMin())), int(ceil(this->_bibliothequeStoquee.getPrixMax())));
+        this->prix_min->setText(QString::fromStdString(to_string(int(floor(slider_prix->lowValue())))));
+        this->prix_max->setText(QString::fromStdString(to_string(int(ceil(slider_prix->highValue())))));
     }
     void charger_biblio_externe(Biblio bib) {
         _bibliothequeStoquee = bib;
     }
-    void abandon() {
-        this->_bibliotheque = this->_bibliothequeStoquee;
+    void trie() {
+        //_bibliotheque = _bibliothequeStoquee;
+        this->_bibliotheque.trier();
         this->charge_biblio(this->_bibliotheque);
         emit charge_biblio(this->_bibliotheque);
     }
     void slide_prix() {
-        this->prix_min->setText(QString::fromStdString(to_string(slider_prix->lowValue())));
-        this->prix_max->setText(QString::fromStdString(to_string(slider_prix->highValue())));
+        this->prix_min->setText(QString::fromStdString(to_string(int(floor(slider_prix->lowValue())))));
+        this->prix_max->setText(QString::fromStdString(to_string(int(ceil(slider_prix->highValue())))));
     }
     void onItemSelectionChanged() {
         // This function will be called when an item is selected in the QListWidget

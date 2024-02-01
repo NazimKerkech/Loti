@@ -91,6 +91,8 @@ public:
         connect(this->trameSup, &TrameSuperieure::nouvelle_bibliotheque, this->tramedroite, &TrameDroite::charge_biblio);
         connect(this->trameSup, &TrameSuperieure::nouvelle_bibliotheque, this->tramecentrale, &TrameCentrale::charge_biblio);
 
+        connect(this->trameSup, &TrameSuperieure::enregistrer_biblio, this->tramegauche, &TrameGauche::enregistere_bib);
+
         connect(this->tramecentrale, &TrameCentrale::c_nouvelle_bibliotheque, this->tramegauche, &TrameGauche::charger_biblio_externe);
         connect(this->tramecentrale, &TrameCentrale::c_nouvelle_bibliotheque, this->tramegauche, &TrameGauche::charge_biblio);
         connect(this->tramecentrale, &TrameCentrale::c_nouvelle_bibliotheque, this->tramedroite, &TrameDroite::charge_biblio);

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_TrameGauche_t {
-    QByteArrayData data[7];
-    char stringdata0[96];
+    QByteArrayData data[21];
+    char stringdata0[250];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,12 +38,31 @@ QT_MOC_LITERAL(2, 34, 0), // ""
 QT_MOC_LITERAL(3, 35, 18), // "indice_selectionne"
 QT_MOC_LITERAL(4, 54, 21), // "nouvelle_bibliotheque"
 QT_MOC_LITERAL(5, 76, 6), // "Biblio"
-QT_MOC_LITERAL(6, 83, 12) // "bibliotheque"
+QT_MOC_LITERAL(6, 83, 12), // "bibliotheque"
+QT_MOC_LITERAL(7, 96, 11), // "maj_tableau"
+QT_MOC_LITERAL(8, 108, 3), // "row"
+QT_MOC_LITERAL(9, 112, 6), // "column"
+QT_MOC_LITERAL(10, 119, 15), // "enregistere_bib"
+QT_MOC_LITERAL(11, 135, 6), // "string"
+QT_MOC_LITERAL(12, 142, 4), // "path"
+QT_MOC_LITERAL(13, 147, 13), // "ajouter_image"
+QT_MOC_LITERAL(14, 161, 13), // "charge_biblio"
+QT_MOC_LITERAL(15, 175, 22), // "charger_biblio_externe"
+QT_MOC_LITERAL(16, 198, 3), // "bib"
+QT_MOC_LITERAL(17, 202, 4), // "trie"
+QT_MOC_LITERAL(18, 207, 10), // "slide_prix"
+QT_MOC_LITERAL(19, 218, 22), // "onItemSelectionChanged"
+QT_MOC_LITERAL(20, 241, 8) // "chercher"
 
     },
     "TrameGauche\0demande_changer_image\0\0"
     "indice_selectionne\0nouvelle_bibliotheque\0"
-    "Biblio\0bibliotheque"
+    "Biblio\0bibliotheque\0maj_tableau\0row\0"
+    "column\0enregistere_bib\0string\0path\0"
+    "ajouter_image\0charge_biblio\0"
+    "charger_biblio_externe\0bib\0trie\0"
+    "slide_prix\0onItemSelectionChanged\0"
+    "chercher"
 };
 #undef QT_MOC_LITERAL
 
@@ -53,7 +72,7 @@ static const uint qt_meta_data_TrameGauche[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -61,12 +80,34 @@ static const uint qt_meta_data_TrameGauche[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x06 /* Public */,
-       4,    1,   27,    2, 0x06 /* Public */,
+       1,    1,   69,    2, 0x06 /* Public */,
+       4,    1,   72,    2, 0x06 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags
+       7,    2,   75,    2, 0x0a /* Public */,
+      10,    1,   80,    2, 0x0a /* Public */,
+      13,    0,   83,    2, 0x0a /* Public */,
+      14,    1,   84,    2, 0x0a /* Public */,
+      15,    1,   87,    2, 0x0a /* Public */,
+      17,    0,   90,    2, 0x0a /* Public */,
+      18,    0,   91,    2, 0x0a /* Public */,
+      19,    0,   92,    2, 0x0a /* Public */,
+      20,    0,   93,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
     QMetaType::Void, 0x80000000 | 5,    6,
+
+ // slots: parameters
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    8,    9,
+    QMetaType::Void, 0x80000000 | 11,   12,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 5,    6,
+    QMetaType::Void, 0x80000000 | 5,   16,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -79,6 +120,15 @@ void TrameGauche::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         switch (_id) {
         case 0: _t->demande_changer_image((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 1: _t->nouvelle_bibliotheque((*reinterpret_cast< Biblio(*)>(_a[1]))); break;
+        case 2: _t->maj_tableau((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 3: _t->enregistere_bib((*reinterpret_cast< string(*)>(_a[1]))); break;
+        case 4: _t->ajouter_image(); break;
+        case 5: _t->charge_biblio((*reinterpret_cast< Biblio(*)>(_a[1]))); break;
+        case 6: _t->charger_biblio_externe((*reinterpret_cast< Biblio(*)>(_a[1]))); break;
+        case 7: _t->trie(); break;
+        case 8: _t->slide_prix(); break;
+        case 9: _t->onItemSelectionChanged(); break;
+        case 10: _t->chercher(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -129,13 +179,13 @@ int TrameGauche::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 11;
     }
     return _id;
 }

@@ -40,6 +40,8 @@ public:
 	void set_cout(string) ;
 	void set_titre(string) ;
 	void set_acces(string) ;
+	bool operator<(const Image& other) const;
+	bool operator>(const Image& other) const;
 
 	//pour le tri des images
     	

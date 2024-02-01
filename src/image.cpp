@@ -362,7 +362,12 @@ void Image::tri_Cout(vector<Image>& biblio, double coutMin, double coutMax) {
             return compareImages(img1, img2, coutMin, coutMax);
         });
 }
-
+bool Image::operator<(const Image& other) const {
+    return this->_cout < other.get_cout();
+}
+bool Image::operator>(const Image& other) const {
+    return this->_cout > other.get_cout();
+}
 // Traitement d'image
 Mat Image::houghLineTransform(float pourcentage)
 {

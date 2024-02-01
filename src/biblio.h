@@ -18,9 +18,14 @@ public:
     Biblio(std::string);
 
     vector<Image> get_images();
+    vector<Image>* get_imagespointer();
+
     void set_images(int, Image);
+    void set_path(string file);
     // afficher les descript
+    void trier();
     void displayDescriptors();
+    void sauvgarder(string path);
 
     // effacer l'image
     void delImage(std::string); //titre

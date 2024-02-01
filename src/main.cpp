@@ -13,7 +13,7 @@
 #include <QApplication>
 
 using namespace std;
-
+#include <QIcon>
 const string LOTI_DIR(SOURCE_DIR);
 const string DATA_DIR(LOTI_DIR+"/dta/");
 
@@ -111,6 +111,9 @@ int main(int argc, char* argv[])
 
     QApplication a(argc, argv);
     FenetrePrincipale mainWindow(Bibliotheque);
+
+    QIcon icon(QString::fromStdString(DATA_DIR+"1.jpg"));  // Replace with the actual path to your icon file
+    mainWindow.setWindowIcon(icon);
     mainWindow.show();
     //return 0;
     return a.exec();

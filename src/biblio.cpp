@@ -19,6 +19,9 @@ Biblio::Biblio() {
     _bibName = DATA_DIR+"defaut.bib";
     loadLibrary();
 }
+void Biblio::set_path(string file) {
+    _bibName = file;
+}
 
 Biblio::Biblio(std::string bibName) : _bibName(bibName) {
     loadLibrary();
@@ -27,6 +30,10 @@ Biblio::Biblio(std::string bibName) : _bibName(bibName) {
 vector<Image> Biblio::get_images()
 {
     return _bib;
+}
+vector<Image>* Biblio::get_imagespointer()
+{
+    return &_bib;
 }
 void Biblio::set_images(int i, Image image)
 {
@@ -105,7 +112,9 @@ void Biblio::loadLibrary() {
     _bib = createBib(descriptorsBib);
 
 }
-
+void Biblio::trier() {
+    std::sort(this->_bib.begin(), this->_bib.end(), std::greater<Image>());
+}
 void Biblio::saveLibrary() {
     std::vector<std::vector<std::string>> descriptors;
 
@@ -125,6 +134,23 @@ void Biblio::saveLibrary() {
 }
 
 //save les .bib a partir dune bibliotheque
+void Biblio::sauvgarder(string path) {
+
+    ofstream outFile(path); // Nom du fichier CSV en sortie (temporaire)
+    string line;
+    if (!outFile.is_open()) {
+        cout << "Impossible de créer le fichier temporaire." << endl;
+        return;
+    }
+    outFile << "Numero image,\r";
+    for (int i = 0; i < _bib.size(); i++) {
+        outFile << _bib[i].get_numero() << ',';
+        outFile << endl;
+    }
+    outFile.close();
+
+
+}
 
 void Biblio::saveLibraryWithImages() {
     ofstream bibFile(_bibName);

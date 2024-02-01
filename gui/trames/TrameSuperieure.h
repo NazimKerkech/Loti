@@ -23,6 +23,7 @@ private:
 
     signals:
         void nouvelle_bibliotheque(Biblio bibliotheque);
+        void enregistrer_biblio(string path);
 public:
     TrameSuperieure(string id, QWidget *parent = nullptr) : QFrame(parent) {
         this->id = id;
@@ -54,6 +55,10 @@ public:
             QPushButton *openButton = new QPushButton("Ouvrir une bibliotheque", this);
             connect(openButton, &QPushButton::clicked, this, &TrameSuperieure::openFile);
             layout->addWidget(openButton);
+
+            QPushButton *enregistrerButton = new QPushButton("enregistrer une bibliotheque", this);
+            connect(enregistrerButton, &QPushButton::clicked, this, &TrameSuperieure::enregistreFile);
+            layout->addWidget(enregistrerButton);
         //}
         layout->addStretch();
         layout->addWidget(iconLabel);
@@ -78,6 +83,19 @@ public:
         }
         Biblio Bibliotheque(fichier);
         emit nouvelle_bibliotheque(Bibliotheque);
+        // ouvrir la biblio
+    }
+    void enregistreFile() {
+        //dialogue->open();
+        const string LOTI_DIR(SOURCE_DIR);
+        const string DATA_DIR(LOTI_DIR+"/dta/");
+
+        QString file_name = dialogue->getSaveFileName(this, "enregistrer une bibliotheque", QString::fromStdString(DATA_DIR), tr("Bibliotheque (*.bib)"));
+        string fichier = file_name.toStdString();
+        if (fichier==""){
+            return;
+        }
+        emit this->enregistrer_biblio(fichier);
         // ouvrir la biblio
     }
     /*void fichier_selectionne() {
