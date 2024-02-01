@@ -154,7 +154,7 @@ void Biblio::ajouter_image(Image img) {
     descripteurs.push_back(img.get_titre()); // titre
     descripteurs.push_back(to_string(img.get_numero())); // numero par defaut
     descripteurs.push_back(to_string(img.get_cout())); // cout
-    descripteurs.push_back(to_string(img.get_acces())); // acces
+    descripteurs.push_back(string(1,img.get_acces())); // acces
     appendCSV(DATA_DIR + "descripteurs.csv", descripteurs);
 
 

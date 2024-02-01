@@ -50,11 +50,11 @@ public:
         user.login(id);
         string access = user.getUserAccess();
         QColor couleur;
-        if(user.getUserAccess() == "2") {
+        //if(user.getUserAccess() == "2") {
             QPushButton *openButton = new QPushButton("Ouvrir une bibliotheque", this);
             connect(openButton, &QPushButton::clicked, this, &TrameSuperieure::openFile);
             layout->addWidget(openButton);
-        }
+        //}
         layout->addStretch();
         layout->addWidget(iconLabel);
         layout->addWidget(nameLabel);
