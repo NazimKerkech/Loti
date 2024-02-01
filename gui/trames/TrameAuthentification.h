@@ -33,7 +33,7 @@ public:
         setStyleSheet("background-color: #f0f0f0; padding: 20px;");
 
         // Create UI components for the login frame
-        QLabel *titleLabel = new QLabel("Authetification", this);
+        QLabel *titleLabel = new QLabel("Authentification", this);
         titleLabel->setStyleSheet("font-size: 20px; font-weight: bold; margin-bottom: 20px;");
 
         codeLineEdit = new QLineEdit(this);

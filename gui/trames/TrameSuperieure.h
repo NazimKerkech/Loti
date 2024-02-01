@@ -56,7 +56,7 @@ public:
             connect(openButton, &QPushButton::clicked, this, &TrameSuperieure::openFile);
             layout->addWidget(openButton);
 
-            QPushButton *enregistrerButton = new QPushButton("enregistrer une bibliotheque", this);
+            QPushButton *enregistrerButton = new QPushButton("Enregistrer une bibliotheque", this);
             connect(enregistrerButton, &QPushButton::clicked, this, &TrameSuperieure::enregistreFile);
             layout->addWidget(enregistrerButton);
         //}

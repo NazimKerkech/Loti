@@ -82,8 +82,8 @@ public:
             // Set the image on the label
             imageLabel->setPixmap(pixmap);
         }
-        void detecter_lignes() {
-            Mat resultat = _image.houghLineTransform();
+        void detecter_lignes(double pourcentage) {
+            Mat resultat = _image.houghLineTransform(pourcentage);
             Mat resultat2;
             normalize(resultat, resultat2, 0, 255, NORM_MINMAX);
 

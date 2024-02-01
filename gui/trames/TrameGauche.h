@@ -149,10 +149,10 @@ public:
         QFrame *prix_frame = new QFrame();
         prix_frame->setLayout(prix_layout);
 
-        QPushButton *chercher = new QPushButton("chercher");
+        QPushButton *chercher = new QPushButton("Chercher");
         connect(chercher, &QPushButton::clicked, this, &TrameGauche::chercher);
 
-        QPushButton *trier = new QPushButton("trie decroissant");
+        QPushButton *trier = new QPushButton("Tri decroissant");
         connect(trier, &QPushButton::clicked, this, &TrameGauche::trie);
 
         recherche_saisie = new QLineEdit(this);
@@ -356,6 +356,8 @@ public:
         this->_bibliotheque.updateCSV();
         this->charge_biblio(_bibliotheque);
         emit this->nouvelle_bibliotheque(_bibliotheque);
+        _bibliothequeStoquee = _bibliotheque;
+
     }
     void charge_biblio(Biblio bibliotheque) {
         this->_bibliotheque = bibliotheque;

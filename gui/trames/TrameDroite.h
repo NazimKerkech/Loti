@@ -27,14 +27,14 @@ private:
     Biblio _bibliotheque;
 
     QSpinBox *SpinBox_flou_taille, *SpinBox_contour_taille,  *SpinBox_rehauss_taille;
-    QSlider *seuil_r, *seuil_g, *seuil_b;
+    QSlider *seuil_r, *seuil_g, *seuil_b, *pourcentageLigne;
     QLabel *seuilr_label, *seuilg_label, *seuilb_label;
 
     signals:
         void flou(int taille_filtre);
         void contours(int noFiltre);
         void traitement(QString traitement);
-        void detection_lignes();
+        void detection_lignes(double);
         void rehaussement(int noFiltre);
         void segmentation(int seuil_r, int seuil_g, int seuil_b);
         void suprimer_image();
@@ -96,10 +96,16 @@ public:
         QTreeWidgetItem *lignes_Item = new QTreeWidgetItem(_Widget_traitementImg);
         lignes_Item->setText(0, QString::fromStdString("Detection de lignes droites"));
 
+        pourcentageLigne = new QSlider(Qt::Horizontal);
+        pourcentageLigne->setRange(0, 100);
+        pourcentageLigne->setMinimumSize(50, 0);
+
+        connect(pourcentageLigne, &QSlider::valueChanged, this, &TrameDroite::slide);
         QPushButton *appliquer_lignes = new QPushButton("Appliquer");
         connect(appliquer_lignes, &QPushButton::clicked, this, &TrameDroite::onLignes);
 
         QGridLayout *lignes_layout = new QGridLayout;
+        lignes_layout->addWidget(pourcentageLigne,0,1);
         lignes_layout->addWidget(appliquer_lignes, 1, 1);
         QFrame *lignes_frame = new QFrame;
         lignes_frame->setLayout(lignes_layout);
@@ -114,6 +120,7 @@ public:
         this->SpinBox_rehauss_taille = new QSpinBox;
         SpinBox_rehauss_taille->setRange(1, 3);
         SpinBox_rehauss_taille->setSingleStep(1);
+
         QPushButton *appliquer_rehauss = new QPushButton("Appliquer");
         connect(appliquer_rehauss, &QPushButton::clicked, this, &TrameDroite::onRehauss);
 
@@ -213,7 +220,7 @@ public:
         emit contours(SpinBox_contour_taille->value());
     }
     void onLignes() {
-        emit detection_lignes();
+        emit detection_lignes((double)pourcentageLigne->value()/100);
     }
     void onRehauss() {
         emit rehaussement(SpinBox_rehauss_taille->value());

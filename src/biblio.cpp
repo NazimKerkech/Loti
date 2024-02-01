@@ -142,7 +142,7 @@ void Biblio::sauvgarder(string path) {
         cout << "Impossible de créer le fichier temporaire." << endl;
         return;
     }
-    outFile << "Numero image,\r";
+    outFile << "Numero image,"<<endl;
     for (int i = 0; i < _bib.size(); i++) {
         outFile << _bib[i].get_numero() << ',';
         outFile << endl;
