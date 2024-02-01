@@ -5,6 +5,7 @@
   /home/thedoctor/Documents/LoTI/gui/trames/TrameCentrale.h \
   /home/thedoctor/Documents/LoTI/src/biblio.h \
   /home/thedoctor/Documents/LoTI/src/image.h \
+  /home/thedoctor/Documents/LoTI/src/utilisateur.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/assert.h \

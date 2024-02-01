@@ -38,10 +38,9 @@ public:
     void updateCSV();
     void ajouter_image(Image img);
     // tri d'images dans la biblio
-    vector<Image> filterImages(const string& sourceMin, const string& sourceMax,
-                               int numeroMin, int numeroMax,
-                               double coutMin, double coutMax);
-
+    Biblio filterImages(string source, int numero, double coutMin, double coutMax);
+    void pushImage(Image img);
+    void vider_images();
     // save le.bib
     void saveBib();
     double getPrixMax();

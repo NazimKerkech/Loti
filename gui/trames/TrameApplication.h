@@ -86,6 +86,7 @@ public:
         connect(this->tramedroite, &TrameDroite::suprimer_image, this->tramecentrale, &TrameCentrale::suprimer_image);
 
 
+        connect(this->trameSup, &TrameSuperieure::nouvelle_bibliotheque, this->tramegauche, &TrameGauche::charger_biblio_externe);
         connect(this->trameSup, &TrameSuperieure::nouvelle_bibliotheque, this->tramegauche, &TrameGauche::charge_biblio);
         connect(this->trameSup, &TrameSuperieure::nouvelle_bibliotheque, this->tramedroite, &TrameDroite::charge_biblio);
         connect(this->trameSup, &TrameSuperieure::nouvelle_bibliotheque, this->tramecentrale, &TrameCentrale::charge_biblio);

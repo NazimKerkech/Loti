@@ -147,6 +147,7 @@ void Biblio::saveLibraryWithImages() {
 void Biblio::updateCSV() {
     saveLibrary();
 }
+
 void Biblio::ajouter_image(Image img) {
     vector<string> descripteurs;
     descripteurs.push_back(img.get_source()); // source
@@ -159,27 +160,28 @@ void Biblio::ajouter_image(Image img) {
 
     this->_bib.push_back(img);
 }
+void Biblio::pushImage(Image img) {
+    this->_bib.push_back(img);
+}
+
+void Biblio::vider_images() {
+    this->_bib.clear();
+}
 // tri des images en fct de leur numero,cout et source 
-vector<Image> Biblio::filterImages(const string& sourceMin, const string& sourceMax,
-                                   int numeroMin, int numeroMax,
-                                   double coutMin, double coutMax) {
-    vector<Image> filteredImages;
+Biblio Biblio::filterImages(string source, int numero, double coutMin, double coutMax) {
+    Biblio bibliotheque_filtree = Biblio();
+    bibliotheque_filtree.vider_images();
 
     for (const auto& image : _bib) {
-
-        if (image.get_source() >= sourceMin && image.get_source() <= sourceMax) {
-
-            if (image.get_numero() >= numeroMin && image.get_numero() <= numeroMax) {
-
+        if (source=="" || image.get_source() == source) {
+            if (numero==0 || image.get_numero() == numero) {
                 if (image.get_cout() >= coutMin && image.get_cout() <= coutMax) {
-
-                    filteredImages.push_back(image);
+                    bibliotheque_filtree.pushImage(image);
                 }
             }
         }
     }
-
-    return filteredImages;
+    return bibliotheque_filtree;
 }
 
 //enregistrer un .bib a partir d'une bibliotheque

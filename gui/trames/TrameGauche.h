@@ -35,7 +35,7 @@ public:
     QLineEdit *recherche_saisie;
     QLineEdit *source_edit, *titre_edit, *cout_edit, *numero_edit, *acces_edit;
     string id;
-    Biblio _bibliotheque;
+    Biblio _bibliotheque, _bibliothequeStoquee;
     QTableWidget* _tableau;
 
     signals:
@@ -51,6 +51,7 @@ public:
         _Widget_bibliotheque = new QListWidget(this);
         this->id = id;
         _bibliotheque = bibliotheque;
+        _bibliothequeStoquee = bibliotheque;
         // Add items from the vector to the QListWidget
         int indice = 0;
         std::unordered_map<int, QString> initialValues;
@@ -191,12 +192,15 @@ public:
         // Set up layout
 
         slider_prix = new QRangeSlider(this);
-        slider_prix->setLowValue(0);
-        slider_prix->setHighValue(100);
-        slider_prix->setRange(0, 100);
+        slider_prix->setLowValue(this->_bibliotheque.getPrixMin());
+        slider_prix->setHighValue(this->_bibliotheque.getPrixMax());
+        slider_prix->setRange(this->_bibliotheque.getPrixMin(), this->_bibliotheque.getPrixMax());
 
-        prix_min = new QLabel("0");
-        prix_max = new QLabel("100");
+        prix_min = new QLabel(QString::fromStdString(to_string(this->_bibliotheque.getPrixMin())));
+        prix_max = new QLabel(QString::fromStdString(to_string(this->_bibliotheque.getPrixMin())));
+        this->prix_min->setText(QString::fromStdString(to_string(slider_prix->lowValue())));
+        this->prix_max->setText(QString::fromStdString(to_string(slider_prix->highValue())));
+
         connect(slider_prix, &QRangeSlider::lowValueChange, this, &TrameGauche::slide_prix);
         connect(slider_prix, &QRangeSlider::highValueChange, this, &TrameGauche::slide_prix);
 
@@ -213,11 +217,15 @@ public:
         QPushButton *chercher = new QPushButton("chercher");
         connect(chercher, &QPushButton::clicked, this, &TrameGauche::chercher);
 
+        QPushButton *abandonner = new QPushButton("abandonner");
+        connect(abandonner, &QPushButton::clicked, this, &TrameGauche::abandon);
+
         recherche_saisie = new QLineEdit(this);
 
         layout->addWidget(recherche_saisie);
         layout->addWidget(prix_frame);
         layout->addWidget(chercher);
+        layout->addWidget(abandonner);
         layout->addWidget(_Widget_bibliotheque);
 
         const string LOTI_DIR(SOURCE_DIR);
@@ -320,6 +328,7 @@ public:
     }
     void charge_biblio(Biblio bibliotheque) {
         this->_bibliotheque = bibliotheque;
+        //this->_bibliothequeStoquee = bibliotheque;
         _Widget_bibliotheque->clear();
         int indice = 0;
         for (const Image image : bibliotheque.get_images()) {
@@ -440,6 +449,19 @@ public:
             _Widget_bibliotheque->setItemWidget(listWidgetItem, tableau);
             indice++;
         }
+        slider_prix->setLowValue(this->_bibliothequeStoquee.getPrixMin());
+        slider_prix->setHighValue(this->_bibliothequeStoquee.getPrixMax());
+        slider_prix->setRange(this->_bibliothequeStoquee.getPrixMin(), this->_bibliothequeStoquee.getPrixMax());
+        this->prix_min->setText(QString::fromStdString(to_string(slider_prix->lowValue())));
+        this->prix_max->setText(QString::fromStdString(to_string(slider_prix->highValue())));
+    }
+    void charger_biblio_externe(Biblio bib) {
+        _bibliothequeStoquee = bib;
+    }
+    void abandon() {
+        this->_bibliotheque = this->_bibliothequeStoquee;
+        this->charge_biblio(this->_bibliotheque);
+        emit charge_biblio(this->_bibliotheque);
     }
     void slide_prix() {
         this->prix_min->setText(QString::fromStdString(to_string(slider_prix->lowValue())));
@@ -454,10 +476,14 @@ public:
         }
     }
     void chercher() {
-        string code = this->recherche_saisie->text().toStdString();
-        int prix_min = slider_prix->lowValue();
-        int prix_max = slider_prix->highValue();
-        //chercher
+        string num = this->recherche_saisie->text().toStdString();
+        int numero = stoi((num=="") ? "0" : num);
+        double prix_min = slider_prix->lowValue();
+        double prix_max = slider_prix->highValue();
+        string source = "";
+        _bibliotheque = _bibliothequeStoquee.filterImages(source, numero, prix_min, prix_max);
+        this->charge_biblio(_bibliotheque);
+        emit nouvelle_bibliotheque(_bibliotheque);
     }
 };
 #endif //TRAMEGAUCHE_H
