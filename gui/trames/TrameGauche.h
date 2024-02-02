@@ -425,7 +425,7 @@ public:
         //_bibliotheque = _bibliothequeStoquee;
         this->_bibliotheque.trier();
         this->charge_biblio(this->_bibliotheque);
-        emit charge_biblio(this->_bibliotheque);
+        emit this->nouvelle_bibliotheque(this->_bibliotheque);
     }
     void slide_prix() {
         this->prix_min->setText(QString::fromStdString(to_string(int(floor(slider_prix->lowValue())))));
