@@ -22,26 +22,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b6763ca9-ce96-40fc-900e-2d77a54f0a38" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/LoTI_autogen/mocs_compilation.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/biblio.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/biblio.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/image.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/image.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI.dir/src/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI_autogen.dir/ParseCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/LoTI_autogen.dir/ParseCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_TrameGauche.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_TrameGauche.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_TrameSuperieure.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/LoTI_autogen/JPUFWXRHQV/moc_TrameSuperieure.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dta/descripteurs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dta/descripteurs.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/trames/TrameApplication.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameApplication.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/trames/TrameGauche.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameGauche.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/trames/TrameSuperieure.h" beforeDir="false" afterPath="$PROJECT_DIR$/gui/trames/TrameSuperieure.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/biblio.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/biblio.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/biblio.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/biblio.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/image.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/image.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/image.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/image.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +134,9 @@
       <workItem from="1706792780580" duration="4148000" />
       <workItem from="1706798133590" duration="7643000" />
       <workItem from="1706805903935" duration="6544000" />
-      <workItem from="1706812853098" duration="25000" />
+      <workItem from="1706812853098" duration="358000" />
+      <workItem from="1706819417947" duration="1779000" />
+      <workItem from="1707771059643" duration="24000" />
     </task>
     <servers />
   </component>
